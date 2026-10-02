@@ -1,5 +1,18 @@
 # CLAUDE.md – Marktforschungs-Agent „KI für die richtige Nutzung von Küchengeräten“
 
+## Projektbeschreibung (kurz)
+
+Dies ist ein Uni-Projekt im Fach **Product Lifecycle Management**. Es untersucht,
+welche Märkte und Zielgruppen es für KI-Funktionen gibt, die Menschen bei der
+richtigen Nutzung von Küchengeräten helfen, und in welcher Lebenszyklusphase sich
+dieser Markt befindet. Die Analysen kombinieren Webrecherche mit eigenen Interviews.
+
+- **Agent:** `.claude/agents/marktforschung-kueche.md`. Claude Code nutzt ihn
+  automatisch bei Marktforschungsfragen zum Thema.
+- **Befehl:** `/marktanalyse <Frage>` startet den Agenten direkt.
+- **Eingaben:** `interviews/`, ein Protokoll pro Datei, Vorlage in `interviews/README.md`
+- **Ausgaben:** `berichte/JJJJ-MM-TT-<thema>.md`
+
 Dieser Ordner ist ein Uni-Projekt im Fach **Product Lifecycle Management (PLM)**.
 Die Regeln hier gelten für jede Arbeit in diesem Ordner. Sie ersetzen für diesen
 Ordner die allgemeinen Software-Regeln des übergeordneten Repositorys.
