@@ -1,0 +1,690 @@
+<section class="chapter" id="kap07">
+
+<h2>07 · Financial Statement Analysis II – Renditen, Verschuldung, Leverage-Effekt, Formelsammlung „Für den Test“</h2>
+
+<p class="lead">Nachdem du in Teil I der Finanzanalyse Margen und Liquiditätskennzahlen kennengelernt hast, geht es hier um die Frage: <em>Wie gut „verzinst“ ein Unternehmen das eingesetzte Kapital, wie stark ist es verschuldet und was macht Fremdkapital mit der Rendite der Eigentümer?</em> Der Dreh- und Angelpunkt ist der <strong>Leverage-Effekt (Hebelwirkung, Financial Leverage)</strong>. Dazu kommen die komplette SAP-Übungsaufgabe 2023–2025 (mit Einmaleffekt Qualtrics), die Working-Capital-Laufzeiten (SAP vs. BMW) und eine vollständige Formelsammlung für den Test. Wichtig für die Klausur: Kennzahlen mit Formel <em>wissen</em>, sauber <em>rechnen</em> und in ein bis zwei Sätzen <em>interpretieren</em>.</p>
+<p class="folienbereich">Folien: PDF-S. 291–303 (Fassung C)</p>
+
+<div class="merke"><strong>Hinweis zur Farbcodierung:</strong> Normaler Text = Folieninhalt (verständlich erklärt). <span class="rec">Pinker Text</span> = Recherche bzw. Ergänzung, die nicht auf den Folien steht (inkl. Quellen). Rechnungen und Zahlenbeispiele ohne Farbe sind selbst gerechnet und mit Python geprüft.</div>
+
+<div class="rec"><strong>Recherche (Vergleich der Fassungen):</strong> Fassung B (PDF-S. 165–171) und Fassung C (S. 291–297) sind für Renditen, Zinslast, Leverage-Effekt und die „Weiteren Aufgaben“ inhaltlich identisch. Unterschiede: (1) In B (S. 167) heißt die Verschuldungsfolie noch <em>Debt-Equity Ratio</em> und <em>Debt-to-Capital Ratio</em> (englisch, mit handschriftlicher Ergänzung <em>Verschuldungsgrad = FK/EK, Fremdkapitalquote = FK/(EK+FK), Eigenkapitalquote = …</em>); C (S. 293) hat dafür die deutschen Bezeichnungen und ergänzt die Eigenkapitalquote. (2) B (S. 166) trägt am Folienrand die Notiz „GTK: Altersvorsorgedepot → vom Kapitalmarkt basierte Rente aufbauen, steuerfrei und 540 €/Jahr“ – ein Randkommentar der Vorlesung ohne Bezug zur Formel; der genaue Zusammenhang ist nicht eindeutig und wurde hier nicht verifiziert. (3) C ergänzt die SAP-Aufgabe samt Lösung (S. 297/298), SAP-GuV und Qualtrics-Einmaleffekt (S. 299/300), die Notiz „Momentane Risiken“ (S. 301), die Laufzeit-Kennzahlen (S. 302/303). Quelle: eigener Folienvergleich.</div>
+
+
+<!-- ===================================================== -->
+<h3>1. Kennzahlen: Renditen (Rentabilität, Return on Investment)</h3>
+
+<h4>1.1 Grundidee und allgemeine Form</h4>
+<p>Investoren geben einem Unternehmen Kapital und erwarten dafür eine angemessene <strong>Rendite</strong> – eine „Verzinsung“ des investierten Vermögens. Man kann zwei Perspektiven einnehmen: <strong>alle Kapitalgeber</strong> (Eigen- und Fremdkapitalgeber zusammen → <em>Gesamtkapitalrendite</em>) oder nur die <strong>Eigenkapitalgeber</strong> (→ <em>Eigenkapitalrendite</em>). Es gibt zahlreiche Varianten von Renditekennzahlen, aber alle folgen demselben Muster: <span class="folie">S. 291</span></p>
+<div class="formel">Rendite = Ergebnis / eingesetztes Vermögen bzw. Kapital</div>
+<p>Wichtig ist das <strong>Prinzip der Zuordnung</strong>: Zähler und Nenner müssen zueinander passen. Wenn im Nenner das Gesamtkapital steht (Vermögen, das <em>allen</em> Kapitalgebern gehört), sollte im Zähler eigentlich ein Ergebnis stehen, das <em>allen</em> Kapitalgebern zusteht (also vor Zinsen). Steht im Nenner nur das Eigenkapital, gehört dazu das Ergebnis, das <em>nur</em> den Eigentümern zusteht (nach Zinsen und Steuern). Diese Überlegung ist später beim Leverage-Effekt entscheidend.</p>
+
+<h4>1.2 Gesamtkapitalrendite (Return on Assets, ROA)</h4>
+<p>Die Gesamtkapitalrendite zeigt die Fähigkeit des Unternehmens, auf das eingesetzte Vermögen der Kapitalgeber eine „Verzinsung“ zu erwirtschaften. Laut Folie: <span class="folie">S. 292</span></p>
+<div class="formel">Gesamtkapitalrendite (ROA) = Jahresüberschuss bzw. Ergebnis nach Steuern / Bilanzsumme</div>
+<p><strong>Interpretation:</strong> Hoch = pro Euro Vermögen bleibt viel Gewinn hängen; das Unternehmen setzt seine Vermögenswerte effizient und profitabel ein. Niedrig = viel gebundenes Vermögen (z. B. Fabriken, Goodwill, Cash-Polster) im Verhältnis zum Gewinn. Die Bilanzsumme ist gleich dem Gesamtkapital (Eigenkapital + Fremdkapital), daher auch „Gesamtkapitalrendite“.</p>
+
+<h4>1.3 Eigenkapitalrendite (Return on Equity, ROE; auf der Folie „EKR“)</h4>
+<p>Die Eigenkapitalrendite gibt Auskunft über die Rendite auf die von den Eigenkapitalgebern eingesetzte Kapitalanlage und beleuchtet die Profitabilität der Investitionen der Eigenkapitalgeber. <span class="folie">S. 292</span></p>
+<div class="formel">Eigenkapitalrendite (EKR / ROE) = Jahresüberschuss bzw. Ergebnis nach Steuern / Eigenkapital</div>
+<p><strong>Interpretation:</strong> Hoch = die Eigentümer bekommen pro eingesetztem Euro viel zurück. Aber Vorsicht: Ein hoher ROE kann auch durch viel Fremdkapital (kleines Eigenkapital im Nenner!) „erkauft“ sein – dazu mehr im Leverage-Abschnitt. Auch ein sehr kleines oder negatives Eigenkapital (z. B. nach hohen Aktienrückkäufen) macht den ROE unbrauchbar.</p>
+
+<h4>1.4 Durchschnittswerte statt Jahresendwerte</h4>
+<p>Die Folie hat einen eigenen Hinweiskasten: Im Nenner wird <em>häufig</em> das durchschnittliche Eigenkapital bzw. die durchschnittliche Bilanzsumme statt der Jahresendwerte verwendet; die Rendite wird damit quasi als Durchschnittswert für das Jahr ermittelt. <span class="folie">S. 292</span></p>
+<p><strong>Warum?</strong> Der Gewinn ist eine <strong>Stromgröße</strong> (er fließt über das ganze Jahr, GuV), das Eigenkapital bzw. die Bilanzsumme sind <strong>Bestandsgrößen</strong> (Stichtag 31.12., Bilanz). Wenn das Kapital im Jahr stark gewachsen ist (z. B. Kapitalerhöhung im Dezember), wäre der Jahresendwert im Nenner „zu groß“ für einen Gewinn, der mit dem früheren, kleineren Kapital erwirtschaftet wurde. Der Durchschnitt aus Anfangs- und Endbestand ist die einfachste Korrektur: Ø = (Bestand 1.1. + Bestand 31.12.) / 2. Merke: <em>Bestandsgrößen mit Stromgrößen vergleichen ist heikel</em> (siehe Folie S. 286 „Achtung beim Vergleich von Bestandsgrößen mit Stromgrößen!“).</p>
+<div class="beispiel"><strong>Beispiel (Stichtag vs. Durchschnitt):</strong> Die Nordlicht AG hat einen Jahresüberschuss von 90 Mio. €. Eigenkapital 1.1.: 400, 31.12.: 500. Bilanzsumme 1.1.: 1.000, 31.12.: 1.200.
+<ul>
+<li>ROE (Stichtag) = 90 / 500 = 18,0 %; ROE (Durchschnitt) = 90 / 450 = 20,0 %.</li>
+<li>ROA (Stichtag) = 90 / 1.200 = 7,5 %; ROA (Durchschnitt) = 90 / 1.100 = 8,2 %.</li>
+</ul>
+Der Durchschnittswert ist höher, weil das Kapital im Jahr gewachsen ist.</div>
+
+<div class="merke"><strong>Merke (Renditen):</strong> ROA = Jahresüberschuss / Bilanzsumme (alle Kapitalgeber). ROE = Jahresüberschuss / Eigenkapital (nur Eigentümer). Nenner häufig als Durchschnitt (Anfang + Ende)/2. In der Klausur immer sagen, welche Variante du verwendest. Eselsbrücke: <em>E-K-R: „Ergebnis durch Eigenkapital“; G-K-R: „Ergebnis durch Gesamtkapital“</em>.</div>
+
+<div class="rec"><strong>Recherche – Varianten in der Praxis (ROCE, ROIC, ROA mit Zinsen):</strong>
+<ul>
+<li><strong>ROIC (Return on Invested Capital)</strong> = NOPAT (Net Operating Profit After Tax, also EBIT nach Steuern auf operativer Basis) / investiertes Kapital (invested capital), meist als Durchschnitt; bewusst nur das <em>operative</em> Kapital im Nenner, damit der Wert unabhängig von der Finanzierung ist. <a href="https://wallstreetprep.com/knowledge/roic-return-on-invested-capital" target="_blank">Wall Street Prep: ROIC</a></li>
+<li><strong>ROCE (Return on Capital Employed)</strong> = Betriebsergebnis (EBIT) / eingesetztes Kapital, wobei „Capital Employed“ häufig als Bilanzsumme − kurzfristige Schulden definiert wird. Quellen sind sich uneinig, ob im Zähler EBIT (vor Steuern) oder NOPAT steht – deshalb vor Vergleichen immer die Definition prüfen. <a href="https://www.wallstreetprep.com/knowledge/roce-return-on-capital-employed/" target="_blank">Wall Street Prep: ROCE</a></li>
+<li>Der Unterschied ROCE vs. ROIC liegt vor allem im Nenner (Capital Employed ist das breitere, Invested Capital das auf das operative Geschäft zugeschnittene Kapital) und im Zähler (EBIT vs. NOPAT); beide Kennzahlen sind <em>nicht</em> auf den Folien. <a href="https://wallstreetprep.com/knowledge/roic-return-on-invested-capital" target="_blank">Wall Street Prep: ROIC</a></li>
+<li><strong>Zins-Add-back:</strong> In deutschen Lehrbüchern wird die Gesamtkapitalrentabilität häufig als (Jahresüberschuss + Fremdkapitalzinsen) / Gesamtkapital definiert, weil die Zinsen eine Vergütung <em>an Kapitalgeber</em> sind. Die Folie nutzt dagegen die einfachere US-ROA-Variante „Jahresüberschuss / Bilanzsumme“. (Eigenes Fachwissen, hier nicht einzeln belegt.)</li>
+<li>Weitere Variationen: vor vs. nach Steuern, Stichtag vs. Durchschnitt, Ergebnis aus fortgeführten Aktivitäten vs. Gesamtergebnis (siehe SAP-Einmaleffekt unten), Anteile ohne beherrschenden Einfluss (Minderheiten) im Zähler oder nicht.</li>
+</ul></div>
+
+<div class="rec"><strong>Recherche – DuPont-Analyse:</strong> Der ROE lässt sich in drei Faktoren zerlegen: <em>ROE = Nettogewinnmarge × Kapitalumschlag (Asset Turnover) × Eigenkapitalmultiplikator (Equity Multiplier)</em>, also (JÜ/Umsatz) × (Umsatz/Bilanzsumme) × (Bilanzsumme/EK). Umsatz und Bilanzsumme kürzen sich weg, übrig bleibt JÜ/EK. Die Zerlegung zeigt, <em>woher</em> eine Rendite kommt (Marge, Effizienz oder Verschuldung). Eine erweiterte Fünf-Faktoren-Version spaltet die Marge in Steuerlast, Zinslast und operative Marge auf. Die DuPont-Analyse steht nicht auf den Folien, passt aber perfekt zu den Margen- und Verschuldungskennzahlen. <a href="https://corporatefinanceinstitute.com/resources/accounting/dupont-analysis" target="_blank">Corporate Finance Institute: DuPont</a>; <a href="https://openstax.org/books/principles-finance-2e/pages/6-6-profitability-ratios-and-the-dupont-method" target="_blank">OpenStax: Profitability ratios and the DuPont method</a>
+<p>Beispiel SAP 2025 (Werte siehe Abschnitt 5, selbst gerechnet): 19,9 % Nettomarge × 0,523 Umschlag × 1,561 Multiplikator = 16,3 % ROE. SAP ist also ein Margen-Unternehmen mit moderatem Fremdkapitaleinsatz, keines, das seine Rendite über Verschuldung „hebelt“.</p></div>
+
+
+<!-- ===================================================== -->
+<h3>2. Kennzahlen: Verschuldung (Kapitalstruktur)</h3>
+<p>Die Verschuldungsfolie liefert drei eng verwandte Kennzahlen, die alle aus derselben Bilanz-Aufteilung (Eigenkapital vs. Fremdkapital) entstehen: <span class="folie">S. 293</span></p>
+<table>
+<thead><tr><th>Name auf der Folie</th><th>Beschreibung</th><th>Formel</th></tr></thead>
+<tbody>
+<tr><td><strong>Verschuldungsgrad</strong> (zum Eigenkapital)</td><td>Fremdkapital in Relation zum Eigenkapital</td><td>Verschuldungsgrad = Fremdkapital / Eigenkapital</td></tr>
+<tr><td><strong>Fremdkapitalquote</strong> („Verschuldungsgrad zum Gesamtkapital“)</td><td>Fremdkapital in Relation zum Gesamtkapital</td><td>Fremdkapitalquote = Fremdkapital / (Eigenkapital + Fremdkapital)</td></tr>
+<tr><td><strong>Eigenkapitalquote</strong></td><td>Eigenkapital in Relation zum Gesamtkapital</td><td>Eigenkapitalquote = Eigenkapital / (Eigenkapital + Fremdkapital)</td></tr>
+</tbody></table>
+<p><strong>Zusammenhang:</strong> Eigenkapitalquote + Fremdkapitalquote = 100 %. Der Verschuldungsgrad lässt sich daraus ableiten: Verschuldungsgrad = Fremdkapitalquote / Eigenkapitalquote. Beispiel: FK-Quote 70 %, EK-Quote 30 % → Verschuldungsgrad = 0,70 / 0,30 = 2,33 (das Unternehmen hat 2,33 € Fremdkapital pro 1 € Eigenkapital).</p>
+<p><strong>Interpretation:</strong> Höherer Verschuldungsgrad bzw. höhere Fremdkapitalquote = stärkere Abhängigkeit von Gläubigern, höheres Kreditrisiko, weniger Puffer bei Verlusten (Verluste mindern zuerst das Eigenkapital), aber potenziell höhere Eigenkapitalrendite durch den Leverage-Effekt. Eine hohe Eigenkapitalquote = solide, krisenfest, aber möglicherweise „zu wenig Hebel“ genutzt.</p>
+<p><strong>Terminologie-Falle:</strong> Auf der Folie heißt die Kennzahl FK/(EK+FK) „Verschuldungsgrad zum Gesamtkapital“; in der handschriftlichen Lösung (S. 298) wird sie zusätzlich als „Fremdkapitalquote“ bezeichnet. In vielen Lehrbüchern bedeutet „Verschuldungsgrad“ allein immer FK/EK. In der Klausur deshalb die Formel mitschreiben! In Fassung B (S. 167) heißen die Kennzahlen <em>Debt-Equity Ratio</em> = Total Debt / Total Equity und <em>Debt-to-Capital Ratio</em> = Total Debt / (Total Equity + Total Debt).</p>
+<div class="beispiel"><strong>Beispiel:</strong> Bilanzsumme 800 Mio. €, davon Eigenkapital 240, langfristiges Fremdkapital 360, kurzfristiges Fremdkapital 200. Fremdkapital = 560. Verschuldungsgrad = 560/240 = 2,33; Fremdkapitalquote = 560/800 = 70 %; Eigenkapitalquote = 240/800 = 30 %.</div>
+<div class="rec"><strong>Recherche – Weitere Verschuldungskennzahlen:</strong>
+<ul>
+<li><strong>Net Debt / EBITDA</strong> = (verzinsliche Schulden − Zahlungsmittel) / EBITDA. Zeigt grob, in wie vielen Jahren die Nettoverschuldung aus dem operativen Cashflow-Proxy EBITDA getilgt werden könnte. Niedriger = weniger Kreditrisiko; Netto-Verschuldung kann negativ sein, wenn Cash &gt; Schulden. Einen allgemeingültigen „sicheren“ Grenzwert fand ich nicht; branchenabhängig. Als Einzeldatenpunkt: S&amp;P-500-Durchschnitt ca. 1,3 (laut CFI). <a href="https://corporatefinanceinstitute.com/resources/valuation/net-debt-ebitda-ratio/" target="_blank">Corporate Finance Institute: Net Debt/EBITDA</a></li>
+<li><strong>Gearing (Verschuldungsquote)</strong> = Verschuldung / Eigenkapital (× 100), in manchen Definitionen auch Schulden / (Schulden + EK) oder Nettoschulden / EK. Faustregeln der Quellen schwanken (z. B. „unter 50 % niedrig“, „über 70 % hoch“) und sind stark branchenabhängig. <a href="https://agicap.com/en-us/article/gearing-ratio-net-debt-ratio/" target="_blank">Agicap: Gearing</a></li>
+<li><strong>Eigenkapitalmultiplikator (Equity Multiplier)</strong> = Bilanzsumme / EK = 1 + FK/EK (Baustein der DuPont-Zerlegung).</li>
+</ul></div>
+
+<div class="beispiel"><strong>Ausblick:</strong> In der Lilium-Fallstudie später in der Vorlesung (S. 310, Fassung C) wurden diese beiden Kennzahlen auf Ende 2023 angewendet: Debt-to-Equity = 274.884 / 37.058 = 7,4 (= 740 %), Debt-to-Capital = 274.884 / 311.941 = 0,88 (= 88 %). Beide Werte signalisieren extreme Verschuldung. (Zahlen von der Folie; Nachrechnen: 274.884 + 37.058 = 311.942 ≈ 311.941, Rundung.)</div>
+
+
+<!-- ===================================================== -->
+<h3>3. Kennzahlen: Zinslast</h3>
+<p>Die Folie ist bewusst kurz: <span class="folie">S. 294</span></p>
+<div class="formel">Zinslast = Verschuldung × Zinssatz</div>
+<p>Zwei Unterscheidungen sind wichtig:</p>
+<ul>
+<li><strong>Langfristige vs. kurzfristige Verschuldung:</strong> Kurzfristige Schulden müssen bald zurückgezahlt oder refinanziert werden (Refinanzierungsrisiko), langfristige binden Kapital länger.</li>
+<li><strong>Langfristige vs. kurzfristige Zinsbindung:</strong> Ist der Zins für viele Jahre fest (z. B. Anleihe mit 4 % Kupon bis 2032), schlagen Zinsänderungen erst bei der Refinanzierung durch. Ist der Zins variabel oder kurz gebunden (z. B. 3-Monats-Euribor + Marge), wirkt ein Zinsanstieg sofort auf die GuV.</li>
+</ul>
+<p>Das ist <strong>prüfungsrelevant</strong>: Die Klausurnotiz auf S. 298 nennt als Beispielfrage „Wie beeinflussen steigende Zinsen die Bilanz, GuV usw.?“ (siehe Abschnitt 6). Antwortgerüst: Steigende Zinsen → höhere Zinsaufwendungen (GuV, Finanzergebnis ↓, Jahresüberschuss ↓) → ROE und ROA sinken, Leverage-Effekt wird kleiner oder negativ; Refinanzierung von Anleihen wird teurer; in der Bilanz sinken ggf. die Marktwerte festverzinslicher Anlagen und Barwerte (z. B. Pensionsrückstellungen werden mit höherem Zins abgezinst → Rückstellung ↓). Wie stark es ein Unternehmen trifft, hängt von Verschuldungshöhe und Zinsbindung ab.</p>
+<div class="beispiel"><strong>Beispiel:</strong> Schulden 900 Mio. €, Durchschnittszins 6,67 % → Zinslast 60 Mio. €. Ist die Hälfte der Schulden (450) variabel verzinst und steigt der Zins um 2 Prozentpunkte, wächst die Zinslast um 450 × 2 % = 9 Mio. € auf 69 Mio. €.</div>
+<div class="rec"><strong>Recherche – Zinsdeckungsgrad (Interest Coverage Ratio, ICR):</strong> Zur Zinslast gehört in der Praxis die Frage „Reicht das operative Ergebnis, um die Zinsen zu zahlen?“. Formel: <em>ICR = EBIT / Zinsaufwand</em> (manche Quellen nehmen EBITDA). Faustregeln der Quellen: unter 1 = Zinsen werden nicht aus dem operativen Ergebnis gedeckt; etwa 1,5 gilt als absolutes Minimum, über 2 gerade noch akzeptabel bei stabilen Erträgen, Analysten sehen gern mindestens 3. Die Werte sind branchenspezifisch. <a href="https://corporatefinanceinstitute.com/resources/knowledge/finance/interest-coverage-ratio" target="_blank">Corporate Finance Institute: Interest Coverage Ratio</a></div>
+
+
+<!-- ===================================================== -->
+<h3>4. Kennzahlenanalyse: Leverage-Effekt (Hebelwirkung)</h3>
+
+<h4>4.1 Die Grundidee</h4>
+<p>Der <strong>Leverage-Effekt</strong> beschreibt, dass sich die Eigenkapitalrendite durch Fremdkapital <em>erhöhen</em> lässt, solange das Unternehmen mit dem geliehenen Geld mehr verdient, als es dafür an Zinsen zahlt. Anschaulich: Du kaufst eine Wohnung für 200.000 €, die 5 % Mietrendite abwirft. Zahlst du alles aus Eigenmitteln, bekommst du 5 % auf dein Geld. Finanzierst du 100.000 € mit einem Kredit zu 3 %, zahlst du nur 3.000 € Zinsen, die Miete bleibt 10.000 € – auf deine 100.000 € Eigenkapital bleiben 7.000 € = 7 % übrig. Das Fremdkapital wirkt wie ein <em>Hebel</em>. Es hebelt aber auch in die andere Richtung: Verdient die Wohnung nur 2 %, drückt der 3 %-Kredit deine Eigenrendite unter 2 %.</p>
+
+<h4>4.2 Das Zahlenbeispiel der Folie</h4>
+<p>Annahme: Zinssatz auf Schulden = 10 %. Beide Fälle haben gleiches Eigenkapital (80), aber unterschiedlich viel Fremdkapital. <span class="folie">S. 295</span></p>
+<table>
+<thead><tr><th></th><th>Fall 1</th><th>Fall 2</th></tr></thead>
+<tbody>
+<tr><td>Assets (Vermögen = Bilanzsumme)</td><td>160</td><td>320</td></tr>
+<tr><td>Eigenkapital (EK)</td><td>80</td><td>80</td></tr>
+<tr><td>Schulden (FK)</td><td>80</td><td>240</td></tr>
+<tr><td>Operativer Gewinn (vor Zinsen)</td><td>24</td><td>48</td></tr>
+<tr><td>Zinsen (10 % × Schulden)</td><td>8</td><td>24</td></tr>
+<tr><td>Gewinn (nach Zinsen)</td><td>16</td><td>24</td></tr>
+<tr><td>ROE = Gewinn / EK</td><td>16/80 = 20 %</td><td>24/80 = 30 %</td></tr>
+<tr><td>ROA laut Folie = Gewinn / Assets</td><td>16/160 = 10 %</td><td>24/320 = 7,5 %</td></tr>
+</tbody></table>
+<p><strong>Lesart:</strong> In Fall 2 wurde das Vermögen verdoppelt, indem 160 neue Schulden aufgenommen wurden. Der operative Gewinn verdoppelt sich ebenfalls (24 → 48), die Zinsen verdreifachen sich (8 → 24), und trotzdem steigt der Gewinn nach Zinsen von 16 auf 24. Weil das Eigenkapital unverändert 80 ist, steigt der <strong>ROE von 20 % auf 30 %</strong>, obwohl die Gesamtkapitalrendite (nach der Folien-Definition) von 10 % auf 7,5 % sinkt. Das ist der Leverage-Effekt: Mehr Fremdkapital → höhere Eigenkapitalrendite, solange die Gesamtkapitalrendite über dem Zins liegt.</p>
+
+<div class="merke"><strong>Achtung, Falle (wichtig zum Verständnis!):</strong> Die ROA-Werte der Folie (10 % und 7,5 %) sind nach der Folien-Definition Gewinn <em>nach Zinsen</em> / Assets. Die Leverage-Formel auf der nächsten Folie braucht aber eine ROA <em>vor</em> Zinsen: Operativer Gewinn / Assets. Das sind in beiden Fällen 24/160 = 48/320 = <strong>15 %</strong>. Mit 15 % passt die Formel exakt: Fall 1: 15 % + (80/80) × (15 % − 10 %) = 20 %; Fall 2: 15 % + (240/80) × (15 % − 10 %) = 30 %. Mit den angezeigten 10 % bzw. 7,5 % würde die Formel <em>nicht</em> aufgehen (Fall 1: 10 % + 1 × (10 % − 10 %) = 10 % ≠ 20 %). Merke: In der Leverage-Gleichung ist „ROA“ = Rendite des Gesamtkapitals <strong>vor Fremdkapitalzinsen</strong>. (Eigene Nachrechnung, Python-geprüft.)</div>
+
+<h4>4.3 Herleitung der Formel</h4>
+<p>Die Folie leitet die Beziehung in zwei Schritten her: <span class="folie">S. 296</span></p>
+<div class="formel">ROA × Bilanzsumme = ROE × Eigenkapital + Zinssatz × Fremdkapital</div>
+<p><strong>Warum?</strong> Links steht der gesamte vom Vermögen erwirtschaftete Gewinn vor Zinsen (Rendite × Vermögen). Dieser Kuchen wird auf zwei Gruppen verteilt: die Eigenkapitalgeber bekommen ROE × EK, die Fremdkapitalgeber Zinssatz × FK. Jetzt Bilanzsumme = EK + FK einsetzen und nach ROE auflösen:</p>
+<div class="formel">ROA·(EK + FK) = ROE·EK + i·FK<br>ROE·EK = ROA·EK + ROA·FK − i·FK<br>ROE = ROA + (FK/EK) · (ROA − i)</div>
+<div class="formel">ROE = ROA + Fremdkapital/Eigenkapital × (ROA − Zinssatz)</div>
+<p>(Auf der Folie englisch: ROE = ROA + liabilities/equity ∗ (ROA − interest rate); die x-Achse der Grafik ist der Leverage = liabilities / equity.)</p>
+
+<h4>4.4 Die Grafik</h4>
+<p>Die Grafik zeigt auf der x-Achse den Leverage (Verschuldungsgrad FK/EK), auf der y-Achse die Renditen. Die <strong>ROA-Linie</strong> und die <strong>Zinssatz-Linie</strong> (Interest rate) laufen waagerecht – beide hängen in der Modellannahme nicht vom Verschuldungsgrad ab, wobei die ROA über dem Zinssatz liegt. Die <strong>ROE-Linie</strong> startet bei Leverage = 0 genau auf der ROA (ohne Fremdkapital ist ROE = ROA) und steigt dann linear an: Die Steigung ist (ROA − i), der „Abstand“ zwischen den beiden waagerechten Linien. <span class="folie">S. 296</span></p>
+
+<h4>4.5 Wann positiv, wann negativ?</h4>
+<table>
+<thead><tr><th>Situation</th><th>Wirkung von mehr Fremdkapital auf den ROE</th><th>Name</th></tr></thead>
+<tbody>
+<tr><td>ROA &gt; Zinssatz</td><td>ROE steigt, je höher FK/EK</td><td>positiver Leverage-Effekt</td></tr>
+<tr><td>ROA = Zinssatz</td><td>ROE = ROA, keine Wirkung</td><td>neutral</td></tr>
+<tr><td>ROA &lt; Zinssatz</td><td>ROE sinkt unter die ROA, bei hohem FK/EK sogar ins Negative</td><td>negativer Leverage-Effekt („Hebel wirkt gegen dich“)</td></tr>
+</tbody></table>
+<div class="beispiel"><strong>Beispiel 1 (positiv):</strong> Bilanzsumme 500, EK 200, FK 300 (FK/EK = 1,5), ROA (vor Zinsen) 12 %, Zinssatz 6 %. EBIT = 0,12 × 500 = 60; Zinsen = 0,06 × 300 = 18; Gewinn = 42; ROE = 42/200 = 21 %. Formel: 12 % + 1,5 × (12 % − 6 %) = 21 %. ✔<br>
+<strong>Beispiel 2 (negativ):</strong> Gleiche Struktur, aber ROA 4 %, Zinssatz 7 %. EBIT = 20; Zinsen = 21; Gewinn = −1; ROE = −0,5 %. Formel: 4 % + 1,5 × (4 % − 7 %) = −0,5 %. ✔ Ohne Fremdkapital hätte der ROE 4 % betragen – die Verschuldung hat aus einem kleinen Gewinn einen Verlust gemacht.</div>
+
+<h4>4.6 Einschränkungen und Risiko</h4>
+<ul>
+<li><strong>Risiko:</strong> Der Hebel verstärkt die <em>Schwankungen</em> des ROE. Fällt die ROA in einer Krise unter den Zins, wirkt der Hebel negativ; Zinsen müssen trotzdem gezahlt werden (Insolvenzrisiko). Verschuldung ist daher nicht „gratis“ – sie tauscht Rendite gegen Risiko.</li>
+<li><strong>Zinssatz nicht konstant:</strong> Die Folie nimmt einen festen Zinssatz an. In der Realität steigt der Zins, je höher die Verschuldung (schlechtere Bonität), und neue Kredite werden teurer, wenn die Marktzinsen steigen (siehe Zinsbindung, Abschnitt 3).</li>
+<li><strong>Steuern fehlen in der Folie:</strong> Die Folie rechnet ohne Steuern. Mit Gewinnsteuersatz t und abzugsfähigen Zinsen gilt: <em>ROE nach Steuern = [ROA + (FK/EK) × (ROA − i)] × (1 − t)</em>, wobei ROA und i vor Steuern gemeint sind (Beispiel s. Übung 07.4).</li>
+<li><strong>Grenze des Hebels:</strong> Je höher die Verschuldung, desto schwerer wird es, Fremdkapital zu bekommen (Covenants, Ratings).</li>
+</ul>
+<div class="rec"><strong>Recherche – Formel in der Literatur:</strong> Die Beziehung wird in deutschsprachigen Quellen als r<sub>EK</sub> = r<sub>GK</sub> + (r<sub>GK</sub> − i) × FK/EK geschrieben; ein positiver Leverage-Effekt liegt vor, wenn die Gesamtkapitalrendite über dem Fremdkapitalzins liegt, liegt der Zins darüber, ist der Effekt negativ. Eine Quelle weist darauf hin, dass der konstante Fremdkapitalzins eine Vereinfachung ist, weil die Bonität mit steigender Verschuldung sinkt. <a href="https://www.weka.ch/themen/finanzen-controlling/finanzmanagement/finanzanalyse/article/financial-leverage-rendite-oder-risiko/" target="_blank">WEKA: Financial Leverage</a>; <a href="https://qonto.com/de/glossar/leverage-effekt" target="_blank">Qonto: Leverage-Effekt</a>; <a href="https://www.lynxbroker.de/boerse/boerse-kurse/boerseninfo/boersenlexikon/leverage-effekt/" target="_blank">Lynx: Leverage-Effekt</a>. Die Münchner Business School führt den Begriff ebenfalls in ihrem BWL-Lexikon: <a href="https://www.munich-business-school.de/l/bwl-lexikon/finanzwissen/leverage-effekt" target="_blank">MBS BWL-Lexikon</a> (Seite nicht im Detail ausgewertet).</div>
+
+
+<!-- ===================================================== -->
+<h3>5. Jahresabschlussanalyse: Übungsaufgabe SAP (Aufgabe S. 297, Lösung S. 298)</h3>
+
+<div class="exercise folien-aufgabe">
+<h4>Folien-Aufgabe: Jahresabschlussanalyse SAP AG 2023–2025</h4>
+<p><span class="folie">S. 297</span></p>
+<ol>
+<li>Bitte analysieren Sie die Bruttomarge, Nettogewinnmarge, die Eigenkapitalrendite, die Gesamtkapitalrendite, die Current Ratio, Cash Ratio, den Verschuldungsgrad zum Gesamtkapital, den Verschuldungsgrad zum Eigenkapital und die Eigenkapitalquote der SAP AG für die Jahre 2023, 2024 und 2025.</li>
+<li>Bitte vergleichen Sie die Ergebnisse jeder Kennzahl mit dem Vorjahr und interpretieren Sie die Veränderungen.</li>
+<li>Untersuchen Sie nun die Entwicklung des SAP-Aktienkurses in den letzten zwei Jahren. Wie hat sich die Aktie entwickelt? Halten Sie diese Entwicklung auf Basis der analysierten Kennzahlen für gerechtfertigt? Würden Sie in Aktien der SAP AG investieren?</li>
+</ol>
+<details><summary>Lösung anzeigen</summary>
+<h4>Schritt 1: Eingangsdaten (in Mio. €)</h4>
+<p>Die Lösungsfolie (S. 298, „in Mio.“) nennt die Formeln für alle drei Jahre und die Zahlen für <strong>2024</strong> und <strong>2025</strong> (handschriftlich). Für 2023 stehen auf der Folie nur die Formeln; die 2023-Zahlen sind pink aus den SAP-Berichten ergänzt.</p>
+<table>
+<thead><tr><th>Position</th><th>2023</th><th>2024</th><th>2025</th></tr></thead>
+<tbody>
+<tr><td>Umsatzerlöse (Total revenue)</td><td><span class="rec">31.207</span></td><td>34.176</td><td>36.800</td></tr>
+<tr><td>Bruttogewinn (Gross profit)</td><td><span class="rec">22.534</span></td><td>24.932</td><td>26.814</td></tr>
+<tr><td>Jahresüberschuss (Profit after tax)</td><td><span class="rec">5.964</span> (davon fortgeführt 3.600)</td><td>3.150</td><td>7.326</td></tr>
+<tr><td>Eigenkapital (EK)</td><td><span class="rec">43.406</span></td><td>45.806</td><td>45.073</td></tr>
+<tr><td>Bilanzsumme (EK + Schulden)</td><td><span class="rec">68.335</span></td><td>74.237</td><td>70.362</td></tr>
+<tr><td>Fremdkapital (Schulden) = Bilanzsumme − EK</td><td><span class="rec">24.929</span></td><td>28.431</td><td>25.288 (Folie; 70.362 − 45.073 = 25.289, Rundung)</td></tr>
+<tr><td>Kurzfristiges Vermögen (Current assets)</td><td><span class="rec">20.571</span></td><td>21.401</td><td>20.256</td></tr>
+<tr><td>Kurzfristige Schulden (Current liabilities)</td><td><span class="rec">14.642</span></td><td>19.082</td><td>17.416</td></tr>
+<tr><td>Zahlungsmittel (Cash)</td><td><span class="rec">8.124</span></td><td>9.609</td><td>8.220</td></tr>
+</tbody></table>
+<div class="rec">Quellen der 2023-Werte: Umsatz, Bruttogewinn und Gewinn aus der SAP-Gewinn-und-Verlustrechnung bzw. dem Fünfjahresüberblick (<a href="https://www.sap.com/integrated-reports/2023/en/datahub/financial-data/five-year-summary.html" target="_blank">SAP Integrated Report 2023: Five-Year Summary</a>; Jahresüberschuss 5.964 inkl. aufgegebener Geschäftsbereiche steht auf der GuV-Folie S. 299); Bilanzwerte aus <a href="https://www.sap.com/integrated-reports/2023/en/datahub/financial-data/financial-position.html" target="_blank">SAP Integrated Report 2023: Financial Position</a> (Bilanzsumme 68.335, EK 43.406, kurzfristige Schulden 14.642, kurzfristiges Vermögen 20.571); Cash 2023 (8.124) aus der Vergleichsspalte des <a href="https://www.sap.com/integrated-reports/2024/en/datahub/financial-data/financial-position.html" target="_blank">SAP Integrated Report 2024</a>. <strong>Nicht vollständig verifiziert:</strong> Die Vorjahreswerte werden in späteren Berichten teils angepasst (z. B. weist der Bericht 2025 für 2024 eine Bilanzsumme von 74.237 aus, der Bericht 2024 selbst 74.122). Die Folienwerte 2024/2025 stimmen mit dem <a href="https://www.sap.com/integrated-reports/2025/en/datahub/financial-data/financial-position.html" target="_blank">SAP Integrated Report 2025</a> überein (Bilanzsumme 70.362, EK 45.073). Hinweis: Die SAP-Pressemitteilung zum Q4 2025 nennt für den Gewinn nach Steuern abweichend 7.492 Mio. €; ich konnte das nicht mit dem Integrated Report abgleichen und verwende die Folienzahl 7.326. <a href="https://www.nasdaq.com/press-release/sap-quarterly-statement-q4-2025-2026-01-29" target="_blank">SAP Q4 2025 Statement</a></div>
+
+<h4>Schritt 2: Formeln und Ergebnisse</h4>
+<table>
+<thead><tr><th>Kennzahl</th><th>Formel</th><th>2023</th><th>2024</th><th>2025</th></tr></thead>
+<tbody>
+<tr><td>Bruttomarge</td><td>Bruttogewinn / Umsatz</td><td>22.534/31.207 = 72,2 %</td><td>24.932/34.176 = 73,0 %</td><td>26.814/36.800 = 72,9 % (Folie: ≈ 0,728)</td></tr>
+<tr><td>Nettogewinnmarge</td><td>Jahresüberschuss / Umsatz</td><td>5.964/31.207 = 19,1 %</td><td>3.150/34.176 = 9,2 %</td><td>7.326/36.800 = 19,9 % (Folie: ≈ 0,199)</td></tr>
+<tr><td>Eigenkapitalrendite (ROE)</td><td>Jahresüberschuss / EK</td><td>5.964/43.406 = 13,7 %</td><td>3.150/45.806 = 6,9 %</td><td>7.326/45.073 = 16,3 % (Folie: ≈ 0,163)</td></tr>
+<tr><td>Gesamtkapitalrendite (ROA)</td><td>Jahresüberschuss / Bilanzsumme</td><td>5.964/68.335 = 8,7 %</td><td>3.150/74.237 = 4,2 %</td><td>7.326/70.362 = 10,4 % (Folie: ≈ 0,104)</td></tr>
+<tr><td>Current Ratio</td><td>kurzfr. Vermögen / kurzfr. Schulden</td><td>20.571/14.642 = 1,40</td><td>21.401/19.082 = 1,12</td><td>20.256/17.416 = 1,16 (Folie: ≈ 1,163)</td></tr>
+<tr><td>Cash Ratio</td><td>Cash / kurzfr. Schulden</td><td>8.124/14.642 = 0,55</td><td>9.609/19.082 = 0,50</td><td>8.220/17.416 = 0,47 (Folie: ≈ 0,472)</td></tr>
+<tr><td>Verschuldungsgrad zum Gesamtkapital (FK-Quote)</td><td>FK / (EK + FK)</td><td>24.929/68.335 = 36,5 %</td><td>28.431/74.237 = 38,3 %</td><td>25.288/70.362 = 35,9 % (Folie: ≈ 0,359)</td></tr>
+<tr><td>Verschuldungsgrad zum Eigenkapital</td><td>FK / EK</td><td>24.929/43.406 = 0,57</td><td>28.431/45.806 = 0,62</td><td>25.288/45.073 = 0,56 (Folie: ≈ 0,561)</td></tr>
+<tr><td>Eigenkapitalquote</td><td>EK / Bilanzsumme</td><td>43.406/68.335 = 63,5 %</td><td>45.806/74.237 = 61,7 %</td><td>45.073/70.362 = 64,1 % (Folie: ≈ 0,64)</td></tr>
+</tbody></table>
+<p>(Alle Werte per Python nachgerechnet. Die 2025-Spalte entspricht den Folienergebnissen, teils mit anderer Rundung; die Folie rundet die Bruttomarge 0,7286 auf „0,728“, richtig gerundet wäre 0,729.)</p>
+<div class="merke"><strong>Fehler in der handschriftlichen Folienlösung (S. 298), die du kennen solltest:</strong>
+<ul>
+<li>In den <em>2024</em>-Spalten sind die Zeilen „Verschuldungsgrad zum Gesamtkapital“ und „Verschuldungsgrad zum Eigenkapital“ vertauscht: In der ersten Zeile steht 28.431/45.806 (das ist FK/EK = 0,62), in der zweiten 28.431/74.237 (das ist FK/Bilanzsumme = 0,38). Richtig: Gesamtkapital-Variante 2024 = 28.431/74.237 = 38,3 %; Eigenkapital-Variante = 28.431/45.806 = 0,62. Die 2025-Spalte ist dagegen richtig (25.288/70.362 = 0,359 bzw. 25.288/45.073 = 0,561).</li>
+<li>Bei den Formeln der 2023-Spalte steht bei der Gesamtkapitalrendite „Jahresüberschuss / Bilanzergebnis“ – gemeint ist die <em>Bilanzsumme</em> (das Bilanzergebnis ist etwas ganz anderes). Zudem steht bei der Formel des „Verschuldungsgrads zum Gesamtkapital“ nur FK/EK und bei „zum Eigenkapital“ FK/Bilanzsumme („Fremdkapitalquote“ notiert) – auch hier wieder vertauscht. Die richtigen Formeln stehen auf S. 293.</li>
+<li>Randnotizen der Lösung: „Nettogewinn = Gewinn nach Steuern = Ergebnis nach Steuern“; „Cash = Zahlungsmittel &amp; Zahlungsmitteläquivalente (Bank)“; „Summe Schulden = Fremdkapital“; „Gesamtkapital = EK + Schulden“.</li>
+</ul></div>
+
+<h4>Schritt 3: Interpretation der Veränderungen</h4>
+<ul>
+<li><strong>Bruttomarge (72–73 %, nahezu konstant):</strong> Software/Cloud hat sehr geringe Herstellkosten pro Zusatzumsatz; die operativen Schwankungen entstehen <em>unterhalb</em> der Bruttomarge (Vertrieb, Verwaltung, Forschung, Restrukturierung). Die Marge ist ein Qualitätsmerkmal des Geschäftsmodells, sagt aber wenig über die Gewinnschwankungen aus.</li>
+<li><strong>Nettogewinnmarge 19,1 % → 9,2 % → 19,9 %:</strong> 2023 ist durch den Qualtrics-Verkauf (Einmaleffekt, siehe Abschnitt 7) aufgebläht: Aus fortgeführten Geschäften wären es nur 3.600/31.207 = 11,5 %. 2024 sinkt die Marge stark (Gewinn 3.150 bei gleichzeitig wachsendem Umsatz); die Folien liefern den Grund nicht, <span class="rec">er liegt nach SAP-Angaben im Transformationsprogramm 2024 (Restrukturierung) – Einzelheiten unten</span>. 2025 erholt sich die Marge auf 19,9 %, <em>ohne</em> Einmalgewinn.</li>
+<li><strong>ROE 13,7 % → 6,9 % → 16,3 % und ROA 8,7 % → 4,2 % → 10,4 %:</strong> Spiegeln die Gewinn-Entwicklung. 2024 halbiert sich die Rendite, 2025 verdoppelt sie sich mehr als. 2023 ist verzerrt (aus fortgeführten Geschäften nur ROE 8,3 %, ROA 5,3 %).</li>
+<li><strong>Current Ratio 1,40 → 1,12 → 1,16:</strong> Die kurzfristigen Schulden stiegen 2024 sprunghaft (14.642 → 19.082), während das kurzfristige Vermögen nur leicht zulegte – die Liquidität 3. Grades verschlechtert sich also. 2025 leichte Erholung. Ein Wert &gt; 1 bedeutet, dass die kurzfristigen Vermögenswerte die kurzfristigen Schulden noch decken.</li>
+<li><strong>Cash Ratio 0,55 → 0,50 → 0,47:</strong> Zahlungsmittel decken nur noch rund die Hälfte der kurzfristigen Schulden, Tendenz sinkend. Für ein Unternehmen mit stabilen, planbaren Software-/Cloud-Zahlungsströmen (vorab gezahlte Abonnements!) ist das weniger kritisch als bei einem zyklischen Industrieunternehmen. <span class="rec">Ein Teil der kurzfristigen Schulden bei Softwarefirmen sind „Vertragsverbindlichkeiten“ (vorausbezahlte Leistungen), die nicht in Cash zurückgezahlt werden müssen, sondern durch Leistung abgearbeitet werden (eigene Fachkenntnis, nicht einzeln belegt).</span></li>
+<li><strong>Verschuldung:</strong> FK-Quote 36,5 % → 38,3 % → 35,9 %; Verschuldungsgrad (FK/EK) 0,57 → 0,62 → 0,56; Eigenkapitalquote 63,5 % → 61,7 % → 64,1 %. 2024 leicht höher verschuldet, 2025 wieder auf dem Niveau von 2023. Insgesamt ist SAP solide kapitalisiert (EK-Quote über 60 %).</li>
+<li><strong>Auffällig 2025:</strong> Das Eigenkapital sinkt (45.806 → 45.073) trotz 7.326 Mio. € Jahresüberschuss. Das kann nur heißen, dass mehr Eigenkapital abfloss als Gewinn hinzukam (Dividenden, Aktienrückkäufe, Währungs-/Bewertungseffekte). <span class="rec">Das ist eine Schlussfolgerung aus den Zahlen; die genauen Ursachen habe ich nicht verifiziert (Eigenkapitalveränderungsrechnung im SAP-Bericht prüfen).</span> Weil der ROE den Gewinn durch ein kleineres Eigenkapital teilt, wird er dadurch zusätzlich nach oben gedrückt.</li>
+</ul>
+<div class="rec"><strong>DuPont-Zerlegung SAP</strong> (eigene Rechnung auf Basis der Tabelle): ROE = Marge × Umschlag × Multiplikator. 2023: 19,1 % × 0,457 × 1,574 = 13,7 %; 2024: 9,2 % × 0,460 × 1,621 = 6,9 %; 2025: 19,9 % × 0,523 × 1,561 = 16,3 %. Der Multiplikator bleibt bei ca. 1,6 – die ROE-Schwankungen kommen praktisch vollständig aus der Marge (und 2025 etwas aus dem höheren Kapitalumschlag), nicht aus mehr Verschuldung.</div>
+
+<h4>Schritt 4: Aktienkurs und Investitionsentscheidung (Teilaufgabe 3)</h4>
+<p>Die Teilaufgabe verlangt eine eigene Beurteilung. Ein gutes Antwortraster: (1) Kursentwicklung beschreiben, (2) Gewinn- und Kennzahlenentwicklung dagegenhalten, (3) Bewertung (KGV etc.) ansprechen, (4) Risiken und Fazit mit Begründung. Die folgenden Marktdaten sind nur Orientierung (Stand 24.11.2026).</p>
+<div class="rec"><strong>Recherche – Aktienkurs SAP (Orientierung, nicht verifiziert):</strong>
+<ul>
+<li>November 2024: Der gewichtete Durchschnittskurs der SAP-Aktienrückkäufe am 22.11.2024 lag laut SAP-Meldung bei 223,98 €; ein Directors’-Dealings-Verkauf am selben Tag erfolgte bei 226,90 € (XETRA). <a href="https://www.finanzen.net/nachricht/aktien/eqs-dd-sap-se-pascal-demat-sell-14045898" target="_blank">finanzen.net: EQS-DD SAP</a></li>
+<li>November 2026: Der Kurs lag laut Kursübersichten bei ca. 213–216 € (Tradegate-Schlusskurs 13.11.2026: 212,70 €). Der 52-Wochen-Bereich wird mit ca. 127,5–244,3 € angegeben (Zeitpunkt des Hochs unklar). <a href="https://de.investing.com/equities/sap-ag" target="_blank">Investing.com: SAP SE</a>; <a href="https://www.boerse-express.com/news/articles/sap-aktie-jpmorgan-dreht-auf-overweight-961221" target="_blank">Börse Express: JPMorgan auf Overweight</a> (Kursziel 275 €, Hochstufung am 9.11.2026 laut Medienbericht).</li>
+<li>Grobes Fazit der Daten: Über zwei Jahre ist der Kurs ungefähr seitwärts bis leicht niedriger (ca. 224 € → ca. 213 €, etwa −5 %), dazwischen gab es offenbar große Schwankungen. Die Schwankungsbreite des Jahres 2026 habe ich nicht im Detail belegt. Bitte vor der Abgabe aktuelle Kurse bei Börse/Broker nachschlagen.</li>
+<li>Marktkonsens-EPS 2026 laut einer Quelle ca. 7,08 € → bei 213 € ergibt sich ein erwartetes KGV von ca. 30 (eigene Division; Konsenswert nicht verifiziert).</li>
+</ul></div>
+<p><strong>Beispiel für eine Argumentation:</strong> Die Kennzahlen 2025 (ROE 16,3 %, Marge 19,9 %, EK-Quote 64 %) sind stark; der Gewinn hat sich gegenüber 2024 mehr als verdoppelt, der Kurs ist aber nicht entsprechend gestiegen. Das spricht dafür, dass der Markt nicht die Vergangenheit, sondern Zukunftserwartungen bepreist (Wachstum der Cloud-Erlöse, KI-Wettbewerb, Margenentwicklung). Ob die Entwicklung „gerechtfertigt“ ist, lässt sich nur mit Bewertungskennzahlen (KGV, Market-to-Book, vgl. Formelsammlung) und Prognosen beurteilen – Bilanzkennzahlen allein reichen nicht. Eine Investitionsempfehlung ist immer eine begründete Abwägung (Rendite, Risiko, Bewertung, Diversifikation); die Klausur bewertet die Argumentation, nicht das „Ja/Nein“. Das ist keine Anlageberatung.</p>
+</details>
+</div>
+
+<div class="rec"><strong>Recherche – SAP 2024 und das Transformationsprogramm:</strong> Im Januar 2024 kündigte SAP ein Transformationsprogramm für 2024 an: etwa 8.000 betroffene Stellen (überwiegend über freiwillige Programme und interne Umschulung), anfänglich rund 2 Mrd. € Restrukturierungsaufwand, großteils im ersten Halbjahr 2024 und mit Belastung des IFRS-Betriebsergebnisses. Im Juli 2024 wurde der Aufwand um etwa 800 Mio. € angehoben und die Zahl der betroffenen Stellen erhöht; später ist von 9.000–10.000 Stellen die Rede. Das erklärt plausibel, warum der Jahresüberschuss 2024 (3.150) trotz Umsatzwachstum einbrach und 2025 wieder stark stieg (Basiseffekt). <a href="https://news.sap.com/2024/01/sap-updates-its-ambition-2025-and-announces-transformation-program-for-2024/embed" target="_blank">SAP News: Transformation Program 2024</a>; <a href="https://www.constellationr.com/insights/news/sap-q2-cloud-erp-revenue-up-33-sees-restructuring-hitting-9000-10000-jobs" target="_blank">Constellation Research</a>; <a href="https://www.cio.com/article/1297964/sap-announces-2-2b-restructuring-program.html" target="_blank">CIO.com</a>. Eine endgültige Gesamtsumme der Restrukturierungskosten habe ich nicht belegt (Berichte nennen rund 2–3 Mrd. €).</div>
+
+
+<!-- ===================================================== -->
+<h3>6. „Für den Test: Kennziffern wissen und die Formeln dazu“ – Formelsammlung</h3>
+
+<h4>6.1 Was auf der Folie S. 298 steht</h4>
+<p>Die Lösungsfolie trägt oben rechts eine kleine Notiz mit den Hinweisen zur Klausur (Abschrift): <span class="folie">S. 298</span></p>
+<ul>
+<li><strong>Für den Test: Kennziffern wissen und die Formeln dazu.</strong></li>
+<li><strong>Theoriestoff aus dem ersten Teil</strong> – allgemein: Was ist IFRS? Warum gibt es das? → Vor- und Nachteile. Vonovia, Wertkonzepte, konzeptionelle Sachen, „Was sind kurzfristige Vermögenswerte?“, „Warum ist das IFRS eingeführt worden?“ – <em>Standardfragen, keine Details</em>.</li>
+<li><strong>In der Klausur:</strong> → z. B. „Wie beeinflussen steigende Zinsen die Bilanz, GuV usw.?“</li>
+<li>Rechts daneben: <strong>KGV = KursGewinnVerhältnis</strong>.</li>
+</ul>
+<p>Das heißt für dich: (a) Formeln auswendig, (b) die Begriffe und Gründe der IFRS-Grundlagen sicher können (Kapitel 01–06 dieses Skripts), (c) Zusammenhänge zwischen Zinsen, Bilanz und GuV argumentieren können (siehe Zinslast und Leverage), (d) Bewertungskennzahlen wie das KGV kennen.</p>
+
+<h4>6.2 Die vollständige Formelsammlung</h4>
+<p>Die Folie nennt selbst keine Tabelle; die Kennzahlen stammen aus den Finanzanalyse-Folien (S. 285–305). Hier ist alles an einem Ort, gruppiert nach Kategorien. Die Spalte „Folie“ verweist auf die Fundstelle.</p>
+
+<h4>A) Profitabilität – Margen (Gewinne erzielen)</h4>
+<table>
+<thead><tr><th>Kennzahl (DE / EN)</th><th>Formel</th><th>Interpretation und Fallstricke</th><th>Folie</th></tr></thead>
+<tbody>
+<tr><td>Bruttomarge (Gross Margin)</td><td>Bruttoergebnis / Umsatzerlöse</td><td>Hoch = viel bleibt nach den Herstellkosten; Branchenvergleich (Software ≈ 70 %+, Handel/Auto deutlich niedriger). Bruttoergebnis = Umsatz − Umsatzkosten (Umsatzkostenverfahren).</td><td>S. 288</td></tr>
+<tr><td>Operative Marge (Operating Margin)</td><td>Operatives Ergebnis / Umsatzerlöse</td><td>Gewinn aus dem Kerngeschäft vor Finanzergebnis und Steuern; Definition des „operativen Ergebnisses“ ist unternehmensspezifisch.</td><td>S. 288</td></tr>
+<tr><td>EBIT(DA)-Marge</td><td>EBIT(DA) / Umsatzerlöse</td><td>EBITDA addiert Abschreibungen zurück – näher am Cash, aber blendet Investitionsbedarf aus.</td><td>S. 288</td></tr>
+<tr><td>EBIT-Marge</td><td>EBIT / Umsatzerlöse</td><td>Operative Ertragskraft unabhängig von Finanzierung und Steuern.</td><td>S. 289</td></tr>
+<tr><td>Nettogewinnmarge (Net Profit Margin)</td><td>Nettogewinn (Jahresüberschuss) / Umsatzerlöse</td><td>Was vom Umsatz beim Eigentümer ankommt. Einmaleffekte (z. B. Verkaufsgewinne) verzerren sie.</td><td>S. 289</td></tr>
+</tbody></table>
+<p>Kategorienschema (S. 286): Umsatzerlöse − Umsatzkosten = Bruttoergebnis; − sonstige Kosten = Betriebsergebnis; +/− Finanzergebnis; +/− Steuern vom Einkommen und vom Ertrag = Ergebnis nach Steuern; +/− sonstige Steuern = Jahresüberschuss/-fehlbetrag. <em>Achtung beim Vergleich von Bestandsgrößen mit Stromgrößen!</em></p>
+
+<h4>B) Liquidität (kurzfristige Zahlungsfähigkeit)</h4>
+<table>
+<thead><tr><th>Kennzahl (DE / EN)</th><th>Formel</th><th>Interpretation und Fallstricke</th><th>Folie</th></tr></thead>
+<tbody>
+<tr><td>Liquidität 3. Grades (Current Ratio)</td><td>Kurzfristige Vermögenswerte / Kurzfristige Schulden</td><td>&gt; 1: kurzfristiges Vermögen deckt kurzfristige Schulden. Vorräte sind nicht sofort in Cash umsetzbar; sehr hoher Wert kann auch gebundenes Kapital bedeuten.</td><td>S. 290</td></tr>
+<tr><td>Liquidität 2. Grades (Quick Ratio, Acid-Test)</td><td>(Cash (Bank) + kurzfristige Investitionen + Forderungen) / Kurzfristige Schulden</td><td>Ohne Vorräte, strengerer Test. (In Fassung B S. 164 stand noch „A/R“ = Accounts Receivable für Forderungen.)</td><td>S. 290</td></tr>
+<tr><td>Liquidität 1. Grades (Cash Ratio)</td><td>Cash (Bank) / Kurzfristige Schulden</td><td>Strengste Variante; Wert &lt; 1 ist bei laufendem Geschäft oft normal.</td><td>S. 290</td></tr>
+</tbody></table>
+
+<h4>C) Renditen (Rentabilität)</h4>
+<table>
+<thead><tr><th>Kennzahl (DE / EN)</th><th>Formel</th><th>Interpretation und Fallstricke</th><th>Folie</th></tr></thead>
+<tbody>
+<tr><td>Allgemeine Rendite</td><td>Ergebnis / eingesetztes Vermögen bzw. Kapital</td><td>„Verzinsung“ des investierten Vermögens.</td><td>S. 291</td></tr>
+<tr><td>Gesamtkapitalrendite (Return on Assets, ROA)</td><td>Jahresüberschuss (Ergebnis nach Steuern) / Bilanzsumme</td><td>Rendite für alle Kapitalgeber. Nenner oft Ø der Bilanzsumme. In der Leverage-Gleichung wird die ROA <em>vor Zinsen</em> benötigt.</td><td>S. 292</td></tr>
+<tr><td>Eigenkapitalrendite (Return on Equity, ROE / EKR)</td><td>Jahresüberschuss (Ergebnis nach Steuern) / Eigenkapital</td><td>Rendite für die Eigentümer. Wird durch Fremdkapital gehebelt; bei kleinem oder negativem EK unbrauchbar. Nenner oft Ø EK.</td><td>S. 292</td></tr>
+<tr><td>Leverage-Gleichung</td><td>ROE = ROA + (FK/EK) × (ROA − i)</td><td>ROA = Rendite vor Fremdkapitalzinsen, i = Fremdkapitalzins. ROA &gt; i → positiver Hebel; ROA &lt; i → negativer Hebel. Basis: ROA × Bilanzsumme = ROE × EK + i × FK.</td><td>S. 296</td></tr>
+</tbody></table>
+
+<h4>D) Verschuldung / Kapitalstruktur</h4>
+<table>
+<thead><tr><th>Kennzahl (DE / EN)</th><th>Formel</th><th>Interpretation und Fallstricke</th><th>Folie</th></tr></thead>
+<tbody>
+<tr><td>Verschuldungsgrad (zum Eigenkapital; Debt-Equity Ratio)</td><td>Fremdkapital / Eigenkapital</td><td>Hoch = stark verschuldet; Hebelpotenzial, aber auch Risiko.</td><td>S. 293 (B: S. 167)</td></tr>
+<tr><td>Verschuldungsgrad zum Gesamtkapital (Fremdkapitalquote; Debt-to-Capital Ratio)</td><td>Fremdkapital / (Eigenkapital + Fremdkapital)</td><td>Anteil des Fremdkapitals an der Bilanzsumme (0–100 %).</td><td>S. 293 (B: S. 167)</td></tr>
+<tr><td>Eigenkapitalquote (Equity Ratio)</td><td>Eigenkapital / (Eigenkapital + Fremdkapital)</td><td>Hoch = krisenfest. EKQ + FKQ = 100 %.</td><td>S. 293</td></tr>
+<tr><td>Zinslast</td><td>Verschuldung × Zinssatz</td><td>Unterscheide kurz-/langfristige Verschuldung und Zinsbindung.</td><td>S. 294</td></tr>
+</tbody></table>
+
+<h4>E) Working Capital / Laufzeiten</h4>
+<table>
+<thead><tr><th>Kennzahl (DE / EN)</th><th>Formel</th><th>Interpretation und Fallstricke</th><th>Folie</th></tr></thead>
+<tbody>
+<tr><td>Debitorenlaufzeit (Laufzeit Forderungen; Days Sales Outstanding, DSO)</td><td>Ø Forderungen aus Lieferungen und Leistungen / Umsatzerlöse × 365</td><td>Wie viele Tage dauert es durchschnittlich, bis Kunden zahlen? Niedrig = schnelle Zahlung.</td><td>S. 302</td></tr>
+<tr><td>Kreditorenlaufzeit (Laufzeit Verbindlichkeiten; Days Payables Outstanding, DPO)</td><td>Ø Verbindlichkeiten aus Lieferungen und Leistungen / Umsatzkosten × 365</td><td>Wie lange nutzt das Unternehmen Lieferantenkredit? Hoch = lange Zahlungsziele (Finanzierungsvorteil), aber nicht die Lieferanten verärgern. Im Nenner stehen die <em>Umsatzkosten</em> (auf der Folie „Umsatzerlöse“ durchgestrichen und handschriftlich ersetzt).</td><td>S. 302</td></tr>
+<tr><td>Lagerdauer (Vorratsvermögen; Days Inventory Outstanding, DIO)</td><td>Ø Vorräte / Umsatzkosten × 365</td><td>Wie viele Tage liegt Ware im Lager? Niedrig = schneller Umschlag. Im Nenner ebenfalls Umsatzkosten (handschriftlich korrigiert).</td><td>S. 302</td></tr>
+</tbody></table>
+<p>Ø = Durchschnitt aus Anfangs- und Endbestand. Die Folie rechnet mit 365 Tagen.</p>
+
+<h4>F) Bewertung / Marktorientierte Kennzahlen</h4>
+<table>
+<thead><tr><th>Kennzahl (DE / EN)</th><th>Formel</th><th>Interpretation und Fallstricke</th><th>Folie</th></tr></thead>
+<tbody>
+<tr><td>Marktwert des Eigenkapitals (Market Cap)</td><td>Aktienpreis × Anzahl Aktien</td><td>Was die Börse für das Eigenkapital zahlt.</td><td>S. 304</td></tr>
+<tr><td>Buchwert des Eigenkapitals (Book Value of Equity)</td><td>Eigenkapital laut Bilanz</td><td>Historisch-bilanzielle Größe.</td><td>S. 304</td></tr>
+<tr><td>Enterprise Value to EBIT</td><td>(Marktwert EK + Schulden − Cash) / EBIT</td><td>Bewertungsmultiple unabhängig von der Kapitalstruktur.</td><td>S. 304</td></tr>
+<tr><td>Enterprise Value to Sales</td><td>(Marktwert EK + Schulden − Cash) / Umsatz</td><td>Für Unternehmen ohne (stabile) Gewinne.</td><td>S. 304</td></tr>
+<tr><td>Gewinn je Aktie (Earnings per Share, EPS)</td><td>Nettogewinn / Anzahl Aktien</td><td>Basis für das KGV.</td><td>S. 305</td></tr>
+<tr><td>Market-to-Book Ratio (Kurs-Buchwert-Verhältnis)</td><td>Marktwert des Eigenkapitals / Buchwert des Eigenkapitals</td><td>&gt; 1: Markt bewertet mehr als die Bilanz ausweist (z. B. immaterielle Werte, Wachstumserwartungen).</td><td>S. 305</td></tr>
+<tr><td>Kurs-Gewinn-Verhältnis (KGV; Price-Earnings Ratio, P/E)</td><td>Aktienpreis / Gewinn pro Aktie</td><td>Wie viele Jahresgewinne zahlt der Anleger? Hoch = Wachstumserwartung oder teuer.</td><td>S. 305</td></tr>
+<tr><td>Dividendenauszahlungsrate (Payout Ratio)</td><td>Dividende pro Aktie / Gewinn pro Aktie</td><td>Anteil des Gewinns, der ausgeschüttet wird.</td><td>S. 305</td></tr>
+<tr><td>Dividendenrendite (Dividend Yield)</td><td>Dividende pro Aktie / Aktienpreis</td><td>Laufende „Verzinsung“ durch Dividenden.</td><td>S. 305</td></tr>
+</tbody></table>
+
+<div class="rec"><strong>Recherche – Zusätzliche Kennzahlen (nicht auf den Folien, aber nützlich):</strong>
+<table class="rec">
+<thead><tr><th>Kennzahl</th><th>Formel</th><th>Kurzinterpretation</th></tr></thead>
+<tbody>
+<tr><td>ROIC</td><td>NOPAT / investiertes Kapital</td><td>Operative Rendite auf das investierte Kapital; Vergleich mit Kapitalkosten (WACC).</td></tr>
+<tr><td>ROCE</td><td>EBIT / (Bilanzsumme − kurzfristige Schulden)</td><td>Rendite auf das langfristig gebundene Kapital; Definition variiert.</td></tr>
+<tr><td>DuPont-Zerlegung</td><td>ROE = Nettomarge × Kapitalumschlag × Eigenkapitalmultiplikator</td><td>Zeigt, ob Marge, Effizienz oder Verschuldung die Rendite treiben.</td></tr>
+<tr><td>Zinsdeckungsgrad (Interest Coverage)</td><td>EBIT / Zinsaufwand</td><td>Faustregeln: &lt; 1 kritisch, ca. 1,5 Minimum, &gt; 3 komfortabel (branchenabhängig).</td></tr>
+<tr><td>Net Debt / EBITDA</td><td>(verzinsliche Schulden − Cash) / EBITDA</td><td>Vereinfacht: Jahre bis zur Schuldentilgung.</td></tr>
+<tr><td>Cash Conversion Cycle</td><td>DIO + DSO − DPO</td><td>Dauer der Kapitalbindung im Working Capital; negativ = Kunden und Lieferanten finanzieren das Unternehmen.</td></tr>
+</tbody></table>
+Quellen: <a href="https://wallstreetprep.com/knowledge/roic-return-on-invested-capital" target="_blank">Wall Street Prep: ROIC</a>; <a href="https://www.wallstreetprep.com/knowledge/roce-return-on-capital-employed/" target="_blank">Wall Street Prep: ROCE</a>; <a href="https://corporatefinanceinstitute.com/resources/accounting/dupont-analysis" target="_blank">CFI: DuPont</a>; <a href="https://corporatefinanceinstitute.com/resources/knowledge/finance/interest-coverage-ratio" target="_blank">CFI: Interest Coverage</a>; <a href="https://corporatefinanceinstitute.com/resources/valuation/net-debt-ebitda-ratio/" target="_blank">CFI: Net Debt/EBITDA</a>. Der Cash Conversion Cycle ist Standardwissen und hier nicht einzeln belegt.</div>
+
+<div class="rec"><strong>Recherche – Aktuelle Entwicklung IFRS 18 (ab 1.1.2027):</strong> IFRS 18 „Darstellung und Angaben im Abschluss“ ersetzt IAS 1 für Geschäftsjahre ab dem 1. Januar 2027 (vorzeitige Anwendung erlaubt). In der Gewinn-und-Verlustrechnung müssen künftig die neuen Zwischensummen „operating profit“ (Betriebsergebnis) und „profit before financing and income taxes“ ausgewiesen werden; vom Management definierte Leistungskennzahlen (z. B. „bereinigtes EBIT“) müssen in einer Anhangangabe übergeleitet werden. Für die Analyse bedeutet das: Die Folien-Kennzahlen wie operative Marge und EBIT-Marge werden besser vergleichbar, weil „operatives Ergebnis“ künftig einheitlicher definiert ist. <a href="https://www.ifrs.org/issued-standards/list-of-standards/ifrs-18-presentation-and-disclosure-in-financial-statements" target="_blank">IFRS Foundation: IFRS 18</a>; <a href="https://www.esma.europa.eu/sites/default/files/2026-02/ESMA32-193237008-9180_Public_Statement_IFRS_18.pdf" target="_blank">ESMA: Public Statement IFRS 18</a>. Die Klausur orientiert sich an den Folien (IAS 1/Vorlesungsstand), IFRS 18 dient nur als Hintergrund.</div>
+
+
+<!-- ===================================================== -->
+<h3>7. SAP GuV und SAPs 2023-KPIs: der Einmaleffekt (S. 299/300)</h3>
+
+<h4>7.1 Die SAP-Gewinn-und-Verlustrechnung (S. 299)</h4>
+<p>Die Folie zeigt einen Ausschnitt der <strong>Consolidated Income Statements of SAP Group</strong> (in Mio. €), jeweils für 2024, 2023, 2022: <span class="folie">S. 299</span></p>
+<table>
+<thead><tr><th>Position (€ Mio.)</th><th>2024</th><th>2023</th><th>2022</th></tr></thead>
+<tbody>
+<tr><td>Cloud</td><td>17.141</td><td>13.664</td><td>11.426</td></tr>
+<tr><td>Software licenses (Softwarelizenzen)</td><td>1.399</td><td>1.764</td><td>2.056</td></tr>
+<tr><td>Software support</td><td>11.290</td><td>11.496</td><td>11.909</td></tr>
+<tr><td>Software licenses and support</td><td>12.689</td><td>13.261</td><td>13.965</td></tr>
+<tr><td>Cloud and software</td><td>29.830</td><td>26.924</td><td>25.391</td></tr>
+<tr><td>Services</td><td>4.346</td><td>4.283</td><td>4.128</td></tr>
+<tr><td><strong>Total revenue</strong></td><td><strong>34.176</strong></td><td><strong>31.207</strong></td><td><strong>29.520</strong></td></tr>
+<tr><td>Income tax expense (Ertragsteuern)</td><td>−1.614</td><td>−1.741</td><td>−1.446</td></tr>
+<tr><td><strong>Profit after tax from continuing operations</strong> (fortgeführte Geschäftsbereiche)</td><td>3.150</td><td>3.600</td><td>3.068</td></tr>
+<tr><td>… davon Eigentümer des Mutterunternehmens</td><td>3.124</td><td>3.634</td><td>3.277</td></tr>
+<tr><td>… davon Anteile ohne beherrschenden Einfluss (non-controlling interests)</td><td>26</td><td>−33</td><td>−210</td></tr>
+<tr><td><strong>Profit (loss) after tax from discontinued operations</strong> (aufgegebene Geschäftsbereiche)</td><td>0</td><td>2.363</td><td>−1.359</td></tr>
+<tr><td><strong>Profit after tax</strong> (Jahresüberschuss gesamt)</td><td>3.150</td><td>5.964</td><td>1.708</td></tr>
+<tr><td>… davon Eigentümer des Mutterunternehmens</td><td>3.124</td><td>6.139</td><td>2.284</td></tr>
+<tr><td>… davon Anteile ohne beherrschenden Einfluss</td><td>26</td><td>−175</td><td>−576</td></tr>
+</tbody></table>
+<p><strong>Was lernt man daraus?</strong> (1) Der Umsatz wächst stetig; <em>Cloud</em> nimmt zu, Lizenzen und Support nehmen ab – SAP wandelt sich vom Lizenz- zum Cloud-Modell. (2) Die Gewinnzeile, die du für Kennzahlen benutzt, ist ab 2023 eine Mischzeile: „Profit after tax“ = fortgeführte + aufgegebene Geschäftsbereiche. (3) 2023 steht bei den aufgegebenen Bereichen ein großer positiver Posten von +2.363 – das ist der <strong>Einmaleffekt</strong> der nächsten Folie.</p>
+
+<h4>7.2 Der Einmaleffekt: Verkauf von Qualtrics (S. 300)</h4>
+<p>Die Folie „SAPs 2023 KPIs kommen aus einem Einmaleffekt“ zeigt zwei Ausschnitte aus dem SAP-Bericht („2023 Divestitures – Qualtrics Disposal“): <span class="folie">S. 300</span></p>
+<ul>
+<li>Am 13.3.2023 gab SAP bekannt, dass es alle seine 423 Mio. Aktien an <strong>Qualtrics International Inc.</strong> verkaufen wird (Prozess ab 26.1.2023); der Käufer waren Fonds um Silver Lake und der Canada Pension Plan Investment Board. Abschluss des Verkaufs: 28.6.2023. Kaufpreis: 18,15 US$ je Aktie in bar.</li>
+<li>Die Finanzzahlen zeigen Qualtrics als <strong>aufgegebenen Geschäftsbereich (discontinued operation)</strong>, wie nach <strong>IFRS 5</strong> vorgeschrieben; Qualtrics war zuvor ein eigenes berichtspflichtiges Segment.</li>
+<li>Der Veräußerungsgewinn vor Steuern in den aufgegebenen Geschäftsbereichen beträgt <strong>3.562 Mio. €</strong>. Berechnung: Kaufpreis abzüglich Veräußerungskosten (7.003 Mio. €) angepasst um die den Konzern verlassenden Nettovermögenswerte (5.800 Mio. €, vor allem Goodwill 4.007 und sonstige immaterielle Vermögenswerte 1.294), die entsprechenden Anteile ohne beherrschenden Einfluss (2.337 Mio. €) und Beträge im sonstigen Ergebnis (22 Mio. €). Auf die Transaktion entfielen Steuern von 799 Mio. €.</li>
+</ul>
+<div class="beispiel"><strong>Nachgerechnet:</strong> 7.003 − 5.800 + 2.337 + 22 = 3.562 ✔ (Python). Die Nettovermögenswerte (5.800) verlassen den Konzern vollständig, aber SAP erhielt nur den Preis für seine Anteile (423 Mio. Aktien × 18,15 US$ ≈ 7.677 Mio. US$ ≈ 7.003 Mio. € nach Abzug von Kosten bzw. Umrechnung). Die Minderheitsanteile (2.337) werden aus der Konzernbilanz ausgebucht und erhöhen deshalb den Gewinn. Nach den 799 Mio. € Steuern verbleiben 3.562 − 799 = 2.763 Mio. € Veräußerungsgewinn; das Ergebnis der aufgegebenen Geschäftsbereiche insgesamt beträgt 2.363, weil darin auch die (verlustreichen) operativen Ergebnisse von Qualtrics bis zum Verkauf enthalten sind.</div>
+
+<h4>7.3 Was bedeutet das für die KPIs?</h4>
+<p>Die „Jahresüberschuss“-Zeile 2023 (5.964) enthält 2.363 Mio. € aus aufgegebenen Geschäften. Der Gewinn aus fortgeführten Geschäften beträgt nur 3.600. Alle Kennzahlen mit dem Jahresüberschuss im Zähler sind 2023 deshalb „zu schön“:</p>
+<table>
+<thead><tr><th>Kennzahl 2023</th><th>mit Gesamt-Jahresüberschuss (5.964)</th><th>nur fortgeführte Geschäfte (3.600)</th></tr></thead>
+<tbody>
+<tr><td>Nettogewinnmarge</td><td>19,1 %</td><td>11,5 %</td></tr>
+<tr><td>Eigenkapitalrendite</td><td>13,7 %</td><td>8,3 %</td></tr>
+<tr><td>Gesamtkapitalrendite</td><td>8,7 %</td><td>5,3 %</td></tr>
+</tbody></table>
+<p>Außerdem verkürzt der Verkauf die Bilanz (Goodwill und Minderheitsanteile verschwinden) und bringt Liquidität (Verkaufserlös) – das beeinflusst Eigenkapitalquote, Cash Ratio usw. Auch der Zeitvergleich 2023 → 2024 → 2025 ist nur dann sinnvoll, wenn du Einmaleffekte erkennst und bereinigst. Genau das fragt die Folie S. 287 mit „Nachhaltig oder Einmaleffekte?“ (Zeitvergleich).</p>
+<div class="merke"><strong>Merke:</strong> Beim Zeitvergleich immer prüfen: Steckt im Gewinn ein Einmaleffekt (Verkaufsgewinn, aufgegebene Geschäftsbereiche nach IFRS 5, Restrukturierung, Wertberichtigung)? Wenn ja, rechne zusätzlich mit dem bereinigten Wert und nenne beide Werte.</div>
+<div class="rec"><strong>Recherche – Einordnung zur Aufgabenstellung:</strong> Wer als Einmaleffekt 2023 eine Restrukturierung vermutet, liegt daneben: Das <em>Transformationsprogramm</em> fällt in 2024 (siehe Abschnitt 5) und drückt den Gewinn <em>2024</em> nach unten, während der <em>Qualtrics-Verkauf 2023</em> den Gewinn <em>2023</em> nach oben treibt. Beides sind Einmaleffekte, aber in verschiedenen Jahren und mit entgegengesetztem Vorzeichen – zusammen erklären sie den Zickzack-Verlauf 19,1 % → 9,2 % → 19,9 % der Nettomarge. Die SAP-Zahlen stammen von den Folien; zur Restrukturierung siehe <a href="https://news.sap.com/2024/01/sap-updates-its-ambition-2025-and-announces-transformation-program-for-2024/embed" target="_blank">SAP News</a>.</div>
+
+
+<!-- ===================================================== -->
+<h3>8. Weitere Aufgaben zum Üben (S. 301)</h3>
+
+<div class="exercise folien-aufgabe">
+<h4>Folien-Aufgabe: Branchenvergleich Eigenkapitalrendite, Nettogewinnmarge, Current Ratio, Verschuldungsgrad</h4>
+<p><span class="folie">S. 301 (Fassung B: S. 171)</span></p>
+<p>1. Berechnen Sie die Eigenkapitalrendite, Nettogewinnmarge, Current Ratio und den Verschuldungsgrad (gemessen am Gesamtkapital) für folgende Unternehmen basierend auf den Jahresabschlüssen 2024 und 2025. Interpretieren Sie Ihre Ergebnisse. Gehen Sie hierbei auch auf die Veränderung von 2024 zu 2025 ein und vergleichen zwischen den Unternehmen der jeweiligen Kategorie.</p>
+<ol>
+<li>Kategorie Automobil: BMW, Volkswagen und Mercedes</li>
+<li>Kategorie Versicherungen: Allianz und Münchener Rück</li>
+<li>Kategorie Chemie: Bayer und BASF</li>
+<li>Kategorie Energie: RWE und EON</li>
+</ol>
+<p>Randnotiz auf der Folie – <strong>„Momentane Risiken“:</strong> extrem hohe Verschuldung; Unternehmensanleihen werden wegen der hohen Zinsen immer schwieriger zu finanzieren; die meisten Unternehmen sind schuldenfinanziert, was heißt, dass sie bei steigenden Zinsen zu einem baldigen Zeitpunkt die Kredite nicht zurückzahlen können, also müsste die EZB den Zins senken. Dies sei nicht vereinbar mit der steigenden Inflation.</p>
+<details><summary>Lösung anzeigen</summary>
+<p><strong>Vorgehen (für jedes Unternehmen gleich):</strong></p>
+<ol>
+<li>Aus dem Konzernabschluss (Bilanz und Gesamtergebnisrechnung) 2024 und 2025 folgende Zahlen holen: Umsatzerlöse, Jahresüberschuss (Ergebnis nach Steuern; Entscheiden: inkl. oder ohne Minderheiten – sagen Sie, welche Variante), Eigenkapital, Bilanzsumme, kurzfristige Vermögenswerte, kurzfristige Schulden (und Fremdkapital = Bilanzsumme − Eigenkapital).</li>
+<li>Formeln anwenden: Eigenkapitalrendite = Jahresüberschuss / Eigenkapital; Nettogewinnmarge = Jahresüberschuss / Umsatzerlöse; Current Ratio = kurzfristige Vermögenswerte / kurzfristige Schulden; Verschuldungsgrad zum Gesamtkapital = Fremdkapital / Bilanzsumme.</li>
+<li>Veränderung 2024 → 2025 in Prozentpunkten angeben und die Ursache (Gewinn, Eigenkapital, Schulden) benennen.</li>
+<li>Innerhalb der Branche vergleichen (Gleiches mit Gleichem) und die Ergebnisse am Branchenmodell einordnen.</li>
+</ol>
+<p>Die Folie enthält <em>keine</em> Zahlen und keine Lösung; die Abschlüsse sollen selbst aus den Geschäftsberichten entnommen werden. Ich habe die Zahlen für diese Unternehmen hier <strong>nicht</strong> vollständig recherchiert, um keine ungeprüften Werte anzugeben. Teilweise belegt: BMW 2025 – Umsatz 133.453 Mio. €, Umsatzkosten 112.858, Bruttogewinn 20.595, Ergebnis vor Steuern 10.236, Jahresüberschuss 7.451 (laut Suchzusammenfassung der Berichtsseiten; nicht vollständig verifiziert). Daraus ergibt sich z. B. eine Nettogewinnmarge von 7.451/133.453 = 5,6 % (Python). Den Rest bitte aus den Berichten der Unternehmen entnehmen.</p>
+<p><strong>Interpretationshinweise je Kategorie (didaktisch, nicht verifiziert):</strong></p>
+<ul>
+<li><strong>Automobil (BMW, VW, Mercedes):</strong> Kapitalintensiv, Konzernbilanz enthält große Finanzdienstleistungsbereiche (Leasing/Kredite) → hohe Fremdkapitalquote ist hier teilweise <em>bankähnlich</em> und nicht mit Industrieunternehmen vergleichbar; Margen unter Druck durch Zölle, Wettbewerb (Tesla, BYD) – vgl. Fallstudie S. 279–282.</li>
+<li><strong>Versicherungen (Allianz, Münchener Rück):</strong> Die Bilanz ist anders aufgebaut (Kapitalanlagen und versicherungstechnische Rückstellungen), eine Aufteilung in kurz-/langfristig fehlt häufig; die Current Ratio ist dann nicht sinnvoll berechenbar. Dazu ist Fremdkapital im Versicherungsgeschäft zum Großteil Verpflichtung gegenüber Versicherten, deshalb sind Verschuldungsgrade strukturell hoch und nicht wie bei Industrieunternehmen zu lesen. <span class="rec">(Eigene Fachkenntnis, nicht einzeln belegt.)</span></li>
+<li><strong>Chemie (Bayer, BASF):</strong> Zyklisch, hohe Investitionen; Bayer mit Sondereffekten (Rechtsstreitigkeiten) – Einmaleffekte bereinigen.</li>
+<li><strong>Energie (RWE, E.ON):</strong> Kapitalintensiv, reguliert (E.ON-Netze), hohe Investitionen in Netze/Erneuerbare, Verschuldung typisch hoch; Zinsen wichtig (Zinsbindung beachten).</li>
+</ul>
+<p><strong>Einordnung der Randnotiz „Momentane Risiken“:</strong> Der Kern stimmt: Hohe Verschuldung plus höhere Zinsen belasten die Zinslast und Refinanzierung (siehe Abschnitt 3). Die Aussage „die meisten Unternehmen sind schuldenfinanziert“ ist verallgemeinernd (SAP hat z. B. 64 % Eigenkapitalquote), und der Satz zur EZB beschreibt ein geldpolitisches Dilemma (Inflationsbekämpfung vs. Finanzierungsbelastung), keine Kennzahlenaussage. Im Test ist wichtig, die Wirkungskette Zins → Zinsaufwand → Gewinn → ROE zu erklären. <span class="rec">(Meine Einordnung, nicht quellenbasiert.)</span></p>
+</details>
+</div>
+
+
+<!-- ===================================================== -->
+<h3>9. Ausgewählte Kennzahlen: Liquiditäts- / Working-Capital-Kennzahlen (S. 302) und Aufgabe (S. 303)</h3>
+
+<h4>9.1 Die drei Laufzeit-Kennzahlen</h4>
+<p>Diese Kennzahlen beschreiben, wie lange Geld im Betriebszyklus gebunden ist: Kunden zahlen erst später (Forderungen), Waren liegen im Lager (Vorräte), Lieferanten werden erst später bezahlt (Verbindlichkeiten). <span class="folie">S. 302</span></p>
+<div class="formel">Debitorenlaufzeit = Ø Forderungen aus Lieferungen und Leistungen / Umsatzerlöse × 365</div>
+<div class="formel">Kreditorenlaufzeit = Ø Verbindlichkeiten aus Lieferungen und Leistungen / Umsatzkosten × 365</div>
+<div class="formel">Lagerdauer = Ø Vorräte / Umsatzkosten × 365</div>
+<p><strong>Warum Umsatzkosten (Umsatzerlöse durchgestrichen)?</strong> Die Folie hat im Druck bei Kreditoren- und Lagerdauer „Umsatzerlöse“ im Nenner stehen, handschriftlich ist es durch <em>Umsatzkosten</em> ersetzt. Das ist inhaltlich richtig: Verbindlichkeiten und Vorräte entstehen aus <em>Einkaufswerten/Herstellkosten</em>, nicht aus Verkaufspreisen. Forderungen dagegen entstehen aus Verkaufspreisen, deshalb Umsatzerlöse im Nenner. Das Prinzip „Zähler und Nenner müssen zusammenpassen“ gilt hier wieder.</p>
+<p><strong>Interpretation:</strong> Debitorenlaufzeit: niedriger = Kunden zahlen schneller. Kreditorenlaufzeit: höher = Lieferantenkredit wird länger genutzt (günstige Finanzierung), aber nicht übertreiben. Lagerdauer: niedriger = schneller Warenumschlag. Zusammen ergeben sie die Kapitalbindungsdauer im Umlaufvermögen.</p>
+<p><strong>Rechenschema:</strong> Ø Bestand = (Bestand Vorjahr + Bestand aktuell) / 2; Tage = Ø Bestand / Jahresgröße × 365.</p>
+
+<h4>9.2 Die handschriftlichen Beispiele</h4>
+<ul>
+<li><strong>SAP, Debitorenlaufzeit:</strong> Ø Forderungen = (…+…)/2 = 6.724,5 → 6.724,5 / 36.800 × 365 ≈ <strong>66,69 Tage</strong>. (36.800 = Umsatz 2025.)</li>
+<li><strong>BMW, Debitorenlaufzeit:</strong> (2.946 + 2.834)/2 = 2.890 → 2.890 / 133.453 × 365 ≈ <strong>7,9 Tage</strong>. (133.453 = Umsatz 2025.)</li>
+<li><strong>SAP, Kreditorenlaufzeit:</strong> Ø Verbindlichkeiten = (…+…)/2 = 2.209,5 → 2.209,5 / 9.986 × 365 ≈ <strong>80,76 Tage</strong>. (9.986 = Umsatzkosten 2025.)</li>
+<li><strong>SAP, Lagerdauer:</strong> keine – „bei SAP gibt es keine Vorräte, da sie nur mit Software handeln“.</li>
+<li><strong>BMW, Kreditorenlaufzeit und Lagerdauer:</strong> auf der Folie nur angekündigt („bei BMW“), nicht ausgerechnet – das ist die Aufgabe auf S. 303.</li>
+</ul>
+<div class="rec"><strong>Recherche – Herkunft der Zahlen:</strong> Die Folienwerte lassen sich aus den Geschäftsberichten nachvollziehen: SAP 2025 Umsatz 36.800 und Bruttogewinn 26.814 → Umsatzkosten = 36.800 − 26.814 = 9.986 ✔; SAP „Trade and other receivables“ 2025: 6.675, 2024: 6.774 → Ø 6.724,5 ✔; SAP „Trade and other payables“ 2024: 1.988 → aus dem Folienwert Ø 2.209,5 folgt für 2025: 2 × 2.209,5 − 1.988 = 2.431 (abgeleitet, nicht direkt verifiziert). BMW Group 2025: Umsatz 133.453, Forderungen aus Lieferungen und Leistungen 2025: 2.946, 2024: 2.834 ✔; Vorräte 2025: 21.281, 2024: 24.387; Verbindlichkeiten aus Lieferungen und Leistungen 2025: 12.488, 2024: 14.126; Umsatzkosten 2025: 112.858 (laut Suchzusammenfassung der Berichtsseiten, nicht vollständig verifiziert). Quellen: <a href="https://www.sap.com/integrated-reports/2025/en/datahub/financial-data/financial-position.html" target="_blank">SAP Integrated Report 2025</a>; <a href="https://www.sap.com/integrated-reports/2024/en/datahub/financial-data/financial-position.html" target="_blank">SAP Integrated Report 2024</a>; <a href="https://www.bmwgroup.com/en/report/2025/financial-statements/balance-sheet/index.html" target="_blank">BMW Group Report 2025: Balance Sheet</a>; <a href="https://www.bmwgroup.com/en/report/2025/financial-statements/income-statement/index.html" target="_blank">BMW Group Report 2025: Income Statement</a>.</div>
+
+<div class="exercise folien-aufgabe">
+<h4>Folien-Aufgabe: Debitorenlaufzeit, Kreditorenlaufzeit, Lagerdauer</h4>
+<p><span class="folie">S. 303</span></p>
+<p>Bitte berechnen Sie die Debitorenlaufzeit, die Kreditorenlaufzeit und die Lagerdauer für die folgenden Unternehmen: SAP, BMW.</p>
+<details><summary>Lösung anzeigen</summary>
+<p><strong>Daten (Mio. €, Geschäftsjahr 2025; Vorjahr 2024 für den Durchschnitt):</strong></p>
+<table>
+<thead><tr><th>Größe</th><th>SAP</th><th>BMW</th></tr></thead>
+<tbody>
+<tr><td>Umsatzerlöse 2025</td><td>36.800</td><td>133.453</td></tr>
+<tr><td>Umsatzkosten 2025</td><td>9.986 (= 36.800 − 26.814)</td><td><span class="rec">112.858</span></td></tr>
+<tr><td>Forderungen aus L&amp;L, 2024 → 2025</td><td><span class="rec">6.774 → 6.675</span> (Ø 6.724,5)</td><td>2.834 → 2.946 (Ø 2.890)</td></tr>
+<tr><td>Verbindlichkeiten aus L&amp;L, 2024 → 2025</td><td>Ø 2.209,5 (Folie)</td><td><span class="rec">14.126 → 12.488</span> (Ø 13.307)</td></tr>
+<tr><td>Vorräte, 2024 → 2025</td><td>keine</td><td><span class="rec">24.387 → 21.281</span> (Ø 22.834)</td></tr>
+</tbody></table>
+<p><strong>Rechenweg:</strong></p>
+<ul>
+<li><strong>SAP:</strong> Debitorenlaufzeit = 6.724,5 / 36.800 × 365 = 66,70 Tage (Folie: 66,69, Rundung). Kreditorenlaufzeit = 2.209,5 / 9.986 × 365 = 80,76 Tage. Lagerdauer: nicht anwendbar (keine Vorräte).</li>
+<li><strong>BMW:</strong> Debitorenlaufzeit = 2.890 / 133.453 × 365 = 7,90 Tage. Kreditorenlaufzeit = 13.307 / 112.858 × 365 = 43,04 Tage. Lagerdauer = 22.834 / 112.858 × 365 = 73,85 Tage.</li>
+</ul>
+<p><strong>Interpretation:</strong> SAP verkauft Software und Cloud-Leistungen an Geschäftskunden, die nach etwa zwei Monaten zahlen (67 Tage), und lässt sich selbst gut 80 Tage Zeit bei Lieferanten; ohne Lager ergibt das eine für den Kapitalbedarf sehr günstige Situation. BMW kassiert nach rund 8 Tagen (weil die Kunden Händler und Finanzdienstleistungs-Kunden sind; BMW-Händler zahlen schnell bzw. Finanzierungen laufen über das Bankgeschäft), hält Fahrzeuge und Teile etwa 74 Tage im Lager und zahlt Lieferanten nach rund 43 Tagen. Cash Conversion Cycle (DIO + DSO − DPO): SAP = 66,70 − 80,76 = −14,06 Tage (negativ: die Lieferanten finanzieren das Geschäft mit); BMW = 73,85 + 7,90 − 43,04 = 38,71 Tage (Kapitalbindung im Umlaufvermögen). <span class="rec">Hinweis: Der BMW-Wert für die Debitorenlaufzeit bezieht sich nur auf die Forderungen aus Lieferungen und Leistungen; die großen Forderungen aus Finanzdienstleistungen (Kundenfinanzierung, Leasing) sind getrennt ausgewiesen und fließen hier nicht ein. Dadurch ist die Zahl nicht mit SAP vergleichbar (eigene Fachkenntnis; BMW-Werte nicht vollständig verifiziert).</span></p>
+</details>
+</div>
+
+
+<!-- ===================================================== -->
+<h3>10. Neue Übungsaufgaben (mit Lösungen)</h3>
+<p>Die folgenden Aufgaben sind im Stil der Folien-Aufgaben selbst erstellt; alle Rechnungen wurden mit Python nachgeprüft.</p>
+
+<div class="exercise neu">
+<h4>Übung 07.1: Wahr oder falsch? (Renditen und Verschuldung)</h4>
+<p>Beurteile jede Aussage und begründe kurz.</p>
+<ol type="a">
+<li>Ein höherer Verschuldungsgrad (FK/EK) bedeutet immer eine höhere Gesamtkapitalrendite.</li>
+<li>Ein positiver Leverage-Effekt liegt vor, wenn die Gesamtkapitalrendite (vor Zinsen) über dem Fremdkapitalzins liegt.</li>
+<li>Eigenkapitalquote und Fremdkapitalquote ergeben zusammen immer 100 %.</li>
+<li>Der Jahresüberschuss ist eine Bestandsgröße, das Eigenkapital eine Stromgröße.</li>
+<li>Wenn die Gesamtkapitalrendite unter dem Fremdkapitalzins liegt, sinkt der ROE durch zusätzliches Fremdkapital.</li>
+<li>Die Current Ratio zeigt die Zahlungsfähigkeit auf lange Sicht.</li>
+</ol>
+<details><summary>Lösung anzeigen</summary>
+<ol type="a">
+<li><strong>Falsch.</strong> Mehr Fremdkapital hebt den <em>ROE</em> (bei positivem Hebel), die ROA hängt vom operativen Geschäft und der Bilanzsumme ab, nicht vom Mix; sie sinkt nach der Folien-Definition bei höheren Zinsen sogar (siehe Folienbeispiel 10 % → 7,5 %).</li>
+<li><strong>Wahr.</strong> Dann ist (ROA − i) &gt; 0 und der Hebelterm FK/EK × (ROA − i) positiv.</li>
+<li><strong>Wahr.</strong> EK/(EK+FK) + FK/(EK+FK) = 1.</li>
+<li><strong>Falsch.</strong> Umgekehrt: Der Jahresüberschuss ist eine Stromgröße (GuV, Zeitraum), das Eigenkapital eine Bestandsgröße (Bilanz, Stichtag). Deshalb nutzt man gern Durchschnittswerte im Nenner.</li>
+<li><strong>Wahr.</strong> Die Gleichung ROE = ROA + FK/EK × (ROA − i) hat dann einen negativen Hebelterm.</li>
+<li><strong>Falsch.</strong> Die Current Ratio misst die <em>kurzfristige</em> Liquidität (kurzfristiges Vermögen / kurzfristige Schulden).</li>
+</ol>
+</details>
+</div>
+
+<div class="exercise neu">
+<h4>Übung 07.2: Verschuldungskennzahlen aus der Bilanz</h4>
+<p>Die Bilanz der Elbe GmbH (in Mio. €): Bilanzsumme 800; Eigenkapital 240; langfristiges Fremdkapital 360; kurzfristiges Fremdkapital 200. Berechne (a) Fremdkapital, (b) Verschuldungsgrad (zum Eigenkapital), (c) Verschuldungsgrad zum Gesamtkapital (Fremdkapitalquote), (d) Eigenkapitalquote. (e) Zeige, dass Verschuldungsgrad = Fremdkapitalquote / Eigenkapitalquote gilt.</p>
+<details><summary>Lösung anzeigen</summary>
+<ol type="a">
+<li>FK = 360 + 200 = 560 (oder 800 − 240 = 560 ✔).</li>
+<li>Verschuldungsgrad = FK/EK = 560/240 = 2,33.</li>
+<li>Fremdkapitalquote = FK/(EK+FK) = 560/800 = 70 %.</li>
+<li>Eigenkapitalquote = 240/800 = 30 %.</li>
+<li>0,70 / 0,30 = 2,33 ✔ (der Nenner Gesamtkapital kürzt sich).</li>
+</ol>
+</details>
+</div>
+
+<div class="exercise neu">
+<h4>Übung 07.3: ROE und ROA – Stichtag oder Durchschnitt?</h4>
+<p>Die Nordlicht AG erzielte 2025 einen Jahresüberschuss von 90 Mio. €. Eigenkapital am 1.1.: 400, am 31.12.: 500; Bilanzsumme am 1.1.: 1.000, am 31.12.: 1.200. Berechne ROE und ROA (a) mit den Jahresendwerten, (b) mit Durchschnittswerten. (c) Warum fallen die Durchschnittsrenditen höher aus?</p>
+<details><summary>Lösung anzeigen</summary>
+<ol type="a">
+<li>ROE = 90/500 = 18,0 %; ROA = 90/1.200 = 7,5 %.</li>
+<li>Ø EK = (400+500)/2 = 450 → ROE = 90/450 = 20,0 %. Ø Bilanzsumme = (1.000+1.200)/2 = 1.100 → ROA = 90/1.100 = 8,2 %.</li>
+<li>Das Kapital ist im Jahr gewachsen; der Gewinn wurde im Mittel mit weniger Kapital erwirtschaftet als der Jahresendwert zeigt. Der Durchschnitt bildet das besser ab (Stromgröße vs. Bestandsgröße).</li>
+</ol>
+</details>
+</div>
+
+<div class="exercise neu">
+<h4>Übung 07.4: Leverage-Effekt mit und ohne Steuern</h4>
+<p>Die Südwind AG hat eine Bilanzsumme von 500 Mio. €, davon Eigenkapital 200 und Fremdkapital 300. Die Gesamtkapitalrendite vor Zinsen und Steuern (EBIT/Bilanzsumme) beträgt 12 %, der Fremdkapitalzins 6 %, der Steuersatz 30 %. (a) Berechne den ROE vor Steuern über die GuV und mit der Leverage-Formel. (b) Berechne den ROE nach Steuern. (c) Wie hoch wäre der ROE nach Steuern bei reiner Eigenfinanzierung (Eigenkapital 500)? (d) Wie groß ist der Leverage-Effekt in Prozentpunkten?</p>
+<details><summary>Lösung anzeigen</summary>
+<ol type="a">
+<li>EBIT = 0,12 × 500 = 60. Zinsen = 0,06 × 300 = 18. Gewinn vor Steuern = 42. ROE vor Steuern = 42/200 = 21 %. Formel: 12 % + (300/200) × (12 % − 6 %) = 12 % + 9 % = 21 % ✔.</li>
+<li>Steuern = 0,30 × 42 = 12,6. Gewinn nach Steuern = 29,4. ROE nach Steuern = 29,4/200 = 14,7 %. Probe: 21 % × (1 − 0,3) = 14,7 % ✔.</li>
+<li>Ohne Fremdkapital: Gewinn vor Steuern 60, nach Steuern 42; ROE = 42/500 = 8,4 % (= 12 % × 0,7).</li>
+<li>Leverage-Effekt = 14,7 % − 8,4 % = 6,3 Prozentpunkte (vor Steuern: 21 % − 12 % = 9 Prozentpunkte).</li>
+</ol>
+</details>
+</div>
+
+<div class="exercise neu">
+<h4>Übung 07.5: Wenn der Hebel gegen dich wirkt</h4>
+<p>Gleiche Kapitalstruktur wie in Übung 07.4 (EK 200, FK 300), aber das Geschäft läuft schlecht: ROA vor Zinsen nur 4 %, Fremdkapitalzins 7 %. Steuern: wegen des Verlustes keine. (a) Berechne den ROE. (b) Vergleiche mit dem ROE ohne Fremdkapital. (c) Was ist die Lehre für das Risiko hoher Verschuldung?</p>
+<details><summary>Lösung anzeigen</summary>
+<ol type="a">
+<li>EBIT = 0,04 × 500 = 20. Zinsen = 0,07 × 300 = 21. Gewinn = −1. ROE = −1/200 = −0,5 %. Formel: 4 % + 1,5 × (4 % − 7 %) = −0,5 % ✔.</li>
+<li>Ohne Fremdkapital: ROE = ROA = 20/500 = 4 %.</li>
+<li>Durch die Verschuldung kippt die Rendite von +4 % auf −0,5 %. Der Hebel vergrößert Gewinne <em>und</em> Verluste; Zinsen sind fix und müssen auch im Verlustjahr gezahlt werden.</li>
+</ol>
+</details>
+</div>
+
+<div class="exercise neu">
+<h4>Übung 07.6: Welche Verschuldung brauche ich für eine Ziel-Rendite?</h4>
+<p>Ein Investor verlangt vom Unternehmen eine Eigenkapitalrendite von 20 %. Die Gesamtkapitalrendite vor Zinsen beträgt 10 %, der Fremdkapitalzins 5 % (Steuern vernachlässigt). (a) Welcher Verschuldungsgrad FK/EK ist nötig? (b) Mache die Probe mit EK = 100.</p>
+<details><summary>Lösung anzeigen</summary>
+<ol type="a">
+<li>20 % = 10 % + x × (10 % − 5 %) ⇒ x = (20 % − 10 %) / 5 % = 2,0. Der Verschuldungsgrad muss 2,0 betragen (FK = 2 × EK).</li>
+<li>EK = 100, FK = 200, Bilanzsumme 300. EBIT = 0,10 × 300 = 30. Zinsen = 0,05 × 200 = 10. Gewinn = 20. ROE = 20/100 = 20 % ✔. Die Fremdkapitalquote wäre 200/300 = 66,7 % – hoch; man sieht den Preis des Hebels.</li>
+</ol>
+</details>
+</div>
+
+<div class="exercise neu">
+<h4>Übung 07.7: Zinslast, Zinsdeckung und Nettoverschuldung</h4>
+<p>Die Weser Maschinenbau AG hat ein EBIT von 240 Mio. €, Abschreibungen von 60 Mio. €, verzinsliche Schulden von 900 Mio. € (Zinsaufwand 60 Mio. €) und Zahlungsmittel von 150 Mio. €. (a) Wie hoch ist der durchschnittliche Zinssatz? (b) Zinsdeckungsgrad (EBIT/Zinsaufwand)? (c) EBITDA und Net Debt/EBITDA? (d) Die Hälfte der Schulden ist variabel verzinst, die Zinsen steigen um 2 Prozentpunkte. Wie ändern sich Zinslast und Zinsdeckungsgrad?</p>
+<details><summary>Lösung anzeigen</summary>
+<ol type="a">
+<li>60/900 = 6,67 %.</li>
+<li>240/60 = 4,0.</li>
+<li>EBITDA = 240 + 60 = 300. Nettoverschuldung = 900 − 150 = 750. Net Debt/EBITDA = 750/300 = 2,5.</li>
+<li>Variable Schulden = 450; Mehrzins = 450 × 0,02 = 9. Neue Zinslast = 69. Neuer Zinsdeckungsgrad = 240/69 = 3,48 (sinkt von 4,0).</li>
+</ol>
+<p><span class="rec">Zinsdeckungsgrad und Net Debt/EBITDA sind nicht auf den Folien, siehe Recherche in Abschnitt 3 und 6.</span></p>
+</details>
+</div>
+
+<div class="exercise neu">
+<h4>Übung 07.8: DuPont – zwei Wege zum gleichen ROE</h4>
+<p>Unternehmen A (Luxusmarke): Nettogewinnmarge 10 %, Kapitalumschlag (Umsatz/Bilanzsumme) 0,5, Eigenkapitalmultiplikator (Bilanzsumme/EK) 3,0. Unternehmen B (Discounter): Marge 3 %, Kapitalumschlag 2,0, Multiplikator 2,5. (a) Berechne den ROE beider Unternehmen. (b) Berechne die ROA beider Unternehmen. (c) Welches Unternehmen ist stärker über Fremdkapital finanziert?</p>
+<details><summary>Lösung anzeigen</summary>
+<ol type="a">
+<li>A: 0,10 × 0,5 × 3,0 = 15 %. B: 0,03 × 2,0 × 2,5 = 15 %.</li>
+<li>ROA = Marge × Umschlag: A: 0,10 × 0,5 = 5 %; B: 0,03 × 2,0 = 6 %.</li>
+<li>A (Multiplikator 3,0 ⇒ EK-Quote 1/3 = 33,3 %, FK/EK = 2,0); B (Multiplikator 2,5 ⇒ EK-Quote 40 %, FK/EK = 1,5). Gleicher ROE, aber A erreicht ihn mit höherer Verschuldung und niedrigerer ROA – risikoreicher.</li>
+</ol>
+</details>
+</div>
+
+<div class="exercise neu">
+<h4>Übung 07.9: Laufzeiten im Working Capital</h4>
+<p>Ein Handelsunternehmen hat Umsatzerlöse von 800 Mio. € und Umsatzkosten von 560 Mio. €. Forderungen aus L&amp;L: Anfang 100, Ende 140. Verbindlichkeiten aus L&amp;L: Anfang 60, Ende 80. Vorräte: Anfang 90, Ende 110. Berechne Debitorenlaufzeit, Kreditorenlaufzeit, Lagerdauer und die Kapitalbindungsdauer (DIO + DSO − DPO).</p>
+<details><summary>Lösung anzeigen</summary>
+<ul>
+<li>Ø Forderungen = 120 → 120 / 800 × 365 = 54,75 Tage.</li>
+<li>Ø Verbindlichkeiten = 70 → 70 / 560 × 365 = 45,63 Tage (Nenner: Umsatzkosten!).</li>
+<li>Ø Vorräte = 100 → 100 / 560 × 365 = 65,18 Tage (Nenner: Umsatzkosten!).</li>
+<li>Kapitalbindung = 65,18 + 54,75 − 45,63 = 74,30 Tage. <span class="rec">(Kennzahl „Cash Conversion Cycle“ nicht auf den Folien.)</span></li>
+</ul>
+</details>
+</div>
+
+<div class="exercise neu">
+<h4>Übung 07.10: Mini-Fallstudie – Einmaleffekt SAP 2023</h4>
+<p>Aus der SAP-GuV: Umsatz 2023 = 31.207 Mio. €; Profit after tax from continuing operations = 3.600; Profit from discontinued operations = 2.363; Profit after tax gesamt = 5.964; Eigenkapital Ende 2023 = 43.406. (a) Berechne Nettogewinnmarge und ROE jeweils mit dem Gesamt-Jahresüberschuss und mit dem Gewinn aus fortgeführten Geschäften. (b) Welche Zahl eignet sich besser, um die „nachhaltige“ Ertragskraft zu beurteilen? (c) Rekonstruiere den Veräußerungsgewinn vor Steuern aus Folie S. 300 (Kaufpreis nach Kosten 7.003; Nettovermögen 5.800; Minderheiten 2.337; sonstiges Ergebnis 22).</p>
+<details><summary>Lösung anzeigen</summary>
+<ol type="a">
+<li>Gesamt: Marge = 5.964/31.207 = 19,1 %; ROE = 5.964/43.406 = 13,7 %. Fortgeführt: Marge = 3.600/31.207 = 11,5 %; ROE = 3.600/43.406 = 8,3 %.</li>
+<li>Die fortgeführte Variante, weil der Qualtrics-Verkauf (IFRS 5, aufgegebener Geschäftsbereich) einmalig ist. Differenz 5.964 − 3.600 = 2.364 (≈ 2.363, Rundung) entspricht den aufgegebenen Geschäftsbereichen.</li>
+<li>7.003 − 5.800 + 2.337 + 22 = 3.562 Mio. € ✔ (Folie). Nach 799 Mio. € Steuern: 2.763 Mio. €.</li>
+</ol>
+</details>
+</div>
+
+<div class="exercise neu">
+<h4>Übung 07.11: Zinsanstieg – was passiert mit dem Hebel?</h4>
+<p>Ein Unternehmen hat ROA (vor Zinsen) von 6 % und einen Verschuldungsgrad FK/EK von 2,0. Der Fremdkapitalzins steigt von 3 % auf 5 %. (a) Berechne den ROE vorher und nachher (ohne Steuern). (b) Wie stark sinkt der ROE? (c) Formuliere in zwei Sätzen die Antwort auf die Klausurfrage: „Wie beeinflussen steigende Zinsen die Bilanz und die GuV?“</p>
+<details><summary>Lösung anzeigen</summary>
+<ol type="a">
+<li>Vorher: 6 % + 2,0 × (6 % − 3 %) = 12 %. Nachher: 6 % + 2,0 × (6 % − 5 %) = 8 %.</li>
+<li>Der ROE sinkt um 4 Prozentpunkte (−33 %), obwohl das operative Geschäft unverändert ist. Hohe Verschuldung macht empfindlich gegenüber Zinsen.</li>
+<li>Steigende Zinsen erhöhen den Zinsaufwand und senken damit das Finanzergebnis und den Jahresüberschuss in der GuV (ROE/ROA sinken, der Leverage-Effekt schrumpft). In der Bilanz verteuert sich die Refinanzierung; Marktwerte von Anleihen sinken, Rückstellungen (z. B. Pensionen) sinken wegen des höheren Abzinsungssatzes, und bei Eigenkapital zeigt sich die Wirkung über den geringeren Gewinn. Wie stark, hängt von Verschuldungshöhe und Zinsbindung ab.</li>
+</ol>
+</details>
+</div>
+
+<div class="exercise neu">
+<h4>Übung 07.12: Fehlersuche in einer Kennzahlenrechnung</h4>
+<p>Eine Kommilitonin berechnet für die Zeta AG (Bilanzsumme 1.000; Eigenkapital 300; Fremdkapital 700; Umsatz 1.200; Jahresüberschuss 60): „Verschuldungsgrad zum Gesamtkapital = 700/300 = 2,33“, „Eigenkapitalquote = 300/700 = 43 %“ und „Eigenkapitalrendite = 60/1.000 = 6 %“. Finde die Fehler, rechne richtig und nenne die zusätzlich berechenbare Nettogewinnmarge.</p>
+<details><summary>Lösung anzeigen</summary>
+<ul>
+<li>Verschuldungsgrad zum <em>Gesamtkapital</em> = FK / (EK + FK) = 700/1.000 = 70 %. Die gerechnete 2,33 ist der Verschuldungsgrad zum <em>Eigenkapital</em> (700/300).</li>
+<li>Eigenkapitalquote = EK / (EK + FK) = 300/1.000 = 30 % (nicht EK/FK).</li>
+<li>Eigenkapitalrendite = Jahresüberschuss / <em>Eigenkapital</em> = 60/300 = 20 %. Die berechneten 6 % sind die Gesamtkapitalrendite (60/1.000).</li>
+<li>Nettogewinnmarge = 60/1.200 = 5 %.</li>
+<li>Kontrolle (DuPont): 5 % × 1,2 (Umsatz/Bilanzsumme) × 3,33 (Bilanzsumme/EK) = 20 % ✔.</li>
+</ul>
+</details>
+</div>
+
+<div class="exercise neu">
+<h4>Übung 07.13: Bewertungskennzahlen im Schnelldurchlauf</h4>
+<p>Die Bergfeld AG: Aktienkurs 80 €, Jahresüberschuss 500 Mio. €, Anzahl Aktien 100 Mio., Buchwert des Eigenkapitals 2.000 Mio. €, Dividende 1,50 € je Aktie. Berechne EPS, KGV, Market-to-Book Ratio, Dividendenauszahlungsrate und Dividendenrendite.</p>
+<details><summary>Lösung anzeigen</summary>
+<ul>
+<li>EPS = 500 / 100 = 5,00 € je Aktie.</li>
+<li>KGV = 80 / 5 = 16,0.</li>
+<li>Marktwert EK = 80 × 100 = 8.000; Market-to-Book = 8.000 / 2.000 = 4,0.</li>
+<li>Payout Ratio = 1,50 / 5,00 = 30 %.</li>
+<li>Dividendenrendite = 1,50 / 80 = 1,875 % ≈ 1,9 %.</li>
+</ul>
+</details>
+</div>
+
+<div class="exercise neu">
+<h4>Übung 07.14: Interpretation – In welches Unternehmen würdest du investieren?</h4>
+<p>Zwei Unternehmen derselben Branche: <strong>X:</strong> ROE 18 %, Eigenkapitalquote 15 %, Current Ratio 0,8, Zinsdeckungsgrad 1,8. <strong>Y:</strong> ROE 10 %, Eigenkapitalquote 55 %, Current Ratio 1,6, Zinsdeckungsgrad 9. Vergleiche Rendite und Risiko und gib eine begründete Empfehlung.</p>
+<details><summary>Lösung anzeigen</summary>
+<ul>
+<li>X hat den höheren ROE, aber die Rendite stammt offensichtlich aus dem Hebel: Eigenkapitalquote 15 % ⇒ Verschuldungsgrad ≈ 85/15 = 5,7. Current Ratio &lt; 1 und Zinsdeckung 1,8 zeigen geringe Puffer: Schon ein kleiner Gewinnrückgang oder Zinsanstieg lässt den Hebel negativ wirken und gefährdet die Zahlungsfähigkeit.</li>
+<li>Y hat einen niedrigeren, aber robusteren ROE: Eigenkapitalquote 55 % (Verschuldungsgrad ≈ 0,82), Current Ratio 1,6, Zinsdeckung 9 – finanzielle Stabilität, Spielraum für Investitionen oder Fremdkapitalaufnahme.</li>
+<li>Empfehlung: Für einen risikoscheuen Anleger Y; für risikofreudige mit Wachstums-/Zinsabwägung X, aber nur mit Blick auf Zinsbindung, Branchenzyklus und Bewertung (KGV). Entscheidend ist die <em>Begründung</em> anhand der Kennzahlen.</li>
+</ul>
+</details>
+</div>
+
+
+<!-- ===================================================== -->
+<div class="glossar">
+<h3>Glossar</h3>
+<table>
+<thead><tr><th>Begriff (DE)</th><th>Englisch</th><th>Kurzerklärung</th></tr></thead>
+<tbody>
+<tr><td>Gesamtkapitalrendite</td><td>Return on Assets (ROA)</td><td>Jahresüberschuss / Bilanzsumme; Rendite auf das gesamte Vermögen.</td></tr>
+<tr><td>Eigenkapitalrendite</td><td>Return on Equity (ROE)</td><td>Jahresüberschuss / Eigenkapital; Rendite für die Eigentümer.</td></tr>
+<tr><td>Verschuldungsgrad</td><td>Debt-Equity Ratio</td><td>Fremdkapital / Eigenkapital.</td></tr>
+<tr><td>Fremdkapitalquote / Verschuldungsgrad zum Gesamtkapital</td><td>Debt-to-Capital Ratio</td><td>Fremdkapital / (Eigenkapital + Fremdkapital).</td></tr>
+<tr><td>Eigenkapitalquote</td><td>Equity Ratio</td><td>Eigenkapital / Gesamtkapital.</td></tr>
+<tr><td>Zinslast</td><td>Interest burden</td><td>Verschuldung × Zinssatz.</td></tr>
+<tr><td>Zinsdeckungsgrad</td><td>Interest Coverage Ratio</td><td>EBIT / Zinsaufwand (Recherche).</td></tr>
+<tr><td>Leverage-Effekt (Hebelwirkung)</td><td>Financial leverage effect</td><td>Eigenkapitalrendite steigt durch Fremdkapital, solange ROA &gt; Zinssatz.</td></tr>
+<tr><td>Bestandsgröße / Stromgröße</td><td>Stock / flow variable</td><td>Stichtagswert (Bilanz) vs. Zeitraumwert (GuV).</td></tr>
+<tr><td>Aufgegebener Geschäftsbereich</td><td>Discontinued operation (IFRS 5)</td><td>Verkaufter oder zur Veräußerung gehaltener Bereich, getrennt in der GuV ausgewiesen.</td></tr>
+<tr><td>Einmaleffekt</td><td>One-off item</td><td>Nicht wiederkehrender Posten, der Zeitvergleiche verzerrt.</td></tr>
+<tr><td>Debitorenlaufzeit</td><td>Days Sales Outstanding (DSO)</td><td>Ø Forderungen / Umsatz × 365.</td></tr>
+<tr><td>Kreditorenlaufzeit</td><td>Days Payables Outstanding (DPO)</td><td>Ø Verbindlichkeiten L&amp;L / Umsatzkosten × 365.</td></tr>
+<tr><td>Lagerdauer</td><td>Days Inventory Outstanding (DIO)</td><td>Ø Vorräte / Umsatzkosten × 365.</td></tr>
+<tr><td>Kurs-Gewinn-Verhältnis (KGV)</td><td>Price-Earnings Ratio (P/E)</td><td>Aktienpreis / Gewinn pro Aktie.</td></tr>
+<tr><td>DuPont-Analyse</td><td>DuPont analysis</td><td>ROE = Marge × Umschlag × Multiplikator (Recherche).</td></tr>
+</tbody></table>
+</div>
+
+<div class="checkliste">
+<h3>Das solltest du am Ende können</h3>
+<ul>
+<li>ROA und ROE mit den Folienformeln berechnen, den Unterschied erklären und Durchschnittswerte begründen.</li>
+<li>Verschuldungsgrad (FK/EK), Fremdkapitalquote (FK/Gesamtkapital) und Eigenkapitalquote sicher unterscheiden und ineinander umrechnen.</li>
+<li>Die Leverage-Gleichung ROE = ROA + FK/EK × (ROA − i) herleiten, anwenden und erklären, wann der Hebel positiv oder negativ wirkt (inklusive Hinweis, dass ROA hier vor Zinsen gemeint ist).</li>
+<li>Die Wirkung steigender Zinsen auf Bilanz, GuV, Zinslast und Leverage argumentieren.</li>
+<li>Die SAP-Kennzahlen 2023–2025 berechnen und interpretieren, einschließlich des Qualtrics-Einmaleffekts (IFRS 5).</li>
+<li>Debitoren-, Kreditoren- und Lagerlaufzeit berechnen (Umsatzkosten im Nenner bei Kreditoren und Lager!).</li>
+<li>Die Formelsammlung (Margen, Liquidität, Renditen, Verschuldung, Laufzeiten, KGV und Co.) auswendig können und mit Interpretation versehen.</li>
+<li>Die Theorie aus Teil 1 bereithalten: Was ist IFRS, warum gibt es IFRS, Vor- und Nachteile, kurzfristige Vermögenswerte.</li>
+</ul>
+</div>
+
+</section>
