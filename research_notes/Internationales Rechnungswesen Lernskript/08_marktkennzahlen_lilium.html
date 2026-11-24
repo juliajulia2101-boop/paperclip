@@ -1,0 +1,696 @@
+<section class="chapter" id="kap08">
+<h2>08 · Marktorientierte Kennzahlen und Case Study Lilium</h2>
+<p class="lead">Bisher hast du Kennzahlen gerechnet, die nur aus dem Jahresabschluss stammen (Rendite, Liquidität, Verschuldung). Jetzt kommt der Aktienkurs dazu: Marktorientierte Kennzahlen (Market-to-Book, Kurs-Gewinn-Verhältnis, Dividendenrendite, Enterprise-Value-Multiplikatoren) vergleichen, was der Kapitalmarkt für ein Unternehmen bezahlt, mit dem, was die Bilanz und die GuV ausweisen. Im zweiten Teil wendest du alles an einem echten Fall an: Lilium, ein Flugtaxi-Startup, das 2024 insolvent ging. Es kommt darauf an, dass du die Formeln sicher beherrschst, die Zahlen richtig interpretierst (und ihre Grenzen kennst) und aus einem Jahresabschluss Warnsignale für Liquidität und Verschuldung herauslesen kannst.</p>
+<p class="folienbereich">Folien: PDF-S. 304–319 (Fassung C)</p>
+
+<div class="rec"><strong>Recherche (Hinweis zur Quellenlage):</strong> Beim Erstellen dieses Kapitels (Stand 24.11.2026) konnten Webseiten nicht direkt abgerufen werden. Die pinken Angaben beruhen deshalb auf den Ergebnis-Zusammenfassungen der Websuche; die jeweils verlinkte Quelle ist die Fundstelle. Angaben, die ich nicht belegen konnte (z. B. der Wortlaut des Going-Concern-Hinweises im Lilium-Geschäftsbericht 2023), sind ausdrücklich als „nicht verifiziert" markiert. Die Zahlen der Lilium-Tabellen stammen dagegen direkt aus den Folien und wurden von mir mit Python nachgerechnet (alle Summen stimmen).</div>
+
+<h3>1 · Marktwert und Buchwert: Zwei verschiedene Welten</h3>
+<p>Ein Unternehmen hat zwei „Preisschilder" für sein Eigenkapital. Das erste steht in der Bilanz (Buchwert), das zweite im Börsenkurs (Marktwert). Die Folie „Kennzahlen: Bewertung" definiert beides sehr knapp:</p>
+<ul>
+<li><strong>Marktwert des Eigenkapitals (Market Value of Equity, Marktkapitalisierung)</strong> = Aktienpreis × Anzahl Aktien.</li>
+<li><strong>Buchwert des Eigenkapitals (Book Value of Equity)</strong> = das Eigenkapital, wie es in der Bilanz steht (Vermögenswerte minus Schulden, bewertet nach den Bilanzierungsregeln, z. B. IFRS).</li>
+</ul>
+<span class="folie">S. 304</span>
+<div class="formel">Marktwert EK = Aktienpreis × Anzahl Aktien<br>Buchwert EK = Eigenkapital laut Bilanz</div>
+<div class="beispiel"><strong>Beispiel:</strong> Die Alpha AG hat 80 Mio. Aktien, die an der Börse 54 € kosten. Marktwert EK = 54 × 80 Mio. = 4.320 Mio. €. In der Bilanz steht ein Eigenkapital von 960 Mio. €. Der Markt bewertet das Unternehmen also mit dem 4,5-Fachen des Buchwerts.</div>
+<h4>Warum weichen Marktwert und Buchwert voneinander ab?</h4>
+<p>Der Buchwert ist rückwärtsgewandt (historische Anschaffungskosten, Regeln der Rechnungslegung), der Marktwert ist vorwärtsgewandt (Erwartungen über künftige Gewinne und Cashflows). Typische Gründe für Abweichungen:</p>
+<ul>
+<li>Selbst geschaffene Werte (Marke, Know-how, Kundenstamm, Forschungsergebnisse) tauchen in der Bilanz oft gar nicht oder nur teilweise auf.</li>
+<li>Die Bilanz zeigt vergangene Kosten, der Kurs zeigt erwartetes Wachstum und Risiko.</li>
+<li>Bei Verlustunternehmen kann der Buchwert durch angesammelte Verluste klein oder negativ werden, obwohl der Markt auf Zukunftschancen setzt (oder umgekehrt).</li>
+</ul>
+<div class="rec"><strong>Recherche:</strong> Nach IAS 38 (Immaterielle Vermögenswerte, Intangible Assets) müssen Forschungskosten sofort als Aufwand erfasst werden; Entwicklungskosten dürfen bzw. müssen nur dann aktiviert werden, wenn bestimmte Kriterien (u. a. technische Realisierbarkeit, Absicht und Fähigkeit zur Fertigstellung, wahrscheinlicher künftiger Nutzen, ausreichende Ressourcen, verlässliche Bewertbarkeit) erfüllt sind; selbst geschaffene Marken, Kundenlisten und ähnliches dürfen nicht aktiviert werden. Genau deshalb ist der Buchwert bei wissens- und markenintensiven Unternehmen systematisch niedriger als der Marktwert. Quellen: <a href="https://www.ifrs.org/issued-standards/list-of-standards/ias-38-intangible-assets/" target="_blank">IFRS Foundation: IAS 38</a>, <a href="https://kpmg.com/mt/en/insights/2021/05/capitalisation-of-internally-generated-intangible-assets.html" target="_blank">KPMG: Capitalisation of internally generated intangible assets</a>.</div>
+
+<h3>2 · Multiplikatoren: Enterprise Value to EBIT und to Sales</h3>
+<p>Neben dem Marktwert des Eigenkapitals gibt es den <strong>Unternehmenswert (Enterprise Value, EV)</strong>. Er fragt: „Was kostet es, das <em>ganze</em> Unternehmen zu kaufen, also Eigentümer und Gläubiger zusammen, abzüglich der Kasse, die man gleich mitbekommt?" Die Folie nennt zwei Multiplikatoren (Multiples):</p>
+<div class="formel">Enterprise Value to EBIT = (Marktwert des Eigenkapitals + Schulden − Kasse) / EBIT<br>Enterprise Value to Sales = (Marktwert des Eigenkapitals + Schulden − Kasse) / Umsatz (Sales)</div>
+<span class="folie">S. 304</span>
+<p><strong>Interpretation:</strong> EV/EBIT sagt, das Wievielfache des operativen Gewinns (vor Zinsen und Steuern) ein Käufer für das Unternehmen zahlt. Niedrig = „billig" (oder schlechte Aussichten), hoch = „teuer" (oder hohes Wachstum erwartet). EV/Sales wird v. a. genutzt, wenn der Gewinn negativ oder noch nicht aussagekräftig ist (z. B. bei jungen Wachstumsfirmen), weil der Umsatz fast immer positiv ist. Fallstrick: Hoher Umsatz sagt nichts über Profitabilität aus; eine Firma mit 1 Mrd. € Umsatz und Dauerverlust kann trotzdem einen niedrigen EV/Sales haben.</p>
+<div class="merke"><strong>Merke:</strong> Zähler und Nenner müssen zusammenpassen. Der EV gehört <em>allen</em> Kapitalgebern (Eigen- und Fremdkapital), deshalb steht im Nenner eine Größe <em>vor</em> Zinsen (EBIT, Umsatz). Das KGV dagegen vergleicht den Aktienpreis (nur Eigentümer) mit dem Gewinn <em>nach</em> Zinsen (Net Income).</div>
+<div class="beispiel"><strong>Beispiel:</strong> Beta AG: 200 Mio. Aktien à 25 € = 5.000 Mio. € Marktwert; Schulden 1.800 Mio. €, Kasse 600 Mio. €. EV = 5.000 + 1.800 − 600 = 6.200 Mio. €. EBIT = 500 Mio. €, Umsatz = 4.000 Mio. €. EV/EBIT = 6.200 / 500 = 12,4; EV/Sales = 6.200 / 4.000 = 1,55.</div>
+<div class="rec"><strong>Recherche:</strong> In der Praxis wird der EV oft um weitere Positionen erweitert (Vorzugsaktien, Anteile nicht beherrschender Gesellschafter, teils Pensionsrückstellungen und Leasingverbindlichkeiten); die Grundform ist „Marktkapitalisierung plus Schulden minus Zahlungsmittel", wie auf der Folie. Quellen: <a href="https://stockanalysis.com/term/enterprise-value" target="_blank">StockAnalysis: Enterprise Value</a>, <a href="https://wallstreetprep.com/knowledge/enterprise-value" target="_blank">Wall Street Prep: Enterprise Value</a>. In Prüfungsaufgaben gilt die Folienformel.</div>
+
+<h3>3 · Beispiele marktorientierter Kennzahlen</h3>
+<p>Die zweite Formelfolie zeigt fünf Kennzahlen. Zusammen bilden sie den „Standard-Werkzeugkasten", den du im Test kennen musst.</p>
+<span class="folie">S. 305</span>
+<h4>3.1 Gewinn pro Aktie (Earnings per Share, EPS)</h4>
+<div class="formel">EPS = Netto-Gewinn (Net Income) / Anzahl Aktien (Shares Outstanding)</div>
+<p>Der Gewinn, der rechnerisch auf eine einzelne Aktie entfällt. Hoch = viel Gewinn je Anteilsschein; wichtig sind der Zeitvergleich und die Entwicklung der Aktienzahl (Kapitalerhöhungen „verwässern" das EPS, Aktienrückkäufe erhöhen es). Bei Verlust ist das EPS negativ (bei Lilium: Verlust je Aktie 0,71 € im Jahr 2023, siehe Abschnitt 7).</p>
+<div class="rec"><strong>Recherche:</strong> In den IFRS-Abschlüssen wird das Ergebnis je Aktie mit der <em>gewichteten durchschnittlichen</em> Zahl ausstehender Aktien berechnet (IAS 33), nicht mit der Zahl am Stichtag. Die Folienformel ist eine Vereinfachung. (IAS 33 hier nicht separat an der Quelle verifiziert.)</div>
+<h4>3.2 Market-to-Book Ratio (Kurs-Buchwert-Verhältnis, MtB)</h4>
+<div class="formel">Market-to-Book = Marktwert des Eigenkapitals / Buchwert des Eigenkapitals</div>
+<p><strong>Interpretation:</strong> MtB &gt; 1: Der Markt bewertet das Unternehmen höher als sein bilanzielles Eigenkapital (er „sieht" Werte, die nicht in der Bilanz stehen: Marke, Technologie, Wachstum). MtB &lt; 1: Der Markt traut dem Unternehmen weniger zu als der Bilanz (Zweifel an Werthaltigkeit der Vermögenswerte, schwache Rentabilität, Krise). MtB ≈ 1: Markt und Bilanz sind sich einig. Rechne dir den Wert als „Wie viel Euro bezahle ich für einen Euro Buchwert?" vor.</p>
+<p><strong>Fallstricke:</strong> Buchwerte hängen von Bilanzierungsregeln ab (IFRS vs. HGB vs. US-GAAP, Bewertung zu Anschaffungskosten oder Fair Value). Bei Firmen mit vielen nicht bilanzierten selbst geschaffenen immateriellen Werten ist der MtB strukturell hoch. Bei kleinem oder negativem Buchwert (hohe angesammelte Verluste, große Aktienrückkäufe) ist der MtB nicht sinnvoll interpretierbar.</p>
+<div class="rec"><strong>Recherche:</strong> Das Verhältnis wird international meist als Price-to-Book (P/B) bezeichnet. Verschiedene Quellen weisen darauf hin, dass es für Unternehmen mit überwiegend immateriellen Werten (Technologie, Dienstleistung) weniger aussagekräftig ist, weil intern geschaffene Immaterielles typischerweise nicht aktiviert wird und der Buchwert historische Kosten statt aktueller Preise zeigt; manchmal rechnet man deshalb mit dem „tangible book value" (Buchwert ohne immaterielle Werte und Goodwill). Quellen: <a href="https://en.wikipedia.org/wiki/P/B_ratio" target="_blank">Wikipedia: P/B ratio (nur zur Orientierung)</a>, <a href="https://accountingtools.com/articles/price-to-book-ratio.html" target="_blank">AccountingTools: Price to book ratio</a>.</div>
+<h4>3.3 Kurs-Gewinn-Verhältnis (KGV, Price-Earnings Ratio, P/E)</h4>
+<div class="formel">KGV = Aktienpreis / Gewinn pro Aktie</div>
+<p><strong>Interpretation:</strong> Das KGV sagt, das Wievielfache des Jahresgewinns je Aktie du bezahlst. KGV 15 heißt: 15 Jahre Gewinn (bei gleichbleibendem Gewinn) „bezahlen" den Kaufpreis. Hohes KGV = Markt erwartet starkes Gewinnwachstum (oder die Aktie ist teuer); niedriges KGV = wenig Wachstum erwartet, hohes Risiko oder „billig". Der Kehrwert (Gewinn / Kurs) ist die Gewinnrendite (Earnings Yield): KGV 20 ⇒ 5 %.</p>
+<p><strong>Fallstricke:</strong> Bei Verlust (EPS &lt; 0) ist das KGV nicht aussagekräftig. Einmalige Sondereffekte im Gewinn verzerren das KGV. Zyklische Branchen (z. B. Autos, Chemie) haben im Gewinntief ein hohes und im Gewinnhoch ein niedriges KGV, dort ist ein niedriges KGV deshalb kein sicherer Kaufhinweis. Zwischen Branchen und Rechnungslegungssystemen (z. B. Immobilienfirmen mit Fair-Value-Bewertung) ist das KGV nur eingeschränkt vergleichbar.</p>
+<div class="rec"><strong>Recherche:</strong> Man unterscheidet das <em>Trailing P/E</em> (Gewinn der letzten 12 Monate, tatsächlich berichtet) und das <em>Forward P/E</em> (erwarteter Gewinn der nächsten 12 Monate, Analystenschätzungen). Trailing gilt als verlässlicher, Forward als zukunftsorientierter, aber schätzungsabhängig. Bei Verlusten ist das KGV nicht anwendbar; die Gewinnrendite kann dann (mit negativem Vorzeichen) weiterverwendet werden. Quelle: <a href="https://www.accountingtools.com/articles/the-difference-between-forward-pe-and-trailing-pe.html" target="_blank">AccountingTools: Forward vs. trailing P/E</a>.</div>
+<h4>3.4 Dividendenauszahlungsrate (Ausschüttungsquote, Payout Ratio)</h4>
+<div class="formel">Dividendenauszahlungsrate = Dividende pro Aktie / Gewinn pro Aktie</div>
+<p>Welcher Anteil des Gewinns wird an die Aktionäre ausgeschüttet? Der Rest (1 − Payout) bleibt als Gewinnrücklage im Unternehmen (Thesaurierung). <strong>Interpretation:</strong> Hohe Quote = Reifes Unternehmen mit wenig Investitionsbedarf oder aktionärsfreundliche Politik; niedrige Quote = Wachstumsunternehmen, das Gewinne reinvestiert. Quote &gt; 100 % bedeutet: Es wird mehr ausgeschüttet als verdient wurde, also aus der Substanz (auf Dauer nicht haltbar).</p>
+<h4>3.5 Dividendenrendite (Dividend Yield)</h4>
+<div class="formel">Dividendenrendite = Dividende pro Aktie / Aktienpreis</div>
+<p>Die laufende „Verzinsung" in Form von Dividenden bezogen auf den Kaufpreis. <strong>Fallstrick:</strong> Fällt der Kurs, steigt die Rendite rechnerisch, obwohl die Dividende gleich bleibt (das kann ein Warnsignal sein, nicht ein Schnäppchen). Die Kursentwicklung ist in der Dividendenrendite nicht enthalten (Gesamtrendite = Dividendenrendite + Kursrendite).</p>
+<div class="merke"><strong>Merke (alle Kennzahlen auf einen Blick):</strong>
+<table>
+<thead><tr><th>Kennzahl</th><th>Formel (Folie S. 305)</th><th>Frage dahinter</th></tr></thead>
+<tbody>
+<tr><td>EPS (Gewinn pro Aktie)</td><td>Net Income / Anzahl Aktien</td><td>Wie viel Gewinn je Aktie?</td></tr>
+<tr><td>Market-to-Book (MtB)</td><td>Marktwert EK / Buchwert EK</td><td>Wie viel zahlt der Markt pro 1 € Buchwert?</td></tr>
+<tr><td>KGV (P/E)</td><td>Aktienpreis / EPS</td><td>Wie viele Jahresgewinne kostet die Aktie?</td></tr>
+<tr><td>Dividendenauszahlungsrate</td><td>Dividende je Aktie / EPS</td><td>Welcher Teil des Gewinns wird ausgeschüttet?</td></tr>
+<tr><td>Dividendenrendite</td><td>Dividende je Aktie / Aktienpreis</td><td>Wie hoch ist die laufende Verzinsung in Dividenden?</td></tr>
+<tr><td>EV/EBIT</td><td>(Marktwert EK + Schulden − Kasse) / EBIT</td><td>Wie viel kostet das ganze Unternehmen pro 1 € operativem Gewinn?</td></tr>
+<tr><td>EV/Sales</td><td>(Marktwert EK + Schulden − Kasse) / Umsatz</td><td>Wie viel kostet das ganze Unternehmen pro 1 € Umsatz?</td></tr>
+</tbody></table></div>
+<div class="beispiel"><strong>Beispiel (alles zusammen, Alpha AG):</strong> Net Income 240 Mio. €, 80 Mio. Aktien, Kurs 54 €, Dividende 1,80 € je Aktie, Buchwert EK 960 Mio. €. EPS = 240 / 80 = 3,00 €. KGV = 54 / 3,00 = 18. MtB = (54 × 80) / 960 = 4.320 / 960 = 4,5. Payout = 1,80 / 3,00 = 60 %. Dividendenrendite = 1,80 / 54 = 3,33 %. Ausgeschüttet: 1,80 × 80 = 144 Mio. €, thesauriert: 240 − 144 = 96 Mio. €.</div>
+
+<h3>4 · Folien-Aufgabe: Market-to-Book Ratio</h3>
+<p>Diese Folie ist textreich und trägt handschriftliche Notizen: „Klausur → Marktwertbuchwertverhältnis-Rechnung; Vergleich und Interpretation; Bewertungsmodell(?)". Der Dozent signalisiert damit, dass genau dieser Aufgabentyp in der Klausur drankommen kann: erst rechnen, dann vergleichen und interpretieren.</p>
+<span class="folie">S. 306</span>
+<div class="exercise folien-aufgabe">
+<h4>Folien-Aufgabe: Vergleich Market-to-Book Ratio von BMW, Volkswagen &amp; Mercedes zu Tesla</h4>
+<ol>
+<li><strong>Analyse:</strong> Berechnen Sie die Market-to-Book Ratio für BMW, Volkswagen, Mercedes und Tesla. Was fällt Ihnen auf?</li>
+<li><strong>Interpretation:</strong>
+<ol>
+<li>Wie interpretieren Sie Ihre Ergebnisse?</li>
+<li>Wie aussagekräftig sind diese Daten?</li>
+<li>In welche der Unternehmen würden Sie am ehesten (nicht) investieren? Bitte begründen Sie Ihre Aussage.</li>
+</ol></li>
+</ol>
+<p><strong>Handschriftliche Notizen auf der Folie (Zahlen, die die Studierenden mitgeschrieben haben bzw. die in der Vorlesung genannt wurden):</strong></p>
+<table>
+<thead><tr><th>Unternehmen</th><th>Marktwert EK (Notiz)</th><th>Buchwert EK (Notiz)</th><th>MtB (Notiz)</th></tr></thead>
+<tbody>
+<tr><td>BMW</td><td>34,7 Mrd.</td><td>98 Mrd.</td><td>0,35</td></tr>
+<tr><td>Tesla</td><td>1.400 Mrd.</td><td>82 Mrd.</td><td>17,0</td></tr>
+<tr><td>Mercedes</td><td>(Rechnung nicht lesbar)</td><td>(nicht lesbar)</td><td>0,4</td></tr>
+<tr><td>Volkswagen</td><td>(Rechnung nicht lesbar)</td><td>(nicht lesbar)</td><td>0,16</td></tr>
+</tbody></table>
+<p>Dazu die Notiz „Marktwert: BMW 34,7 Mrd., Tesla 1.400 Mrd. ⇒ BMW/Tesla = 0,02" und der Randkommentar „Tesla ist 50-mal besser bewertet".</p>
+<details><summary>Lösung anzeigen</summary>
+<p><strong>Rechenweg:</strong></p>
+<ul>
+<li>BMW: MtB = 34,7 / 98 = 0,354 ≈ 0,35.</li>
+<li>Tesla: MtB = 1.400 / 82 = 17,07 ≈ 17,0 (auf der Folie „170" geschrieben, gemeint ist 17,0).</li>
+<li>Mercedes ≈ 0,4 und VW ≈ 0,16 (nur die Ergebnisse stehen auf der Folie, die Bruchrechnung ist nicht lesbar).</li>
+<li>Marktwert-Verhältnis BMW/Tesla = 34,7 / 1.400 = 0,0248 ≈ 0,02.</li>
+</ul>
+<p><strong>Kontrolle der Randnotiz „50-mal":</strong> Aus 0,02 folgt 1 / 0,02 = 50. Genauer gerechnet ist Tesla beim Marktwert aber nur 1.400 / 34,7 = 40,3-mal so hoch bewertet (der Wert 0,0248 wurde auf 0,02 gerundet, daher die „50"). Vergleicht man die MtB-Werte selbst: 17,07 / 0,354 = 48,2, also etwa 50-mal höher bewertet pro Euro Buchwert. Die „50" passt damit eher zum MtB-Vergleich als zum Marktwert-Vergleich.</p>
+<p><strong>Was fällt auf?</strong> Die drei deutschen Autobauer haben einen MtB deutlich unter 1 (0,16 bis 0,4): Der Markt bewertet sie mit weniger als ihrem Buchwert. Tesla liegt bei etwa 17: Der Markt zahlt das 17-Fache des Buchwerts.</p>
+<p><strong>Interpretation:</strong> MtB &lt; 1 heißt, die Anleger glauben nicht, dass die bilanzierten Vermögenswerte (Werke, Maschinen, Finanzierungsgeschäft der Autobanken, Vorräte) künftig genug verdienen. Gründe können sein: schwache Profitabilität, Margendruck, Transformationsrisiko hin zur Elektromobilität, Zölle, China-Geschäft. Ein MtB von 17 heißt, dass der Markt sehr hohes Wachstum und künftige Gewinne einpreist (Software, Autonomes Fahren, Energiegeschäft, Marke), von denen der größte Teil nicht in der Bilanz steht.</p>
+<p><strong>Wie aussagekräftig?</strong> Nur begrenzt: (1) Stichtag der Kurse und Bilanzen muss identisch bzw. vergleichbar sein (auf der Folie nicht angegeben). (2) Währungen: BMW in € und Tesla in US-$; für das Verhältnis selbst unkritisch (Zähler und Nenner in derselben Währung), nicht aber für den Vergleich absoluter Beträge. (3) Buchwerte sind rechnungslegungsabhängig (IFRS bei BMW/VW/Mercedes, US-GAAP bei Tesla). (4) Das EK der Autobauer enthält Finanzdienstleistungsgeschäfte mit hoher Bilanzsumme; Industrie- und Tech-Geschäftsmodelle sind schwer vergleichbar. (5) Der MtB sagt nichts über Rentabilität, dafür braucht man ROE, KGV etc. (6) Momentaufnahme: Kurse schwanken stark (bei Tesla besonders).</p>
+<p><strong>Investitionsentscheidung (Beispielargumentation, kein Anlagerat):</strong> Ein niedriger MtB allein ist kein Kaufsignal („Value-Falle" möglich: billig, weil das Geschäft schwächelt). Ein hoher MtB allein ist kein Verkaufssignal, aber das Risiko ist hoch, weil die Erwartungen schon eingepreist sind (Enttäuschung führt zu Kurseinbrüchen). Eine gute Antwort nennt Zusatzkennzahlen (ROE, KGV, Dividendenrendite, Verschuldung) und die eigene Risikopräferenz: Wer Substanz und Dividenden will, tendiert zu den „günstigen" Autobauern; wer Wachstum will und Schwankung verträgt, schaut auf Tesla.</p>
+</details>
+<p><em>Hinweis:</em> Die Zahlen oben sind die Notizen der Folie. Ich habe sie nicht anhand der Geschäftsberichte und Kurse zum Stichtag überprüft (Stichtag auf der Folie nicht genannt).</p>
+</div>
+<div class="rec"><strong>Recherche:</strong> Warum der MtB von Tesla und der deutschen Autobauer so weit auseinanderliegt, ist eine klassische Frage der Bewertung: Der Buchwert nach IFRS/US-GAAP enthält selbst entwickelte Software, Daten, Marke und Know-how nur zu einem kleinen Teil (siehe IAS 38 in Abschnitt 1). Ein hoher MtB ist daher nicht automatisch „überbewertet", sondern spiegelt auch Bilanzierungsregeln wider. Quellen: <a href="https://accountingtools.com/articles/price-to-book-ratio.html" target="_blank">AccountingTools</a>, <a href="https://en.wikipedia.org/wiki/P/B_ratio" target="_blank">Wikipedia: P/B ratio</a>.</div>
+
+<h3>5 · Folien-Aufgabe: Kurs-Gewinn-Verhältnis</h3>
+<span class="folie">S. 307</span>
+<div class="exercise folien-aufgabe">
+<h4>Folien-Aufgabe: Vergleich des KGV von BMW, Allianz, Siemens, Vonovia und Fresenius</h4>
+<ol>
+<li><strong>Analyse:</strong> Berechnen Sie das Kurs-Gewinn-Verhältnis. Was fällt Ihnen auf?</li>
+<li><strong>Interpretation:</strong>
+<ol>
+<li>Wie interpretieren Sie Ihre Ergebnisse?</li>
+<li>Wie aussagekräftig sind diese Daten?</li>
+<li>In welche der Aktien würden Sie am ehesten (nicht) investieren? Bitte begründen Sie Ihre Aussage.</li>
+</ol></li>
+</ol>
+<p>Auf der Folie stehen keine Zahlen: Kurse und Gewinne (EPS) sollen selbst aus den Geschäftsberichten 2024/2025 und von Börsenseiten zusammengesucht werden.</p>
+<details><summary>Lösung anzeigen</summary>
+<p><strong>Vorgehen (Schritt für Schritt):</strong></p>
+<ol>
+<li>Für jede Firma den Aktienkurs an einem festen, einheitlichen Stichtag nehmen (z. B. 31.12.) und das Ergebnis je Aktie (EPS) desselben Geschäftsjahres aus dem Geschäftsbericht (Net Income, auf die Aktionäre entfallend, geteilt durch Aktienzahl). Währung und Aktiengattung (Stamm-/Vorzugsaktie bei BMW) beachten.</li>
+<li>KGV = Kurs / EPS rechnen. Ist EPS ≤ 0, ist das KGV „nicht aussagekräftig (n. a.)".</li>
+<li>Die Werte sortieren und mit Branchenüblichem vergleichen.</li>
+</ol>
+<p><strong>Was erfahrungsgemäß auffällt (qualitativ; konkrete Werte hängen vom Stichtag ab):</strong> Die fünf Firmen kommen aus ganz unterschiedlichen Branchen (Auto, Versicherung, Industrie/Technologie, Immobilien, Gesundheit). Automobilhersteller haben typischerweise ein niedriges KGV (zyklisch, geringes Wachstum). Versicherer liegen meist im niedrigen bis mittleren Bereich. Immobilienunternehmen (Vonovia) können ein extrem hohes, sehr schwankendes oder negatives KGV haben, weil der Jahresgewinn stark von Neubewertungen des Immobilienbestands (Fair Value) und Zinsen abhängt, und dann ist das KGV kaum interpretierbar (hier eher Kennzahlen wie FFO nutzen). Siemens und Fresenius liegen meist in der Mitte bis oben; hohe KGVs deuten auf Wachstumserwartung hin.</p>
+<p><strong>Interpretation und Aussagekraft:</strong> Niedriges KGV kann „billig" oder „zu Recht billig" bedeuten; hohes KGV kann Wachstumsprämie oder Überbewertung bedeuten. KGV-Vergleiche sind nur innerhalb derselben Branche und bei gleichem Stichtag und gleicher Gewinndefinition sinnvoll. Zyklik, Einmaleffekte (Wertberichtigungen, Verkäufe) und Rechnungslegungsunterschiede verzerren. Trailing (Vergangenheit) und Forward (Erwartung) können weit auseinanderliegen.</p>
+<p><strong>Investitionsentscheidung:</strong> Eine fundierte Antwort kombiniert KGV mit Dividendenrendite, Verschuldung, Wachstum und Branchenrisiko. Beispielhaft: Nicht in eine Aktie investieren, deren niedriges KGV auf Einmalgewinnen beruht oder deren Gewinn negativ ist; eher in eine, bei der niedriges bis moderates KGV auf stabile, nachhaltige Gewinne trifft.</p>
+</details>
+</div>
+<div class="rec"><strong>Recherche:</strong> Konkrete aktuelle KGV-Werte der DAX-Konzerne habe ich bewusst nicht in den Text aufgenommen: Ohne belegten Stichtag und verlässlichen Kurs wären sie nicht überprüfbar. Zum Üben nimm Geschäftsberichte und Kurse zu einem selbst gewählten Stichtag (und notiere ihn!). Zur Methodik siehe <a href="https://www.accountingtools.com/articles/the-difference-between-forward-pe-and-trailing-pe.html" target="_blank">AccountingTools: Forward vs. trailing P/E</a>.</div>
+
+<h3>6 · Folien-Aufgabe: Dividenden</h3>
+<span class="folie">S. 308</span>
+<div class="exercise folien-aufgabe">
+<h4>Folien-Aufgabe: Dividendenrendite und Dividendenpolitik</h4>
+<ol>
+<li>Wie hoch war die Dividendenrendite von BMW, Allianz, Siemens, Vonovia und Fresenius im Jahr 2024 und 2025?</li>
+<li>Wie wirkt sich eine Dividendenzahlung auf den Kurs einer Aktie aus?</li>
+<li>Was ist für Investoren besser: Unternehmen, die Teile der Gewinne in Form von Dividenden auszahlen oder Unternehmen, die keine Dividenden auszahlen? Begründen Sie Ihre Aussagen.</li>
+</ol>
+<table>
+<thead><tr><th>Firma</th><th>Dividendenrendite 2024</th><th>Dividendenrendite 2025</th></tr></thead>
+<tbody>
+<tr><td>BMW</td><td></td><td></td></tr>
+<tr><td>Allianz</td><td></td><td></td></tr>
+<tr><td>Siemens</td><td></td><td></td></tr>
+<tr><td>Vonovia</td><td></td><td></td></tr>
+<tr><td>Fresenius</td><td></td><td></td></tr>
+</tbody></table>
+<details><summary>Lösung anzeigen</summary>
+<p><strong>Zu 1 (Rechenweg):</strong> Dividendenrendite = Dividende je Aktie / Aktienpreis. Für jedes Jahr nimmst du die für das Geschäftsjahr beschlossene Dividende (z. B. bei BMW: Dividende für 2024, ausgezahlt 2025) und teilst sie durch den Aktienkurs, wobei du den Stichtag (z. B. Jahresende oder Tag der Hauptversammlung) festlegst und für alle Firmen gleich hältst. Die Tabelle ist auf der Folie leer: die Zahlen sollst du aus Geschäftsberichten und Kursen selbst ergänzen.</p>
+<div class="rec"><strong>Recherche (Beispiel BMW):</strong> BMW nennt auf seiner Investor-Relations-Seite eine Dividende je Stammaktie von 4,30 € für das Geschäftsjahr 2024 und 4,40 € für 2025; die Dividende für 2025 wurde der Hauptversammlung 2026 mit 4,40 € vorgeschlagen (laut FTD-Bericht über die BMW-Hauptversammlung 2026, hier nicht an der Primärquelle geprüft). Bei einem Kurs von 76,52 € (Stand 29.04.2025 laut Easybank-Factsheet) ergäbe das 4,30 / 76,52 = 5,6 %; das Factsheet selbst nennt 5,47 % (Berechnungsbasis nicht bekannt), ein Hinweis darauf, dass die Rendite stark von Kurs-Stichtag und Datenanbieter abhängt. Quellen: <a href="https://www.bmwgroup.com/de/investor-relations/aktie.html" target="_blank">BMW Group: Aktie</a>, <a href="https://www.easybank.at/markets/wertpapiere/aktie/tts-458822/BAY-MOTOREN-WERKE-AG-ST/factsheet" target="_blank">Easybank Factsheet</a>, <a href="https://www.ftd.de/unternehmen/industrie/bmw-hauptversammlung-2026-chefwechsel-hoehere-dividende-ende-der-vorzugsaktien/" target="_blank">FTD: BMW-Hauptversammlung 2026</a>. Für Allianz, Siemens, Vonovia und Fresenius habe ich keine geprüften Zahlen aufgenommen (nicht verifiziert).</div>
+<p><strong>Zu 2 (Wirkung auf den Kurs):</strong> Am Ex-Dividenden-Tag wird die Dividende vom Aktienkurs „abgeschnitten": Wer die Aktie ab diesem Tag kauft, bekommt die Dividende nicht mehr. Theoretisch fällt der Kurs deshalb um etwa den Dividendenbetrag, denn das Unternehmen hat Vermögen (Kasse) in dieser Höhe an die Aktionäre abgegeben. Im Beispiel: Kurs 80 €, Dividende 4 € ⇒ Kurs ex Dividende ca. 76 €; das Depot des Aktionärs bleibt wertgleich (Aktie + Bargeld).</p>
+<div class="rec"><strong>Recherche:</strong> Nach der Dividendenirrelevanz-These von Modigliani und Miller (1961) ändert die Ausschüttungspolitik in einem perfekten Markt weder Unternehmenswert noch Aktionärsvermögen, und der Kurs fällt am Ex-Tag um etwa die Dividende. Empirisch fällt der Kurs oft etwas weniger als die Dividende; erklärt wird das u. a. mit Steuern und Transaktionskosten. Quelle: <a href="https://pages.stern.nyu.edu/~adamodar/podcasts/cfspr23/session22slides.pdf" target="_blank">Damodaran (NYU Stern): Dividend policy, Folien</a>.</div>
+<p><strong>Zu 3 (Dividende oder keine Dividende?):</strong> Es gibt keine allgemein „bessere" Variante; es kommt auf die Investitionsmöglichkeiten des Unternehmens an.</p>
+<ul>
+<li><strong>Pro Dividende:</strong> Laufender Zahlungsstrom (z. B. für Rentner), Disziplin für das Management (weniger Geld für unprofitable Projekte), Signalwirkung (stabile Dividende = Vertrauen in künftige Gewinne), Dividenden sind „sicherer" als erhoffte Kursgewinne.</li>
+<li><strong>Pro Thesaurierung (keine Dividende):</strong> Wenn das Unternehmen das Geld besser investieren kann, als die Aktionäre es selbst könnten (Rendite &gt; Kapitalkosten), steigt der Aktienwert stärker; Steuern: Kursgewinne werden oft erst beim Verkauf besteuert; keine Transaktionskosten für Wiederanlage.</li>
+<li><strong>Fazit:</strong> Wachstumsfirmen mit hohen Renditechancen sollten Gewinne einbehalten; reife Firmen ohne gute Projekte sollten ausschütten. Wer Dividenden nicht will, kann sie selbst reinvestieren; wer Geld braucht, kann bei einer Firma ohne Dividende Aktien verkaufen („selbstgemachte Dividende", siehe Übung 08.5).</li>
+</ul>
+</details>
+</div>
+
+<h3>7 · Case Study: Insolvenz Lilium</h3>
+<h4>7.1 Hintergrund: Wer ist Lilium, was ist passiert?</h4>
+<p>Die Folien zeigen Zeitungsausschnitte (Composites World: „AAM startup Lilium to file for self-administered insolvency", The Verge: „Air taxi maker Lilium is out of money and will cease operations", CNBC: „Air taxi firm Lilium's shares plunge 61% after company says main subsidiaries will file for insolvency"), die Investor-Relations-Seite von Lilium und eine Folie aus der Unternehmenspräsentation: „Attractive entry point with strong upside: Total of ~$1.5B capital invested in company to date; strong insider investor support; historically very focused on technology and certification rather than US financial markets &amp; publicity; highly compelling valuation relative to peers based on fundamentals of TAM, technology &amp; progress to certification."</p>
+<span class="folie">S. 309</span>
+<p>Die Faktenfolie fasst zusammen:</p>
+<ul>
+<li>Am 24. Oktober 2024 meldete das Startup Lilium (Herstellung von Flugtaxis) Insolvenz an (siehe Artikel oben).</li>
+<li>Lilium hat bereits mehr als 1,5 Mrd. $ an Finanzierung aufgebraucht.</li>
+</ul>
+<span class="folie">S. 310</span>
+<p>Die Aufgaben der Case Study lauten:</p>
+<ol>
+<li>An welchen Positionen im Lilium Jahresabschluss 2023 konnte man im Hinblick auf die finanzielle Stabilität und Liquidität bereits Probleme erkennen?</li>
+<li>Wie hoch waren Stand Ende 2023 das Debt-to-Equity und das Debt-to-Capital Ratio? (Lösung auf der Folie: Debt-to-Equity = 274,884 / 37,058 = 7,4 = 740 %; Debt to Capital = 274,884 / 311,941 = 0,88 = 88 %.)</li>
+</ol>
+<p>Was heißt „Case Study" hier? Du sollst den echten Konzernabschluss nach IFRS (Lilium Group, Geschäftsbericht 2023, Beträge in Tausend Euro, „in € thousand") lesen wie ein Kreditanalyst: Bilanz (Folien S. 311/312), Gesamtergebnisrechnung (S. 313/314), Kapitalflussrechnung (S. 315–318) und Eigenkapitalveränderungsrechnung (S. 319). Die Zahlen unten sind 1:1 von den Folien übernommen (Schreibweise wie im Original: Tausender-Komma, Klammer = negativ).</p>
+<div class="rec"><strong>Recherche: Geschäftsmodell und Börsengang.</strong> Lilium entwickelte ein elektrisches Senkrechtstarter-Flugzeug (eVTOL) mit 36 Fans (Kanalgebläse); der siebensitzige „Lilium Jet" sollte ab 2024 kommerziell fliegen (zuerst Florida und Deutschland). Der Börsengang lief über eine SPAC (Special Purpose Acquisition Company, „Börsenmantel") namens Qell: Die Aktionäre stimmten am 10.09.2021 mit über 98 % der Stimmen zu, Notierung an der Nasdaq ab 15.09.2021 (Kürzel LILM). Der Deal bewertete Lilium mit 3,3 Mrd. US-$ (Pro-forma-Eigenkapitalwert), brachte aber nur rund 584 Mio. US-$, weil 65 % der SPAC-Aktionäre ihre Aktien zurückgaben (angekündigt waren 830 Mio. US-$). Quelle: <a href="https://www.ainonline.com/news-article/2021-09-13/lilium-set-nasdaq-listing-qell-shareholders-approve-spac-merger" target="_blank">AIN: Lilium set for Nasdaq listing</a>. Lilium N.V. ist die niederländische Holding des Konzerns (die Anträge im Oktober 2024 betrafen zunächst die deutschen Tochtergesellschaften; ob und wann auch die Holding selbst ein Verfahren beantragte, wird in den von mir gefundenen Quellen uneinheitlich dargestellt, nicht verifiziert); sie berichtete als ausländischer Emittent mit Form 20-F (Jahresbericht) und 6-K (Zwischenberichte) bei der US-Börsenaufsicht SEC. Quellen: <a href="https://sec.gov/Archives/edgar/data/1855756/000141057824000206/lilm-20231231x20f.htm" target="_blank">Lilium Form 20-F FY2023 (SEC)</a>, <a href="https://www.electrive.com/2024/10/29/lilium-officially-files-for-insolvency" target="_blank">electrive</a>.</div>
+<div class="rec"><strong>Recherche: Ablauf der Insolvenz(en).</strong> Mitte Oktober 2024 lehnte der Haushaltsausschuss des Bundestags eine Bundesbürgschaft von 50 Mio. € ab; die bayerische Landesbürgschaft in gleicher Höhe war an die Bundeszusage geknüpft. Lilium hatte einen Kredit (KfW) von mindestens 100 Mio. € angestrebt. Am 24.10.2024 teilte Lilium der SEC mit, dass die Mittel für den Weiterbetrieb der Lilium GmbH und der Lilium eAircraft GmbH nicht beschafft werden konnten; die Aktie fiel an diesem Tag um etwa 61 bis 62 %. Die Anträge auf Insolvenz in Eigenverwaltung (self-administration) wurden am 28.10.2024 beim Amtsgericht Weilheim gestellt; als vorläufiger Sachwalter wurde Ivo-Meinert Willrodt (PLUTA) bestellt. Im Februar 2025 stellte auch die Nachfolgegesellschaft Lilium Aerospace GmbH Insolvenzantrag, weil eine Investorengruppe (u. a. DTM Group, EarlyBird, Fifth Wall, GenCap) die Finanzierung nicht rechtzeitig zusagte; Dr. Robert Hänel wurde vorläufiger Insolvenzverwalter; etwa 960 Beschäftigte waren betroffen. Ob später ein Käufer gefunden wurde, konnte ich nicht belegen (nicht verifiziert). Quellen: <a href="https://ainonline.com/aviation-news/futureflight/2024-10-18/german-parliament-blocks-loan-guarantee-liliums-evtol" target="_blank">AIN: Parliament blocks loan guarantee</a>, <a href="https://www.nbcdfw.com/news/business/money-report/air-taxi-firm-lilium-plunges-62-after-saying-main-subsidiaries-will-file-for-insolvency/3679616/" target="_blank">CNBC (via NBC DFW)</a>, <a href="https://www.electrive.com/2024/10/29/lilium-officially-files-for-insolvency" target="_blank">electrive: Lilium officially files for insolvency</a>, <a href="https://www.goerg.de/en/insights/publications/24-02-2025/evtol-developer-lilium-aerospace-successor-company-files-for-insolvency" target="_blank">Görg: Lilium Aerospace files for insolvency</a>, <a href="https://www.legal500.com/developments/press-releases/dr-robert-hanel-becomes-provisional-insolvency-administrator-at-lilium/" target="_blank">Legal 500: Hänel provisional administrator</a>, <a href="https://ainonline.com/aviation-news/futureflight/2025-02-21/lilium-closes-evtol-business-new-investment-falls-through" target="_blank">AIN: Lilium closes eVTOL business</a>.</div>
+<div class="rec"><strong>Recherche: Korrekturen/Hinweise zu den Folien.</strong> (1) Die Folie spricht von „1,5 Mrd. $ aufgebraucht"; die Unternehmenspräsentation (Folie S. 309) sagt „capital <em>invested</em>", also eingeworbenes Kapital. Das passt zum Jahresabschluss: Das gezeichnete Kapital plus Agio plus sonstige Kapitalrücklagen betragen 2023 zusammen 1.396.265 T€ (5.728 + 1.008.759 + 381.778), der kumulierte Verlust 1.359.317 T€. (2) Der 24.10.2024 ist der Tag der Mitteilung/Ankündigung; die förmlichen Eigenverwaltungsanträge wurden laut Presse am 28.10.2024 gestellt (Quellen siehe oben). (3) Die Überschrift der Folie nennt 61 % Kursverlust, die URL 62 %; beide Zahlen sind in der Berichterstattung zu finden (je nach Zeitpunkt; laut einer Anwaltskanzlei-Mitteilung schloss die Aktie bei 0,209 US-$ nach 0,544 US-$, das sind −61,6 %; Quelle: <a href="https://markets.financialcontent.com/pennwell.pennenergy/article/bizwire-2024-11-4-the-law-offices-of-frank-r-cruz-announces-investigation-of-lilium-nv-lilm-lilmw-on-behalf-of-investors" target="_blank">Frank R. Cruz, Pressemitteilung, interessengeleitete Quelle</a>).</div>
+
+<h4>7.2 Bilanz (Consolidated Statement of Financial Position)</h4>
+<p>Die Bilanz der Lilium Group zum 31.12.2023 und 31.12.2022 (in € thousand; Spalte „Note" = Verweis in den Anhang). <strong>Aktivseite:</strong></p>
+<span class="folie">S. 311</span>
+<table>
+<thead><tr><th>Vermögenswerte (Assets)</th><th>Note</th><th>31.12.2023</th><th>31.12.2022</th></tr></thead>
+<tbody>
+<tr><td>Intangible assets (Immaterielle Vermögenswerte)</td><td>14</td><td>494</td><td>870</td></tr>
+<tr><td>Property, plant and equipment (Sachanlagen)</td><td>15, 16</td><td>63,991</td><td>36,699</td></tr>
+<tr><td>Investment in a joint venture / associate</td><td>17</td><td>11,040</td><td>13,410</td></tr>
+<tr><td>Other financial assets (langfristig)</td><td>18</td><td>7,991</td><td>3,386</td></tr>
+<tr><td>Non-financial assets (langfristig)</td><td>19</td><td>9,769</td><td>13,487</td></tr>
+<tr><td><strong>Non-current assets (Langfristiges Vermögen)</strong></td><td></td><td><strong>93,285</strong></td><td><strong>67,852</strong></td></tr>
+<tr><td>Other financial assets (kurzfristig)</td><td>18</td><td>111,616</td><td>22,581</td></tr>
+<tr><td>Non-financial assets (kurzfristig)</td><td>19</td><td>22,781</td><td>18,648</td></tr>
+<tr><td>Income tax receivable</td><td>12</td><td>751</td><td>169</td></tr>
+<tr><td>Cash and cash equivalents (Zahlungsmittel)</td><td>20</td><td>83,508</td><td>179,581</td></tr>
+<tr><td><strong>Current assets (Kurzfristiges Vermögen)</strong></td><td></td><td><strong>218,656</strong></td><td><strong>220,979</strong></td></tr>
+<tr><td><strong>Total Assets (Bilanzsumme)</strong></td><td></td><td><strong>311,941</strong></td><td><strong>288,831</strong></td></tr>
+</tbody></table>
+<p><strong>Passivseite (Shareholders' Equity and Liabilities):</strong></p>
+<span class="folie">S. 312</span>
+<table>
+<thead><tr><th>Eigenkapital und Schulden</th><th>Note</th><th>31.12.2023</th><th>31.12.2022</th></tr></thead>
+<tbody>
+<tr><td>Subscribed capital (Gezeichnetes Kapital)</td><td>21</td><td>5,728</td><td>53,104</td></tr>
+<tr><td>Share premium (Agio)</td><td>21</td><td>1,008,759</td><td>843,074</td></tr>
+<tr><td>Other capital reserves (Sonstige Kapitalrücklagen)</td><td>21</td><td>381,778</td><td>277,654</td></tr>
+<tr><td>Treasury shares (Eigene Anteile)</td><td>21</td><td>—</td><td>(279)</td></tr>
+<tr><td>Accumulated loss (Kumulierter Verlust)</td><td></td><td>(1,359,317)</td><td>(970,198)</td></tr>
+<tr><td>Accumulated other comprehensive income</td><td></td><td>110</td><td>148</td></tr>
+<tr><td><strong>Shareholders' equity (Eigenkapital)</strong></td><td></td><td><strong>37,058</strong></td><td><strong>203,503</strong></td></tr>
+<tr><td>Other financial liabilities (langfr.)</td><td>23</td><td>17</td><td>21</td></tr>
+<tr><td>Lease liabilities (langfr.)</td><td>16</td><td>8,224</td><td>8,353</td></tr>
+<tr><td>Provisions (langfr.)</td><td>25, 26</td><td>1,264</td><td>445</td></tr>
+<tr><td>Trade and other payables (langfr.)</td><td>27</td><td>3,362</td><td>3,483</td></tr>
+<tr><td>Deferred tax liabilities</td><td>12</td><td>—</td><td>10</td></tr>
+<tr><td>Other non-financial liabilities (langfr.)</td><td>28</td><td>2,000</td><td>—</td></tr>
+<tr><td><strong>Non-current liabilities</strong></td><td></td><td><strong>14,867</strong></td><td><strong>12,312</strong></td></tr>
+<tr><td>Other financial liabilities (kurzfr.)</td><td>23</td><td>4</td><td>4</td></tr>
+<tr><td>Lease liabilities (kurzfr.)</td><td>16</td><td>2,943</td><td>2,616</td></tr>
+<tr><td>Share-based payment liability</td><td>22</td><td>—</td><td>1,046</td></tr>
+<tr><td>Provisions (kurzfr.)</td><td>25</td><td>311</td><td>730</td></tr>
+<tr><td>Income tax payable</td><td>12</td><td>435</td><td>128</td></tr>
+<tr><td><strong>Warrants</strong> (Optionsscheine)</td><td>24</td><td><strong>205,013</strong></td><td>26,267</td></tr>
+<tr><td>Trade and other payables (kurzfr.)</td><td>27</td><td>44,601</td><td>33,658</td></tr>
+<tr><td>Other non-financial liabilities (kurzfr.)</td><td>28</td><td>6,709</td><td>8,567</td></tr>
+<tr><td><strong>Current liabilities (Kurzfristige Schulden)</strong></td><td></td><td><strong>260,016</strong></td><td><strong>73,016</strong></td></tr>
+<tr><td><strong>Total Shareholders' Equity and Liabilities</strong></td><td></td><td><strong>311,941</strong></td><td><strong>288,831</strong></td></tr>
+</tbody></table>
+<p>Nachgerechnet: Die Summen stimmen (93.285 + 218.656 = 311.941; 37.058 + 14.867 + 260.016 = 311.941). Die Schulden insgesamt sind 14.867 + 260.016 = <strong>274.883</strong> T€ (auf der Folie steht 274,884; Rundungsdifferenz von 1 T€, ohne Einfluss auf das Ergebnis).</p>
+<h4>Was fällt in der Bilanz auf?</h4>
+<ul>
+<li><strong>Das Eigenkapital ist von 203.503 auf 37.058 T€ geschrumpft</strong> (−82 %), weil der Verlust 2023 (389.119 T€) viel größer war als die neu eingeworbenen Mittel. Die Eigenkapitalquote fällt von 70,5 % auf 11,9 %.</li>
+<li><strong>Die kurzfristigen Schulden sind von 73.016 auf 260.016 T€ gesprungen</strong>, vor allem wegen der Position Warrants (26.267 → 205.013 T€). Das Umlaufvermögen (218.656 T€) deckt die kurzfristigen Schulden nicht mehr (Current Ratio 0,84).</li>
+<li><strong>Die Zahlungsmittel sind von 179.581 auf 83.508 T€ gesunken.</strong> Die Position „Other financial assets" (kurzfristig, 111.616 T€) enthält laut Kapitalflussrechnung die kurzfristigen Geldanlagen (Short-term investments: 200.000 T€ neu angelegt, 110.000 T€ aufgelöst; Folie S. 316). Zusammen mit den langfristigen „Other financial assets" (7.991 T€) ergibt das 83.508 + 111.616 + 7.991 = 203.115 T€; diese Summe passt zu dem Wert von rund 203,1 Mio. €, den eine Zusammenfassung des 20-F als Jahresend-Liquidität nennt (siehe Recherche unten). Ob die Zuordnung exakt so ist, steht im Anhang (Note 18/20); das ist meine Ableitung.</li>
+<li>Die Sachanlagen steigen (36.699 → 63.991 T€): Lilium investierte in Produktions- und Testanlagen, also bindet sich Kapital.</li>
+<li>Es gibt <strong>keine Umsätze</strong> und keine Bank- oder Anleiheschulden; die Finanzierung lief fast ausschließlich über Eigenkapital (und Optionsscheine).</li>
+</ul>
+<div class="rec"><strong>Recherche:</strong> Die Unternehmensmitteilung zum 4. Quartal 2023 nannte eine (ungeprüfte) Liquidität von 198 Mio. € zum Jahresende 2023 und einen „adjusted cash spend" von 150 Mio. € im zweiten Halbjahr 2023; für das erste Halbjahr 2024 wurden 170 bis 180 Mio. € Cash-Verbrauch erwartet; 2023 hatte Lilium laut Unternehmen 292 Mio. US-$ zusätzliches Kapital eingeworben. Die Zahlen des Unternehmens (alternative Liquiditätsdefinition) weichen leicht von der Bilanzrechnung oben ab. Quellen: <a href="https://www.revolution.aero/news/2024/02/29/lilium-tightens-belt-beats-budget-in-2023/" target="_blank">Revolution.aero</a>, <a href="https://news.futunn.com/post/38534960/earnings-call-summary-lilium-lilmus-q4-2023-earnings-conference" target="_blank">Futunn: Earnings-Call-Zusammenfassung</a>, <a href="https://investors.lilium.com/Q4_2023_Shareholder_Letter" target="_blank">Lilium: Q4 2023 Shareholder Letter</a>. Den Going-Concern-Hinweis (Fortführungsprognose) im Geschäftsbericht 2023 oder im Bestätigungsvermerk des Abschlussprüfers habe ich nicht belegen können (nicht verifiziert); bei dieser Art von Fall lohnt sich ein Blick in die Notes („going concern", „material uncertainty") im <a href="https://sec.gov/Archives/edgar/data/1855756/000141057824000206/lilm-20231231x20f.htm" target="_blank">Form 20-F</a>.</div>
+
+<h4>7.3 Gewinn- und Verlustrechnung (Statement of Operations and Other Comprehensive Loss)</h4>
+<span class="folie">S. 313</span>
+<table>
+<thead><tr><th>in € thousand</th><th>Note</th><th>2023</th><th>2022</th><th>2021</th></tr></thead>
+<tbody>
+<tr><td>Revenue (Umsatzerlöse)</td><td>5</td><td>—</td><td>—</td><td>47</td></tr>
+<tr><td>Cost of sales</td><td>5</td><td>—</td><td>—</td><td>(11)</td></tr>
+<tr><td><strong>Gross profit</strong></td><td></td><td>—</td><td>—</td><td>36</td></tr>
+<tr><td>Research and development expenses (F&amp;E-Aufwand)</td><td>6</td><td>(183,760)</td><td>(175,618)</td><td>(144,558)</td></tr>
+<tr><td>General and administrative expenses (Verwaltung)</td><td>7</td><td>(81,280)</td><td>(93,887)</td><td>(239,093)</td></tr>
+<tr><td>Selling expenses (Vertrieb)</td><td>8</td><td>(10,759)</td><td>(12,929)</td><td>(17,189)</td></tr>
+<tr><td>Other income</td><td>9</td><td>8,136</td><td>6,808</td><td>2,274</td></tr>
+<tr><td>Other expenses</td><td>10</td><td>(3,028)</td><td>(3,268)</td><td>(2,036)</td></tr>
+<tr><td><strong>Operating loss (Operatives Ergebnis)</strong></td><td></td><td><strong>(270,691)</strong></td><td><strong>(278,894)</strong></td><td><strong>(400,566)</strong></td></tr>
+<tr><td>Finance income</td><td>11</td><td>15,335</td><td>30,322</td><td>11,288</td></tr>
+<tr><td>Finance expenses</td><td>11</td><td>(131,059)</td><td>(1,995)</td><td>(20,201)</td></tr>
+<tr><td><strong>Financial result (Finanzergebnis)</strong></td><td>11</td><td><strong>(115,724)</strong></td><td><strong>28,327</strong></td><td><strong>(8,913)</strong></td></tr>
+<tr><td>Share of loss in a joint venture / associate</td><td>17</td><td>(2,370)</td><td>(2,823)</td><td>(848)</td></tr>
+<tr><td><strong>Loss before income tax</strong></td><td></td><td><strong>(388,785)</strong></td><td><strong>(253,390)</strong></td><td><strong>(410,327)</strong></td></tr>
+<tr><td>Income tax (expense) / benefit</td><td>12</td><td>(334)</td><td>326</td><td>(709)</td></tr>
+<tr><td><strong>Net loss for the year (Jahresfehlbetrag)</strong></td><td></td><td><strong>(389,119)</strong></td><td><strong>(253,064)</strong></td><td><strong>(411,036)</strong></td></tr>
+</tbody></table>
+<p><strong>Sonstiges Ergebnis (Other Comprehensive Income) und Ergebnis je Aktie:</strong></p>
+<span class="folie">S. 314</span>
+<table>
+<thead><tr><th>in € thousand (außer je Aktie)</th><th>Note</th><th>2023</th><th>2022</th><th>2021</th></tr></thead>
+<tbody>
+<tr><td>OCI, das später in die GuV umgegliedert werden kann</td><td></td><td>(60)</td><td>33</td><td>44</td></tr>
+<tr><td>&nbsp;&nbsp;Exchange differences on translation of foreign business units</td><td></td><td>(60)</td><td>33</td><td>44</td></tr>
+<tr><td>Posten, die nicht umgegliedert werden</td><td></td><td>22</td><td>28</td><td>162</td></tr>
+<tr><td>&nbsp;&nbsp;Remeasurement of defined pension benefit obligation</td><td>26</td><td>22</td><td>28</td><td>162</td></tr>
+<tr><td><strong>Other comprehensive (loss) / income</strong></td><td></td><td>(38)</td><td>61</td><td>206</td></tr>
+<tr><td><strong>Total consolidated comprehensive loss for the year</strong></td><td></td><td>(389,157)</td><td>(253,003)</td><td>(410,830)</td></tr>
+<tr><td><strong>Loss per share (basic and diluted) in €</strong></td><td>13</td><td>(0.71)</td><td>(0.80)</td><td>(1.91)</td></tr>
+</tbody></table>
+<p>Nachgerechnet: Operatives Ergebnis 2023 = −183.760 − 81.280 − 10.759 + 8.136 − 3.028 = −270.691. Finanzergebnis = 15.335 − 131.059 = −115.724. Verlust vor Steuern = −270.691 − 115.724 − 2.370 = −388.785; Jahresfehlbetrag = −388.785 − 334 = −389.119. Gesamtergebnis = −389.119 − 38 = −389.157. Alle drei Jahre stimmen.</p>
+<h4>Was fällt in der GuV auf?</h4>
+<ul>
+<li><strong>Kein Umsatz:</strong> Lilium hatte 2022 und 2023 keinen Umsatz, 2021 nur 47 T€. Es ist ein reines Entwicklungsunternehmen. Kennzahlen wie Umsatzrendite oder EV/Sales sind nicht berechenbar bzw. unendlich.</li>
+<li><strong>F&amp;E ist der größte Block:</strong> 183.760 T€ = 67 % der Aufwendungen aus F&amp;E, Verwaltung und Vertrieb (275.799 T€). F&amp;E wird nach IFRS (IAS 38) bis zur Erfüllung der Aktivierungskriterien direkt als Aufwand gebucht, deshalb stehen die Entwicklungsausgaben nicht als Vermögenswert in der Bilanz (Immaterielle Vermögenswerte: nur 494 T€).</li>
+<li><strong>Das Finanzergebnis kippt von +28.327 auf −115.724 T€.</strong> Die „Finance expenses" von 131.059 T€ (2022: nur 1.995 T€) sind keine Zinsen auf Bankkredite (Lilium hat kaum Bankschulden), sondern überwiegend Bewertungseffekte: In der Kapitalflussrechnung steht die Anpassung „Fair value and foreign exchange changes of financial instruments and expected credit losses" von +120.592 T€ (nicht zahlungswirksam; Folie S. 315). Das passt zu den neuen Optionsscheinen (Warrants) in der Bilanz.</li>
+<li><strong>Der Verlust je Aktie sinkt scheinbar</strong> von 1,91 € (2021) über 0,80 € (2022) auf 0,71 € (2023), obwohl der Gesamtverlust 2023 mit 389 Mio. € höher als 2022 war: Die Zahl der Aktien ist durch Kapitalerhöhungen stark gestiegen (Verwässerung). Rückgerechnet: 389.119 / 0,71 ≈ 548 Mio. Aktien (gewichteter Durchschnitt, grob gerundet), 2022: 253.064 / 0,80 ≈ 316 Mio.</li>
+<li>Die Verwaltungskosten 2021 (239.093 T€) enthalten vermutlich den Einmalaufwand aus dem SPAC-Börsengang (siehe CF 2021: „Share listing expense" 111.109 T€).</li>
+</ul>
+<div class="rec"><strong>Recherche:</strong> Die Gliederung der GuV in Funktionskosten (F&amp;E, Verwaltung, Vertrieb) entspricht dem Umsatzkostenverfahren nach IAS 1. Ab Berichtsjahren, die am oder nach dem 1. Januar 2027 beginnen, gilt IFRS 18 statt IAS 1: Erträge und Aufwendungen werden dann in die Kategorien Betrieb, Investieren, Finanzieren, Ertragsteuern und aufgegebene Geschäftsbereiche eingeordnet, und zwei neue Zwischensummen (Operatives Ergebnis; Ergebnis vor Finanzierung und Ertragsteuern) sind Pflicht. Für Lilium-Zahlen gilt noch IAS 1, für deine Klausur die Folienlogik. Quelle: <a href="https://www.ifrs.org/news-and-events/news/2024/04/new-ifrs-accounting-standard-will-aid-investor-analysis-of-companies-financial-performance/" target="_blank">IFRS Foundation: IFRS 18</a>. Dass die 111.109 T€ „Share listing expense" als IFRS-2-Aufwand für die Börsennotierung über den SPAC zu verstehen sind, ist eine übliche Behandlung bei SPAC-Transaktionen, aber hier nicht an der Quelle verifiziert (Note 1/21 des Geschäftsberichts prüfen).</div>
+
+<h4>7.4 Kapitalflussrechnung (Statement of Cash Flows)</h4>
+<p>Wiederholung (Kapitel zur Kapitalflussrechnung): Die indirekte Methode startet beim Jahresergebnis, bereinigt nicht zahlungswirksame Posten und Veränderungen des Working Capital und kommt so zum <strong>operativen Cashflow</strong>; dazu kommen Investitions- und Finanzierungs-Cashflow. Die Summe aller drei erklärt die Veränderung der Zahlungsmittel.</p>
+<p><strong>Operativer Cashflow (Operating CF):</strong></p>
+<span class="folie">S. 315</span>
+<table>
+<thead><tr><th>in € thousand</th><th>2023</th><th>2022</th><th>2021</th></tr></thead>
+<tbody>
+<tr><td>Net loss for the year</td><td>(389,119)</td><td>(253,064)</td><td>(411,036)</td></tr>
+<tr><td>Income tax expense / (benefits)</td><td>334</td><td>(326)</td><td>709</td></tr>
+<tr><td>Net interest (income) / expense</td><td>(4,813)</td><td>958</td><td>4,289</td></tr>
+<tr><td>Depreciation, amortization and impairment</td><td>12,694</td><td>8,267</td><td>6,476</td></tr>
+<tr><td>Share listing expense</td><td>—</td><td>—</td><td>111,109</td></tr>
+<tr><td>Expenses for other share-based payments</td><td>22,539</td><td>24,261</td><td>61,378</td></tr>
+<tr><td>Net losses from the disposal of intangibles and PP&amp;E</td><td>—</td><td>17</td><td>—</td></tr>
+<tr><td>Share of loss in a joint venture / associate</td><td>2,370</td><td>2,823</td><td>848</td></tr>
+<tr><td>Gain on dilution in investment in joint venture / associate</td><td>—</td><td>(1,179)</td><td>—</td></tr>
+<tr><td>Fair value and foreign exchange changes of financial instruments and expected credit losses</td><td>120,592</td><td>(29,050)</td><td>4,625</td></tr>
+<tr><td>Net exchange differences</td><td>(812)</td><td>—</td><td>—</td></tr>
+<tr><td>Income tax paid</td><td>(617)</td><td>(266)</td><td>(196)</td></tr>
+<tr><td>Change in provisions</td><td>(345)</td><td>(1,640)</td><td>2,392</td></tr>
+<tr><td>Working capital: Changes in trade and other payables</td><td>10,633</td><td>(1,451)</td><td>20,517</td></tr>
+<tr><td>Working capital: Change in other assets and liabilities</td><td>(5,445)</td><td>(6,935)</td><td>(16,177)</td></tr>
+<tr><td><strong>Cash flow used in operating activities</strong></td><td><strong>(231,989)</strong></td><td><strong>(257,585)</strong></td><td><strong>(215,066)</strong></td></tr>
+</tbody></table>
+<p><strong>Investitions-Cashflow (Investing CF):</strong></p>
+<span class="folie">S. 316</span>
+<table>
+<thead><tr><th>in € thousand</th><th>2023</th><th>2022</th><th>2021</th></tr></thead>
+<tbody>
+<tr><td>Purchases of intangible assets</td><td>(79)</td><td>(200)</td><td>(1,597)</td></tr>
+<tr><td>Purchases of and advance payments on property, plant and equipment</td><td>(28,671)</td><td>(8,942)</td><td>(17,099)</td></tr>
+<tr><td>Disposals of intangible assets, PP&amp;E</td><td>—</td><td>—</td><td>1</td></tr>
+<tr><td>Proceeds from short-term investments</td><td>110,000</td><td>319,773</td><td>50,000</td></tr>
+<tr><td>Payments for short-term investments</td><td>(200,000)</td><td>(120,000)</td><td>(220,006)</td></tr>
+<tr><td>Payments for acquisition of an associate</td><td>—</td><td>—</td><td>(13,680)</td></tr>
+<tr><td>Payment for acquisition of equity instruments</td><td>(5,159)</td><td>—</td><td>—</td></tr>
+<tr><td>Payments for promissory notes</td><td>—</td><td>—</td><td>(1,051)</td></tr>
+<tr><td>Interest paid</td><td>—</td><td>(466)</td><td>—</td></tr>
+<tr><td>Interest received</td><td>4,160</td><td>129</td><td>6</td></tr>
+<tr><td><strong>Cash flow (used in) / from investing activities</strong></td><td><strong>(119,749)</strong></td><td><strong>190,294</strong></td><td><strong>(203,426)</strong></td></tr>
+</tbody></table>
+<p><strong>Finanzierungs-Cashflow (Financing CF):</strong></p>
+<span class="folie">S. 317</span>
+<table>
+<thead><tr><th>in € thousand</th><th>2023</th><th>2022</th><th>2021</th></tr></thead>
+<tbody>
+<tr><td>Proceeds from share capital increase and issue of warrants – CMPO &amp; 2023 PIPE</td><td>104,409</td><td>—</td><td>—</td></tr>
+<tr><td>Proceeds from issue of May 2023 Warrants</td><td>159,227</td><td>—</td><td>—</td></tr>
+<tr><td>Proceeds from share capital increase and issue of warrants – RDO &amp; 2022 PIPE</td><td>—</td><td>113,971</td><td>—</td></tr>
+<tr><td>Proceeds from other share capital increase – ELOC</td><td>—</td><td>12,498</td><td>—</td></tr>
+<tr><td>Proceeds from the Reorganization</td><td>—</td><td>—</td><td>83,393</td></tr>
+<tr><td>Proceeds from the 2021 PIPE capital increase</td><td>—</td><td>—</td><td>381,208</td></tr>
+<tr><td>Proceeds from exercise of May 2023 Warrants</td><td>1,091</td><td>—</td><td>—</td></tr>
+<tr><td>Proceeds from convertible loans</td><td>—</td><td>—</td><td>1,850</td></tr>
+<tr><td>Proceeds from other share capital increase and capital contributions</td><td>290</td><td>288</td><td>7</td></tr>
+<tr><td>Payments of transaction costs for capital contributions</td><td>(6,112)</td><td>(7,402)</td><td>(2,227)</td></tr>
+<tr><td>Proceeds from sale of shares held in treasury</td><td>—</td><td>983</td><td>—</td></tr>
+<tr><td>Payment for foreign exchange contract</td><td>—</td><td>—</td><td>(423,372)</td></tr>
+<tr><td>Proceeds from foreign exchange contract</td><td>—</td><td>—</td><td>407,840</td></tr>
+<tr><td>Principal elements of lease payments</td><td>(3,425)</td><td>(2,720)</td><td>(1,781)</td></tr>
+<tr><td>Interest paid</td><td>(604)</td><td>(534)</td><td>(734)</td></tr>
+<tr><td><strong>Cash flow from financing activities</strong> (Fußnote 1 auf der Folie)</td><td><strong>254,876</strong></td><td><strong>117,084</strong></td><td><strong>446,184</strong></td></tr>
+</tbody></table>
+<p><strong>Gesamt (Total):</strong></p>
+<span class="folie">S. 318</span>
+<table>
+<thead><tr><th>in € thousand</th><th>2023</th><th>2022</th><th>2021</th></tr></thead>
+<tbody>
+<tr><td>Cash-based changes in cash and cash equivalents</td><td>(96,862)</td><td>49,793</td><td>27,692</td></tr>
+<tr><td>Effect of foreign exchange rate changes on cash and cash equivalents</td><td>789</td><td>(13)</td><td>20</td></tr>
+<tr><td>Effect of change in expected credit loss provisions</td><td>—</td><td>(55)</td><td>—</td></tr>
+<tr><td><strong>Net (decrease) / increase in cash and cash equivalents</strong></td><td><strong>(96,073)</strong></td><td><strong>49,725</strong></td><td><strong>27,712</strong></td></tr>
+<tr><td>Cash and cash equivalents at the beginning of the year</td><td>179,581</td><td>129,856</td><td>102,144</td></tr>
+<tr><td><strong>Cash and cash equivalents at the end of the year</strong></td><td><strong>83,508</strong></td><td><strong>179,581</strong></td><td><strong>129,856</strong></td></tr>
+</tbody></table>
+<p>Nachgerechnet: Operativer CF 2023: Die Summe aller Zeilen ergibt −231.989 (Python-Check; ebenso 2022: −257.585 und 2021: −215.066). Investing 2023: −79 − 28.671 + 110.000 − 200.000 − 5.159 + 4.160 = −119.749. Financing 2023: 104.409 + 159.227 + 1.091 + 290 − 6.112 − 3.425 − 604 = 254.876. Gesamt: −231.989 − 119.749 + 254.876 = −96.862; plus Währungseffekt 789 = −96.073; 179.581 − 96.073 = 83.508 = Zahlungsmittel in der Bilanz.</p>
+<h4>Was fällt im Cashflow auf?</h4>
+<ul>
+<li><strong>Der Verlust von 389.119 T€ ist nicht der Cash-Verlust.</strong> Der operative Cashflow beträgt −231.989 T€; die Differenz von rund 157 Mio. € besteht v. a. aus nicht zahlungswirksamen Posten: Fair-Value-Änderungen von Finanzinstrumenten +120.592 T€, aktienbasierte Vergütung +22.539 T€, Abschreibungen +12.694 T€ und Working Capital (+10.633 T€ höhere Verbindlichkeiten aus Lieferungen und Leistungen: Lilium hat Rechnungen später bezahlt, was kurzfristig Cash schont).</li>
+<li><strong>Dauer-Cash-Burn:</strong> Operativer CF in drei Jahren: −215.066, −257.585, −231.989 T€, zusammen −704.640 T€. Kein Jahr mit positivem operativem Cashflow.</li>
+<li><strong>Die Firma lebt von Kapitalmarktfinanzierung.</strong> Finanzierungs-Cashflow 2023: +254.876 T€ (fast nur Kapitalerhöhungen: CMPO &amp; PIPE 104.409, Mai-2023-Warrants 159.227), 2022: +117.084 T€, 2021: +446.184 T€. Ohne neue Investoren wäre die Kasse leer. Das ist das klassische Muster eines „Cash-Burners" (Startup, das Verluste durch Eigenkapitalaufnahmen finanziert).</li>
+<li><strong>Investing CF:</strong> Der Großteil der Mittelabflüsse ist ein Umschichten in kurzfristige Geldanlagen (netto 200.000 − 110.000 = 90.000 T€ mehr angelegt). Die echten Investitionen in Sachanlagen sind 28.671 T€ (Free Cashflow = −231.989 − 28.671 − 79 = −260.739 T€). Die Zahlungsmittel von 83.508 T€ allein sind nur ca. 4,3 Monate des operativen Cash-Burns (19,3 Mio. €/Monat); mit den kurzfristigen Anlagen sind es etwa 10 Monate (siehe Übung 08.10).</li>
+</ul>
+
+<h4>7.5 Eigenkapitalveränderungsrechnung (Statement of Changes in Equity)</h4>
+<p>Die EK-Veränderungsrechnung zeigt, wie sich jede Eigenkapitalposition vom 1.1.2021 bis zum 31.12.2023 entwickelt hat: Verlust, Sonstiges Ergebnis, Kapitalerhöhungen, aktienbasierte Vergütungen etc.</p>
+<span class="folie">S. 319</span>
+<table>
+<thead><tr><th>in € thousand</th><th>Note</th><th>Gez. Kapital</th><th>Agio</th><th>Sonst. Kapitalrückl.</th><th>Eigene Anteile</th><th>Kum. Verlust</th><th>Währungs-umrechn.</th><th>Pensions-neubew.</th><th>Gesamt</th></tr></thead>
+<tbody>
+<tr><td><strong>1. Januar 2021</strong></td><td></td><td>29,550</td><td>224,359</td><td>110,055</td><td>(25)</td><td>(306,098)</td><td>39</td><td>(158)</td><td>57,722</td></tr>
+<tr><td>Loss for the year</td><td></td><td>—</td><td>—</td><td>—</td><td>—</td><td>(411,036)</td><td>—</td><td>—</td><td>(411,036)</td></tr>
+<tr><td>Other comprehensive income</td><td></td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>44</td><td>162</td><td>206</td></tr>
+<tr><td><em>Total comprehensive income / (loss)</em></td><td></td><td>—</td><td>—</td><td>—</td><td>—</td><td>(411,036)</td><td>44</td><td>162</td><td>(410,830)</td></tr>
+<tr><td>Share-based payment awards</td><td>22</td><td>—</td><td>—</td><td>53,350</td><td>—</td><td>—</td><td>—</td><td>—</td><td>53,350</td></tr>
+<tr><td>Convertible loans</td><td>21</td><td>2,464</td><td>127,813</td><td>(34,084)</td><td>—</td><td>—</td><td>—</td><td>—</td><td>96,193</td></tr>
+<tr><td>Reorganization</td><td>1, 21</td><td>2,724</td><td>51,116</td><td>111,109</td><td>(81)</td><td>—</td><td>—</td><td>—</td><td>164,868</td></tr>
+<tr><td>Share capital increase 2021 PIPE</td><td>21</td><td>5,400</td><td>375,808</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>381,208</td></tr>
+<tr><td>Share buy-back</td><td>21</td><td>—</td><td>45</td><td>—</td><td>(45)</td><td>—</td><td>—</td><td>—</td><td>—</td></tr>
+<tr><td><strong>31. Dezember 2021</strong></td><td></td><td>40,138</td><td>779,141</td><td>240,430</td><td>(151)</td><td>(717,134)</td><td>83</td><td>4</td><td>342,511</td></tr>
+<tr><td>Loss for the year</td><td></td><td>—</td><td>—</td><td>—</td><td>—</td><td>(253,064)</td><td>—</td><td>—</td><td>(253,064)</td></tr>
+<tr><td>Other comprehensive income</td><td></td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>33</td><td>28</td><td>61</td></tr>
+<tr><td><em>Total comprehensive income / (loss)</em></td><td></td><td>—</td><td>—</td><td>—</td><td>—</td><td>(253,064)</td><td>33</td><td>28</td><td>(253,003)</td></tr>
+<tr><td>Share-based payment awards</td><td>22</td><td>—</td><td>—</td><td>27,380</td><td>—</td><td>—</td><td>—</td><td>—</td><td>27,380</td></tr>
+<tr><td>Conversion of share-based payment awards into shares</td><td>21</td><td>1,303</td><td>207</td><td>(2,072)</td><td>—</td><td>—</td><td>—</td><td>—</td><td>(562)</td></tr>
+<tr><td>Exercise of Reorganization warrants</td><td>21</td><td>0</td><td>0</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>0</td></tr>
+<tr><td>Share capital increase – ELOC</td><td>21</td><td>674</td><td>12,520</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>13,194</td></tr>
+<tr><td>Share capital increase – RDO &amp; 2022 PIPE</td><td>21</td><td>10,983</td><td>50,095</td><td>11,916</td><td>—</td><td>—</td><td>—</td><td>—</td><td>72,994</td></tr>
+<tr><td>Conversion of Class B shares</td><td>21</td><td>—</td><td>126</td><td>—</td><td>(126)</td><td>—</td><td>—</td><td>—</td><td>—</td></tr>
+<tr><td>Repurchase of Class B shares</td><td>21</td><td>6</td><td>108</td><td>—</td><td>(108)</td><td>—</td><td>—</td><td>—</td><td>6</td></tr>
+<tr><td>Sale of treasury shares held by consolidated entity</td><td>21</td><td>—</td><td>877</td><td>—</td><td>106</td><td>—</td><td>—</td><td>—</td><td>983</td></tr>
+<tr><td><strong>31. Dezember 2022</strong></td><td></td><td>53,104</td><td>843,074</td><td>277,654</td><td>(279)</td><td>(970,198)</td><td>116</td><td>32</td><td>203,503</td></tr>
+<tr><td>Loss for the year</td><td></td><td>—</td><td>—</td><td>—</td><td>—</td><td>(389,119)</td><td>—</td><td>—</td><td>(389,119)</td></tr>
+<tr><td>Other comprehensive income / (loss)</td><td></td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>(60)</td><td>22</td><td>(38)</td></tr>
+<tr><td><em>Total comprehensive income / (loss)</em></td><td></td><td>—</td><td>—</td><td>—</td><td>—</td><td>(389,119)</td><td>(60)</td><td>22</td><td>(389,157)</td></tr>
+<tr><td>Share-based payment awards</td><td>22</td><td>—</td><td>—</td><td>22,805</td><td>—</td><td>—</td><td>—</td><td>—</td><td>22,805</td></tr>
+<tr><td>Conversion of share-based payment awards into shares</td><td>21</td><td>1,471</td><td>—</td><td>(1,510)</td><td>—</td><td>—</td><td>—</td><td>—</td><td>(39)</td></tr>
+<tr><td>Initial recognition of May 2023 Warrants</td><td>21</td><td>—</td><td>—</td><td>82,829</td><td>—</td><td>—</td><td>—</td><td>—</td><td>82,829</td></tr>
+<tr><td>Share capital increase – CMPO &amp; 2023 PIPE</td><td>21</td><td>9,046</td><td>81,387</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>90,433</td></tr>
+<tr><td>Exercise of May 2023 Warrants</td><td>21</td><td>2,453</td><td>24,231</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>26,684</td></tr>
+<tr><td>Conversion of Class B shares</td><td>21</td><td>—</td><td>84</td><td>—</td><td>(84)</td><td>—</td><td>—</td><td>—</td><td>—</td></tr>
+<tr><td>Cancellation of issued shares</td><td>21</td><td>(194)</td><td>—</td><td>—</td><td>194</td><td>—</td><td>—</td><td>—</td><td>—</td></tr>
+<tr><td>Reduction in nominal value of Class A, B and C shares</td><td>21</td><td>(60,152)</td><td>59,983</td><td>—</td><td>169</td><td>—</td><td>—</td><td>—</td><td>—</td></tr>
+<tr><td><strong>31. Dezember 2023</strong></td><td></td><td>5,728</td><td>1,008,759</td><td>381,778</td><td>—</td><td>(1,359,317)</td><td>56</td><td>54</td><td>37,058</td></tr>
+</tbody></table>
+<p>Nachgerechnet: Das Eigenkapital 2023 = 203.503 − 389.157 + 22.805 − 39 + 82.829 + 90.433 + 26.684 = 37.058; analog stimmen 2022 (342.511 → 203.503) und 2021 (57.722 → 342.511). Spaltensummen 2023: 5.728 + 1.008.759 + 381.778 + 0 − 1.359.317 + 56 + 54 = 37.058.</p>
+<h4>Was fällt in der EK-Veränderungsrechnung auf?</h4>
+<ul>
+<li><strong>Der kumulierte Verlust frisst das Kapital auf:</strong> −306.098 (1.1.2021) → −717.134 → −970.198 → −1.359.317 T€. Die eingezahlten Kapitalbestandteile (gezeichnetes Kapital + Agio + sonstige Kapitalrücklagen) betragen Ende 2023 zusammen 1.396.265 T€; davon sind 1.359.317 T€ (97,4 %) durch Verluste aufgezehrt. Es bleiben 37.058 T€ (inkl. 110 T€ OCI).</li>
+<li><strong>Die Herabsetzung des Nennwerts</strong> („Reduction in nominal value") verschiebt 59.983 T€ vom gezeichneten Kapital ins Agio; sie verändert das Gesamt-EK nicht (nur die Aufteilung).</li>
+<li><strong>Nicht zahlungswirksame EK-Zuführungen:</strong> aktienbasierte Vergütungen (22.805 T€ in 2023, 27.380 T€ in 2022) erhöhen die Rücklagen, ohne dass Geld fließt. Der Aufwand dafür steckt in der GuV, ein Nullsummenspiel im EK.</li>
+<li>Kapitalerhöhungen 2023: CMPO &amp; PIPE (90.433 T€ im EK, davon 104.409 T€ Cash-Zufluss inklusive Optionsscheine), Ausübung von Mai-2023-Warrants (26.684 T€) und die erstmalige Erfassung der Mai-2023-Warrants (82.829 T€ in den sonstigen Rücklagen). Hypothese (bitte im Anhang Note 21/24 prüfen): Die Optionsscheine wurden teils als Eigenkapital, teils als Verbindlichkeit (Position „Warrants" 205.013 T€) erfasst, weil sie nach IFRS je nach Ausgestaltung als Derivat bilanziert werden müssen.</li>
+</ul>
+
+<h4>7.6 Lösung der Case-Study-Aufgaben</h4>
+<div class="exercise folien-aufgabe">
+<h4>Folien-Aufgabe: An welchen Positionen im Lilium-Jahresabschluss 2023 konnte man Probleme bei Stabilität und Liquidität erkennen?</h4>
+<span class="folie">S. 310</span>
+<details><summary>Lösung anzeigen</summary>
+<p>Eine gute Antwort ordnet die Warnsignale nach Bilanz, GuV und Cashflow:</p>
+<table>
+<thead><tr><th>Statement</th><th>Position</th><th>Zahl 2023 (2022)</th><th>Warnsignal</th></tr></thead>
+<tbody>
+<tr><td>Bilanz</td><td>Eigenkapital / EK-Quote</td><td>37.058 T€ = 11,9 % (203.503 T€ = 70,5 %)</td><td>EK −82 %; kaum Verlustpuffer</td></tr>
+<tr><td>Bilanz</td><td>Kumulierter Verlust</td><td>−1.359.317 (−970.198)</td><td>97 % des eingezahlten Kapitals verbraucht</td></tr>
+<tr><td>Bilanz</td><td>Kurzfristige Schulden</td><td>260.016 (73.016)</td><td>Fälligkeiten schießen hoch (×3,6)</td></tr>
+<tr><td>Bilanz</td><td>Current Ratio</td><td>0,84 (3,03)</td><td>Umlaufvermögen &lt; kurzfr. Schulden</td></tr>
+<tr><td>Bilanz</td><td>Working Capital</td><td>−41.360 (+147.963)</td><td>Negatives Working Capital</td></tr>
+<tr><td>Bilanz</td><td>Zahlungsmittel</td><td>83.508 (179.581)</td><td>−53 % in einem Jahr; Cash Ratio 0,32 (2,46)</td></tr>
+<tr><td>Bilanz</td><td>Verschuldungsgrad (D/E)</td><td>7,4 = 742 % (0,42)</td><td>Von sehr niedrig auf sehr hoch</td></tr>
+<tr><td>GuV</td><td>Keine Umsätze, Verlust</td><td>Umsatz 0; Jahresverlust −389.119 (−253.064)</td><td>Kein eigener Mittelzufluss; Verlust wächst</td></tr>
+<tr><td>Cashflow</td><td>Operativer CF</td><td>−231.989 (−257.585)</td><td>Dauerhafter Cash-Burn</td></tr>
+<tr><td>Cashflow</td><td>Finanzierungs-CF</td><td>+254.876 (+117.084)</td><td>Abhängigkeit von neuen Kapitalgebern</td></tr>
+</tbody></table>
+<p><strong>Wichtige Einordnung:</strong> Das Hauptproblem ist nicht die Verschuldung bei Banken (die gibt es kaum), sondern: Das Unternehmen verbrennt jedes Jahr rund 230–260 Mio. € und hat keine Erlöse; die Liquidität reicht nur für wenige Monate bis rund ein Jahr. Ein Teil der kurzfristigen Schulden (die Warrants von 205.013 T€) ist kein Zahlungsabfluss, sondern eine nicht zahlungswirksam bewertete Position; ohne sie liegt die Current Ratio bei 3,98 (siehe Übung 08.9). Das Warnsignal liegt also bei Cash-Burn, Eigenkapitalverzehr und Finanzierungsabhängigkeit.</p>
+</details>
+</div>
+<div class="exercise folien-aufgabe">
+<h4>Folien-Aufgabe: Debt-to-Equity und Debt-to-Capital Ende 2023</h4>
+<span class="folie">S. 310</span>
+<details><summary>Lösung anzeigen</summary>
+<p><strong>Schritt 1 – Schulden bestimmen:</strong> Gesamte Schulden = langfristige Schulden + kurzfristige Schulden = 14.867 + 260.016 = 274.883 T€ (Folie rechnet mit 274.884; Rundung). Gleichzeitig = Bilanzsumme − Eigenkapital = 311.941 − 37.058 = 274.883.</p>
+<p><strong>Schritt 2 – Debt-to-Equity (Verschuldungsgrad):</strong> 274.883 / 37.058 = 7,42, also ca. <strong>742 %</strong> (Folie: 7,4 = 740 %). Pro 1 € Eigenkapital gibt es 7,42 € Schulden.</p>
+<p><strong>Schritt 3 – Debt-to-Capital (Verschuldung bezogen auf das Gesamtkapital):</strong> 274.883 / 311.941 = 0,881, also <strong>88,1 %</strong> (Folie: 0,88 = 88 %). Das Gesamtkapital (Capital) ist hier die Bilanzsumme (Eigen- plus Fremdkapital).</p>
+<p><strong>Vergleich zum Vorjahr:</strong> 2022: Schulden = 12.312 + 73.016 = 85.328 T€; D/E = 85.328 / 203.503 = 0,42 (42 %); D/C = 85.328 / 288.831 = 29,5 %. Die Verschuldung hat sich in einem Jahr von einer vorsichtigen auf eine extreme Struktur verändert.</p>
+<p><strong>Achtung (Interpretation):</strong> Die Quote ist stark durch die Position Warrants getrieben (205.013 T€ = 75 % aller Schulden). Rechnet man diese heraus: Schulden = 274.883 − 205.013 = 69.870 T€; D/E = 69.870 / 37.058 = 1,89; D/C (auf Basis der um Warrants gekürzten Bilanzsumme 106.928 T€) = 65,3 %. Auch dann bleibt das Eigenkapital dünn.</p>
+</details>
+</div>
+
+<h4>7.7 Kennzahlen, die die Krise früh gezeigt hätten</h4>
+<p>Aus Kapitel 6/7 (Liquidität, Verschuldung, Rendite) auf den Lilium-Abschluss 2023 angewandt (Rechenwege in den Übungen 08.8 bis 08.11):</p>
+<table>
+<thead><tr><th>Kennzahl</th><th>Formel</th><th>2023</th><th>2022</th><th>Signal</th></tr></thead>
+<tbody>
+<tr><td>Current Ratio</td><td>Umlaufvermögen / kurzfr. Schulden</td><td>0,84</td><td>3,03</td><td>unter 1</td></tr>
+<tr><td>Cash Ratio</td><td>Zahlungsmittel / kurzfr. Schulden</td><td>0,32</td><td>2,46</td><td>stark gefallen</td></tr>
+<tr><td>Working Capital</td><td>Umlaufvermögen − kurzfr. Schulden</td><td>−41.360 T€</td><td>+147.963 T€</td><td>negativ</td></tr>
+<tr><td>Eigenkapitalquote</td><td>EK / Bilanzsumme</td><td>11,9 %</td><td>70,5 %</td><td>dünn</td></tr>
+<tr><td>Debt-to-Equity</td><td>Schulden / EK</td><td>7,42</td><td>0,42</td><td>Sprung</td></tr>
+<tr><td>Debt-to-Capital</td><td>Schulden / Bilanzsumme</td><td>88,1 %</td><td>29,5 %</td><td>Sprung</td></tr>
+<tr><td>ROE</td><td>Jahresergebnis / durchschn. EK</td><td>−323,5 %</td><td>(nicht berechnet)</td><td>nicht sinnvoll (Verlust, EK fast aufgezehrt)</td></tr>
+<tr><td>ROA</td><td>Jahresergebnis / durchschn. Bilanzsumme</td><td>−129,5 %</td><td>(nicht berechnet)</td><td>Verlust = 1,3-fache der Bilanzsumme</td></tr>
+<tr><td>Free Cashflow</td><td>Operativer CF − Investitionen (PP&amp;E, Immat.)</td><td>−260.739 T€</td><td>−266.727 T€</td><td>Dauer-Burn</td></tr>
+<tr><td>Reichweite (Runway)</td><td>Liquide Mittel / monatlicher operativer Cash-Burn</td><td>≈ 10 Monate (mit kurzfr. Anlagen); 4,3 Monate (nur Zahlungsmittel)</td><td></td><td>reicht nicht über 2024 hinaus ohne Kapital</td></tr>
+</tbody></table>
+<div class="merke"><strong>Merke:</strong> Bei Wachstums-/Entwicklungsunternehmen ohne Umsatz sind die Rendite-Kennzahlen (ROE, ROA, Margen) wenig hilfreich, weil alle negativ sind. Entscheidend sind <strong>Liquidität und Reichweite</strong>: Wie viele Monate reicht das Geld bei dem aktuellen Cash-Burn? Dazu: Wie viel Eigenkapital ist noch da, und woher kommt neues Geld?</div>
+<p>Und die marktorientierten Kennzahlen? KGV und Dividendenrendite sind für Lilium nicht berechenbar bzw. null (kein Gewinn, keine Dividende). Einen MtB-Wert könnte man mit Aktienkurs mal Aktienzahl durch 37.058 T€ bilden; der Markt bewertete Lilium bei Börsengang (3,3 Mrd. US-$) extrem hoch, am 24.10.2024 fiel der Kurs nach den Insolvenzmeldungen auf rund 0,21 US-$ (Quelle siehe oben, interessengeleitete Pressemitteilung); eine Berechnung des MtB zu einem Stichtag hat hier keinen Beleg (Aktienzahl zu den Stichtagen nicht verifiziert). Die Lehre: Der Markt verlangte lange nur Zukunftsversprechen, der Kurs kollabierte, als die Finanzierung nicht mehr zu sichern war.</p>
+<div class="rec"><strong>Recherche: Wie eine Krise „früh" erkennbar war.</strong> Die wichtigste externe Beobachtung war die Finanzierungslücke: Das Unternehmen rechnete selbst für das erste Halbjahr 2024 mit 170–180 Mio. € Cash-Verbrauch (siehe oben) und brauchte laut Presse 2024 zusätzliche Finanzierung, die weder die öffentliche Hand (Bürgschaft abgelehnt) noch private Geldgeber rechtzeitig zusagten. Quelle: <a href="https://ainonline.com/aviation-news/futureflight/2024-10-18/german-parliament-blocks-loan-guarantee-liliums-evtol" target="_blank">AIN</a>, <a href="https://www.revolution.aero/news/2024/02/29/lilium-tightens-belt-beats-budget-in-2023/" target="_blank">Revolution.aero</a>.</div>
+
+<h3>8 · Vergleich Fassung B und Fassung C</h3>
+<p>Fassung B (PDF-S. 172–187) enthält denselben Stoff in derselben Reihenfolge (Kennzahlen: Bewertung, Beispiele marktorientierter Kennzahlen, Aufgaben MtB/KGV/Dividenden, Case Study Lilium mit den gleichen Tabellen, Seiten 177–187). Unterschied: In Fassung C trägt die MtB-Folie (S. 306) zusätzlich die <strong>handschriftlichen Notizen</strong> zur Klausurrelevanz und zu den Zahlen (BMW 34,7/98 = 0,35; Tesla 1.400/82 = 17,0; Mercedes 0,4; VW 0,16). Die Lösungsformeln und die Lilium-Daten sind identisch. Neue Folien (Formelsammlung „Für den Test") liegen hinter S. 296 und gehören in andere Kapitel.</p>
+
+<h3>9 · Übungsaufgaben (neu)</h3>
+<p>Die folgenden Aufgaben sind im Stil der Folien gehalten: erst Verständnis, dann Rechnen, am Ende Interpretation mit echten Lilium-Zahlen. Alle Lösungen sind mit Python nachgerechnet.</p>
+
+<div class="exercise neu">
+<h4>Übung 08.1: Wahr oder falsch? Marktorientierte Kennzahlen</h4>
+<p>Beurteile die Aussagen und begründe kurz.</p>
+<ol>
+<li>Ein Market-to-Book von 0,5 bedeutet, dass der Markt das Eigenkapital niedriger bewertet als die Bilanz.</li>
+<li>Das KGV kann bei Verlusten sinnvoll berechnet und wie üblich interpretiert werden.</li>
+<li>Steigt der Aktienkurs bei gleicher Dividende, sinkt die Dividendenrendite.</li>
+<li>Die Dividendenauszahlungsrate einer Firma mit EPS 2,00 € und Dividende 2,40 € beträgt 120 %; das ist langfristig problematisch.</li>
+<li>Der Enterprise Value ist immer kleiner als der Marktwert des Eigenkapitals.</li>
+<li>Der Buchwert des Eigenkapitals enthält selbst geschaffene Marken nach IFRS in voller Höhe.</li>
+</ol>
+<details><summary>Lösung anzeigen</summary>
+<ol>
+<li><strong>Wahr.</strong> MtB &lt; 1: Marktwert &lt; Buchwert.</li>
+<li><strong>Falsch.</strong> Bei Verlust ist das KGV nicht aussagekräftig (negatives EPS). Man weicht auf andere Kennzahlen (EV/Sales, Cash-Burn) aus.</li>
+<li><strong>Wahr.</strong> Dividendenrendite = Dividende / Kurs; Kurs im Nenner steigt, Rendite sinkt.</li>
+<li><strong>Wahr.</strong> 2,40 / 2,00 = 120 %: Es wird mehr ausgeschüttet als verdient (aus der Substanz); nicht dauerhaft haltbar.</li>
+<li><strong>Falsch.</strong> EV = Marktwert EK + Schulden − Kasse. Hat die Firma mehr Kasse als Schulden (Nettoliquidität), ist EV kleiner; sonst größer. „Immer" stimmt nicht.</li>
+<li><strong>Falsch.</strong> Selbst geschaffene Marken dürfen nach IAS 38 nicht aktiviert werden.</li>
+</ol>
+</details>
+</div>
+
+<div class="exercise neu">
+<h4>Übung 08.2: Fünf Kennzahlen der Alpha AG</h4>
+<p>Die Alpha AG hat 80 Mio. Aktien im Umlauf, einen Jahresüberschuss (Net Income) von 240 Mio. €, einen Aktienkurs von 54 €, eine Dividende von 1,80 € je Aktie und ein bilanzielles Eigenkapital von 960 Mio. €. Berechne EPS, KGV, Market-to-Book, Dividendenauszahlungsrate und Dividendenrendite. Wie viel wird insgesamt ausgeschüttet und wie viel thesauriert?</p>
+<details><summary>Lösung anzeigen</summary>
+<ul>
+<li>EPS = 240 / 80 = <strong>3,00 €</strong></li>
+<li>KGV = 54 / 3,00 = <strong>18</strong></li>
+<li>Marktwert EK = 54 × 80 Mio. = 4.320 Mio. €; MtB = 4.320 / 960 = <strong>4,5</strong></li>
+<li>Payout = 1,80 / 3,00 = <strong>60 %</strong></li>
+<li>Dividendenrendite = 1,80 / 54 = <strong>3,33 %</strong></li>
+<li>Ausschüttung gesamt = 1,80 × 80 = 144 Mio. €; Thesaurierung = 240 − 144 = <strong>96 Mio. €</strong> (40 % des Gewinns).</li>
+</ul>
+<p>Kontrolle: Buchwert je Aktie = 960 / 80 = 12 €; Kurs / Buchwert je Aktie = 54 / 12 = 4,5 (gleich wie MtB).</p>
+</details>
+</div>
+
+<div class="exercise neu">
+<h4>Übung 08.3: Enterprise Value und Multiplikatoren</h4>
+<p>Die Beta AG hat 200 Mio. Aktien zu 25 € Kurs, Schulden von 1.800 Mio. € und Zahlungsmittel von 600 Mio. €. EBIT: 500 Mio. €, Umsatz: 4.000 Mio. €. (a) Berechne EV, EV/EBIT, EV/Sales. (b) Die Gamma AG hat dasselbe operative Geschäft (gleiche EBIT und Umsatz), aber Marktwert des EK 3.000 Mio. €, Schulden 3.800 Mio. €, Zahlungsmittel 600 Mio. €. Berechne ihren EV und vergleiche. Warum ist der EV zum Vergleich sinnvoll?</p>
+<details><summary>Lösung anzeigen</summary>
+<p>(a) Marktwert EK = 25 × 200 = 5.000 Mio. €. EV = 5.000 + 1.800 − 600 = <strong>6.200 Mio. €</strong>. EV/EBIT = 6.200 / 500 = <strong>12,4</strong>. EV/Sales = 6.200 / 4.000 = <strong>1,55</strong>.</p>
+<p>(b) EV (Gamma) = 3.000 + 3.800 − 600 = <strong>6.200 Mio. €</strong>, also dieselben Multiplikatoren. Weil das operative Geschäft gleich ist, bekommt man denselben Unternehmenswert; der EV ist unabhängig davon, wie das Unternehmen finanziert ist (viel Eigenkapital oder viel Fremdkapital). Deshalb eignen sich EV-Multiplikatoren, um Firmen mit unterschiedlicher Kapitalstruktur zu vergleichen. Das KGV oder der MtB allein würden dagegen von der Verschuldung beeinflusst.</p>
+</details>
+</div>
+
+<div class="exercise neu">
+<h4>Übung 08.4: Market-to-Book im Branchenvergleich</h4>
+<p>Vergleiche zwei Unternehmen zu einem gemeinsamen Stichtag: Autohersteller A (Marktwert EK 60 Mrd. €, Buchwert EK 120 Mrd. €) und Softwarefirma B (Marktwert EK 900 Mrd. €, Buchwert EK 60 Mrd. €). (a) Berechne den MtB. (b) Um welchen Faktor unterscheiden sich die MtB-Werte? (c) Nenne mindestens drei Gründe, warum der Vergleich nur eingeschränkt aussagekräftig ist. (d) Welche zusätzlichen Kennzahlen würdest du heranziehen?</p>
+<details><summary>Lösung anzeigen</summary>
+<p>(a) MtB(A) = 60 / 120 = <strong>0,5</strong>; MtB(B) = 900 / 60 = <strong>15,0</strong>.</p>
+<p>(b) 15,0 / 0,5 = <strong>30</strong>: Der Markt zahlt pro Euro Buchwert bei B das 30-Fache.</p>
+<p>(c) Gründe: (1) Selbst geschaffene immaterielle Werte (Software, Marke, Daten) werden nach IAS 38 nicht aktiviert: Der Buchwert von B unterschätzt dessen Substanz, A hat dagegen viel bilanziertes Sachvermögen. (2) Unterschiedliche Wachstumserwartung und Risiken. (3) Bilanzierungsregeln und Währungen können verschieden sein. (4) Ein Stichtag ist nur eine Momentaufnahme; Kurse schwanken. (5) Der MtB sagt nichts über die Profitabilität.</p>
+<p>(d) ROE (Rendite), KGV, EV/EBIT, Dividendenrendite, Verschuldung (Debt-to-Equity), Free Cashflow.</p>
+</details>
+</div>
+
+<div class="exercise neu">
+<h4>Übung 08.5: Dividende am Ex-Tag und „selbstgemachte Dividende"</h4>
+<p>Anne besitzt 500 Aktien der Delta AG zu 80 € pro Stück. Die Delta AG schüttet 4 € je Aktie aus. (a) Wie hoch ist die Dividendenrendite? (b) Auf welchen Kurs fällt die Aktie am Ex-Tag in der Theorie, und wie verändert sich Annes Gesamtvermögen? (c) Gäbe es keine Dividende: Wie kann Anne sich dieselben 2.000 € „selbst auszahlen", und wie hoch ist dann ihr Gesamtvermögen?</p>
+<details><summary>Lösung anzeigen</summary>
+<p>(a) 4 / 80 = <strong>5,0 %</strong>.</p>
+<p>(b) Theoretischer Ex-Kurs = 80 − 4 = <strong>76 €</strong>. Vermögen vorher: 500 × 80 = 40.000 €. Nachher: Aktien 500 × 76 = 38.000 € plus Dividende 500 × 4 = 2.000 € Bargeld = 40.000 €. Es ändert sich nichts (ohne Steuern und Kosten).</p>
+<p>(c) Ohne Dividende verkauft Anne 2.000 / 80 = 25 Aktien. Sie hat 475 × 80 = 38.000 € in Aktien + 2.000 € Bargeld = 40.000 €. Fazit: Die Dividende ändert den Vermögenswert nicht, sondern nur die Form (Bargeld statt Aktien). Das ist der Kerngedanke der Dividendenirrelevanz-These (in der Praxis wirken Steuern und Transaktionskosten).</p>
+</details>
+</div>
+
+<div class="exercise neu">
+<h4>Übung 08.6: Dividendenrendite und Ausschüttungsquote 2024 und 2025</h4>
+<p>Gegeben sind drei fiktive Unternehmen (Dividende je Aktie, Kurs am Jahresende und EPS):</p>
+<table>
+<thead><tr><th>Firma</th><th>Dividende 2024</th><th>Kurs 2024</th><th>EPS 2024</th><th>Dividende 2025</th><th>Kurs 2025</th><th>EPS 2025</th></tr></thead>
+<tbody>
+<tr><td>X</td><td>2,70</td><td>45</td><td>4,50</td><td>2,80</td><td>56</td><td>7,00</td></tr>
+<tr><td>Y</td><td>4,80</td><td>120</td><td>8,00</td><td>4,80</td><td>96</td><td>4,00</td></tr>
+<tr><td>Z</td><td>3,00</td><td>200</td><td>12,00</td><td>3,00</td><td>150</td><td>12,50</td></tr>
+</tbody></table>
+<p>(a) Berechne Dividendenrendite und Ausschüttungsquote für beide Jahre. (b) Bei welcher Firma ist die Dividende am stärksten gefährdet? (c) Y zahlt unverändert 4,80 €; warum ist die Rendite trotzdem gestiegen, und ist das gut?</p>
+<details><summary>Lösung anzeigen</summary>
+<table>
+<thead><tr><th>Firma</th><th>Rendite 2024</th><th>Rendite 2025</th><th>Payout 2024</th><th>Payout 2025</th></tr></thead>
+<tbody>
+<tr><td>X</td><td>2,70/45 = 6,0 %</td><td>2,80/56 = 5,0 %</td><td>2,70/4,50 = 60 %</td><td>2,80/7,00 = 40 %</td></tr>
+<tr><td>Y</td><td>4,80/120 = 4,0 %</td><td>4,80/96 = 5,0 %</td><td>4,80/8,00 = 60 %</td><td>4,80/4,00 = 120 %</td></tr>
+<tr><td>Z</td><td>3,00/200 = 1,5 %</td><td>3,00/150 = 2,0 %</td><td>3,00/12 = 25 %</td><td>3,00/12,50 = 24 %</td></tr>
+</tbody></table>
+<p>(b) <strong>Y:</strong> Payout 2025 = 120 %: Die Dividende liegt über dem Gewinn; langfristig nur durch Rücklagen oder Schulden zu halten, Kürzungsrisiko hoch.</p>
+<p>(c) Die Rendite von Y stieg von 4 % auf 5 %, weil der <em>Kurs</em> fiel (120 → 96, −20 %), nicht weil die Dividende höher wurde. Das ist kein gutes Zeichen: Der Markt hat die gesunkenen Gewinne (EPS 8 → 4) eingepreist. Eine hohe Dividendenrendite kann eine „Dividendenfalle" sein.</p>
+</details>
+</div>
+
+<div class="exercise neu">
+<h4>Übung 08.7: KGV, Trailing vs. Forward, Verlustunternehmen</h4>
+<p>(a) Vier Aktien (Kurs / EPS des letzten Jahres): Auto: 40 € / 5,00 €; Versicherer: 250 € / 25 €; Immobilien: 20 € / −1,50 €; Tech: 300 € / 4,00 €. Berechne jeweils das KGV und die Gewinnrendite. (b) Die Delta-Aktie kostet 60 €; EPS der letzten 12 Monate 2,00 €, erwartetes EPS der nächsten 12 Monate 3,00 €. Berechne Trailing- und Forward-KGV. (c) Welche Aktie ist am „billigsten"? Was sagt das aus?</p>
+<details><summary>Lösung anzeigen</summary>
+<p>(a) Auto: 40 / 5 = <strong>8</strong>; Gewinnrendite 5 / 40 = 12,5 %. Versicherer: 250 / 25 = <strong>10</strong>; 10 %. Tech: 300 / 4 = <strong>75</strong>; 1,33 %. Immobilien: 20 / (−1,5) = −13,3: <strong>nicht aussagekräftig</strong> (Verlust); Gewinnrendite −7,5 %.</p>
+<p>(b) Trailing = 60 / 2,00 = <strong>30</strong>; Forward = 60 / 3,00 = <strong>20</strong>. Gewinnrendite 3,33 % bzw. 5 %.</p>
+<p>(c) Rechnerisch am niedrigsten ist das Auto-KGV (8). Das heißt aber nicht automatisch „billig": Autos sind zyklisch, der aktuelle Gewinn kann ein Hoch sein; Tech mit KGV 75 erwartet hohes Wachstum. Vergleiche nur innerhalb der Branche und prüfe Nachhaltigkeit des Gewinns, Wachstum und Risiko.</p>
+</details>
+</div>
+
+<div class="exercise neu">
+<h4>Übung 08.8: Lilium – Liquidität und Verschuldung 2023 vs. 2022</h4>
+<p>Berechne mit den Zahlen der Folien S. 311/312 (in T€) für 31.12.2023 und 31.12.2022: (a) Current Ratio, (b) Cash Ratio, (c) Working Capital, (d) Eigenkapitalquote, (e) Debt-to-Equity, (f) Debt-to-Capital. Interpretiere.</p>
+<details><summary>Lösung anzeigen</summary>
+<p><strong>Zahlen:</strong> Umlaufvermögen 218.656 (2022: 220.979); kurzfr. Schulden 260.016 (73.016); Zahlungsmittel 83.508 (179.581); EK 37.058 (203.503); Bilanzsumme 311.941 (288.831); Schulden gesamt 274.883 (85.328).</p>
+<ul>
+<li>(a) Current Ratio: 218.656 / 260.016 = <strong>0,84</strong> (2022: 220.979 / 73.016 = <strong>3,03</strong>)</li>
+<li>(b) Cash Ratio: 83.508 / 260.016 = <strong>0,32</strong> (2022: 179.581 / 73.016 = <strong>2,46</strong>)</li>
+<li>(c) Working Capital: 218.656 − 260.016 = <strong>−41.360</strong> (2022: <strong>+147.963</strong>)</li>
+<li>(d) EK-Quote: 37.058 / 311.941 = <strong>11,9 %</strong> (2022: 203.503 / 288.831 = <strong>70,5 %</strong>)</li>
+<li>(e) D/E: 274.883 / 37.058 = <strong>7,42</strong> (2022: 85.328 / 203.503 = <strong>0,42</strong>)</li>
+<li>(f) D/C: 274.883 / 311.941 = <strong>88,1 %</strong> (2022: 85.328 / 288.831 = <strong>29,5 %</strong>)</li>
+</ul>
+<p><strong>Interpretation:</strong> Alle Kennzahlen haben sich massiv verschlechtert. Die kurzfristigen Mittel decken die kurzfristigen Schulden nicht mehr (Current Ratio unter 1; negatives Working Capital); die Eigenkapitalquote sank von 70 % auf 12 %, der Verschuldungsgrad stieg auf das 18-Fache (7,42 / 0,42 ≈ 17,7).</p>
+</details>
+</div>
+
+<div class="exercise neu">
+<h4>Übung 08.9: Lilium – Warrants herausrechnen (Mini-Fallstudie)</h4>
+<p>Die kurzfristigen Schulden 2023 enthalten die Position „Warrants" von 205.013 T€ (2022: 26.267 T€). Warrants sind Optionsscheine, die mit dem Fair Value bewertet werden und bei Ausübung zu neuen Aktien statt zu Bargeld-Abflüssen führen. (a) Berechne die Current Ratio 2023 und 2022 ohne Warrants. (b) Berechne die „liquide Mittel"-Quote: (Zahlungsmittel + kurzfr. sonstige finanzielle Vermögenswerte) / kurzfr. Schulden ohne Warrants für 2023. (c) Was lernst du? Bleibt Lilium trotzdem ein Risikofall?</p>
+<details><summary>Lösung anzeigen</summary>
+<p>(a) Kurzfr. Schulden ohne Warrants: 2023: 260.016 − 205.013 = 55.003; 2022: 73.016 − 26.267 = 46.749. Current Ratio ohne Warrants: 2023: 218.656 / 55.003 = <strong>3,98</strong>; 2022: 220.979 / 46.749 = <strong>4,73</strong>.</p>
+<p>(b) (83.508 + 111.616) / 55.003 = 195.124 / 55.003 = <strong>3,55</strong>.</p>
+<p>(c) Die schlechte Current Ratio (0,84) wird fast vollständig durch die Warrants verursacht, die aber keine reguläre Zahlungsverpflichtung sind. Aus Sicht der Zahlungsfähigkeit ist die kurzfristige Rechnungsbegleichung ohne Warrants zunächst nicht kritisch. <strong>Aber:</strong> Lilium hat keinen Umsatz und verbrennt rund 230–260 Mio. € pro Jahr. Die liquiden Mittel (195.124 T€) reichen nur für etwa 9 bis 10 Monate (siehe Übung 08.10). Deshalb bleibt Lilium ein Risikofall. Lehre: Kennzahlen immer mit Blick auf die Zusammensetzung der Positionen und den Cash-Burn interpretieren; eine einzelne Quote kann täuschen.</p>
+</details>
+</div>
+
+<div class="exercise neu">
+<h4>Übung 08.10: Lilium – Cash-Burn, Free Cashflow und Reichweite</h4>
+<p>Mit den Folien S. 315–318 (in T€): (a) Prüfe, dass operativer CF + Investing-CF + Financing-CF die Veränderung der Zahlungsmittel erklären (2023). (b) Berechne den Free Cashflow 2023 (operativer CF minus Auszahlungen für immaterielle Vermögenswerte und Sachanlagen). (c) Wie hoch ist der durchschnittliche monatliche operative Cash-Burn 2023? (d) Wie viele Monate reichen (i) die Zahlungsmittel, (ii) Zahlungsmittel plus kurzfristige sonstige finanzielle Vermögenswerte (Bilanz S. 311)? (e) Wie viel Eigenkapital wurde 2023 netto (nach Transaktionskosten) eingeworben?</p>
+<details><summary>Lösung anzeigen</summary>
+<p>(a) −231.989 − 119.749 + 254.876 = −96.862; plus Währungseffekt 789 = −96.073; Anfangsbestand 179.581 − 96.073 = <strong>83.508</strong> = Bilanzposten. ✓</p>
+<p>(b) Capex = 79 + 28.671 = 28.750. Free Cashflow = −231.989 − 28.750 = <strong>−260.739 T€</strong> (2022: −257.585 − 200 − 8.942 = −266.727).</p>
+<p>(c) 231.989 / 12 = <strong>19.332 T€ pro Monat</strong> (≈ 19,3 Mio. €); mit Capex (FCF) 260.739 / 12 = 21.728 T€.</p>
+<p>(d) (i) 83.508 / 19.332 = <strong>4,3 Monate</strong>. (ii) 195.124 / 19.332 = <strong>10,1 Monate</strong> (bei FCF: 195.124 / 21.728 = 9,0 Monate). Das ist ein Näherungswert, der die Annahme trifft, dass der Cash-Burn gleich bleibt und alle finanziellen Vermögenswerte kurzfristig verfügbar sind.</p>
+<p>(e) Eingeworben: 104.409 + 159.227 + 1.091 + 290 = 265.017; minus Transaktionskosten 6.112 = <strong>258.905 T€</strong> (Bruttoeinnahmen enthalten teils Optionsscheine, die zum Teil als Verbindlichkeit erfasst sind).</p>
+<p>Fazit: Ohne neue Finanzierung reichte das Geld bei diesem Verbrauch nicht länger als rund ein Jahr: ein klassisches „Going-Concern"-Risiko.</p>
+</details>
+</div>
+
+<div class="exercise neu">
+<h4>Übung 08.11: Lilium – EK-Fortschreibung, Rendite und Verlust je Aktie</h4>
+<p>(a) Schreibe das Eigenkapital 2023 fort: Anfangsbestand 203.503; Gesamtergebnis −389.157; aktienbasierte Vergütung 22.805; Umwandlung von Vergütungsrechten −39; erstmalige Erfassung Mai-2023-Warrants 82.829; Kapitalerhöhung CMPO &amp; PIPE 90.433; Ausübung der Warrants 26.684. (b) Wie viel Prozent der Kapitalrücklagen (gezeichnetes Kapital + Agio + sonstige Kapitalrücklagen) sind Ende 2023 durch Verluste aufgezehrt? (c) ROE und ROA 2023 (mit durchschnittlichem EK bzw. durchschnittlicher Bilanzsumme). (d) Aus dem Verlust je Aktie von 0,71 € und dem Jahresfehlbetrag: Wie viele Aktien (gewichteter Durchschnitt) wurden im Schnitt 2023 verwendet? Warum sinkt der Verlust je Aktie trotz steigendem Gesamtverlust?</p>
+<details><summary>Lösung anzeigen</summary>
+<p>(a) 203.503 − 389.157 = −185.654; + 22.805 = −162.849; − 39 = −162.888; + 82.829 = −80.059; + 90.433 = 10.374; + 26.684 = <strong>37.058 T€</strong> ✓ (stimmt mit der Bilanz).</p>
+<p>(b) Kapitalrücklagen = 5.728 + 1.008.759 + 381.778 = 1.396.265. Kumulierter Verlust 1.359.317. Anteil = 1.359.317 / 1.396.265 = <strong>97,4 %</strong>.</p>
+<p>(c) Durchschnittliches EK = (203.503 + 37.058) / 2 = 120.280,5; ROE = −389.119 / 120.280,5 = <strong>−323,5 %</strong>. Durchschnittliche Bilanzsumme = (288.831 + 311.941) / 2 = 300.386; ROA = −389.119 / 300.386 = <strong>−129,5 %</strong>. Solche Werte sind nicht sinnvoll interpretierbar; sie zeigen nur, dass der Verlust größer ist als das gesamte Kapital.</p>
+<p>(d) 389.119 / 0,71 ≈ <strong>548 Mio. Aktien</strong> (grob, wegen der Rundung von 0,71). 2022: 253.064 / 0,80 ≈ 316 Mio. Der Verlust je Aktie sinkt, weil die Aktienzahl stark gewachsen ist (Kapitalerhöhungen): Der Verlust wird auf mehr Aktien verteilt, die Verwässerung nimmt zu. Das EPS allein täuscht hier eine Verbesserung vor.</p>
+</details>
+</div>
+
+<div class="exercise neu">
+<h4>Übung 08.12: Frühwarnsystem für Startups – Interpretation</h4>
+<p>Du bist Kreditanalystin bei einer Bank und sollst entscheiden, ob du einem Entwicklungsunternehmen ohne Umsatz (wie Lilium) eine Bürgschaft empfiehlst. (a) Nenne fünf Kennzahlen/Positionen, die du zuerst prüfst, und was du jeweils erwartest. (b) Warum ist ein hoher Aktienkurs (bzw. Marktwert) kein Beweis für Zahlungsfähigkeit? (c) Was würde sich ändern, wenn das Unternehmen Umsätze und Gewinne hätte (welche marktorientierten Kennzahlen kämen hinzu)?</p>
+<details><summary>Lösung anzeigen</summary>
+<p>(a) Beispiele: (1) <strong>Operativer Cashflow / Cash-Burn</strong> und Reichweite (Monate) – kurze Reichweite = Risiko. (2) <strong>Liquide Mittel</strong> (Zahlungsmittel + kurzfr. Anlagen) im Verhältnis zu den kurzfristig fälligen Verpflichtungen. (3) <strong>Eigenkapitalquote / Debt-to-Equity</strong> – dünnes Eigenkapital = geringer Verlustpuffer. (4) <strong>Kumulierter Verlust im Verhältnis zum eingezahlten Kapital</strong> (hier 97 %). (5) <strong>Finanzierungs-Cashflow</strong>: Von wem kommt das Geld, und wie verlässlich? Zusätzlich: Zusammensetzung der kurzfristigen Schulden (nicht zahlungswirksame Posten wie Warrants), Going-Concern-Hinweise im Anhang und im Prüfungsurteil.</p>
+<p>(b) Der Marktwert bildet Erwartungen ab, kein Geld. Zahlungsfähig ist, wer seine Rechnungen mit liquiden Mitteln bezahlen kann. Fällt die Finanzierung weg, kann der Kurs binnen Tagen kollabieren (Lilium: −61 % am Tag der Mitteilung).</p>
+<p>(c) Dann kämen KGV, Dividendenrendite, Payout, EV/EBIT und ROE sinnvoll ins Spiel; bei Gewinnen wäre auch der Market-to-Book aussagekräftiger. Bei reinen Entwicklungsfirmen ohne Umsatz sind EV/Sales und KGV nicht anwendbar.</p>
+</details>
+</div>
+
+<h3>Glossar</h3>
+<div class="glossar">
+<table>
+<thead><tr><th>Begriff (DE)</th><th>Englisch</th><th>Kurzerklärung</th></tr></thead>
+<tbody>
+<tr><td>Marktwert des Eigenkapitals / Marktkapitalisierung</td><td>Market Value of Equity / Market Capitalization</td><td>Aktienpreis × Anzahl Aktien</td></tr>
+<tr><td>Buchwert des Eigenkapitals</td><td>Book Value of Equity</td><td>Eigenkapital laut Bilanz</td></tr>
+<tr><td>Market-to-Book Ratio (Kurs-Buchwert-Verhältnis)</td><td>Market-to-Book / Price-to-Book</td><td>Marktwert EK / Buchwert EK</td></tr>
+<tr><td>Kurs-Gewinn-Verhältnis (KGV)</td><td>Price-Earnings Ratio (P/E)</td><td>Aktienpreis / Gewinn pro Aktie</td></tr>
+<tr><td>Gewinn pro Aktie</td><td>Earnings per Share (EPS)</td><td>Net Income / Anzahl Aktien</td></tr>
+<tr><td>Dividendenauszahlungsrate (Ausschüttungsquote)</td><td>Dividend Payout Ratio</td><td>Dividende je Aktie / EPS</td></tr>
+<tr><td>Dividendenrendite</td><td>Dividend Yield</td><td>Dividende je Aktie / Aktienpreis</td></tr>
+<tr><td>Unternehmenswert</td><td>Enterprise Value (EV)</td><td>Marktwert EK + Schulden − Kasse</td></tr>
+<tr><td>EV/EBIT, EV/Sales</td><td>Enterprise Value to EBIT / Sales</td><td>Unternehmenswert bezogen auf EBIT bzw. Umsatz</td></tr>
+<tr><td>Verschuldungsgrad</td><td>Debt-to-Equity</td><td>Schulden / Eigenkapital</td></tr>
+<tr><td>Verschuldung zum Gesamtkapital</td><td>Debt-to-Capital</td><td>Schulden / (Eigen- + Fremdkapital)</td></tr>
+<tr><td>Zahlungsmittelabfluss</td><td>Cash Burn</td><td>Monatlicher/jährlicher Mittelverbrauch (hier: operativer CF)</td></tr>
+<tr><td>Optionsschein</td><td>Warrant</td><td>Recht auf Kauf von Aktien zu festem Preis; bei Lilium als Verbindlichkeit zum Fair Value erfasst</td></tr>
+<tr><td>Börsenmantel</td><td>SPAC (Special Purpose Acquisition Company)</td><td>Börsennotierte Hülle, die ein Unternehmen per Fusion an die Börse bringt</td></tr>
+<tr><td>Insolvenz in Eigenverwaltung</td><td>Self-administration (Debtor in Possession)</td><td>Geschäftsführung bleibt im Amt unter Aufsicht eines Sachwalters</td></tr>
+<tr><td>Fortführungsprognose</td><td>Going Concern</td><td>Annahme, dass das Unternehmen auf absehbare Zeit weiterbesteht</td></tr>
+</tbody></table>
+</div>
+
+<div class="checkliste">
+<h3>Das solltest du am Ende können</h3>
+<ul>
+<li>Marktwert und Buchwert des Eigenkapitals definieren und erklären, warum sie abweichen.</li>
+<li>Die Formeln EPS, Market-to-Book, KGV, Dividendenauszahlungsrate, Dividendenrendite sowie EV/EBIT und EV/Sales auswendig anwenden.</li>
+<li>Ergebnisse interpretieren: hoch/niedrig, Grenzen (Branche, Stichtag, Rechnungslegung, Verlust).</li>
+<li>Den Vergleich MtB BMW/VW/Mercedes vs. Tesla nachrechnen (0,35; 0,16; 0,4; 17) und begründen.</li>
+<li>Erklären, was nach der Dividendenzahlung mit dem Kurs passiert, und Dividenden vs. Thesaurierung argumentativ abwägen.</li>
+<li>Debt-to-Equity und Debt-to-Capital für Lilium rechnen (7,4 bzw. 88 %) und Liquiditätskennzahlen (Current, Cash Ratio, Working Capital) anwenden.</li>
+<li>Aus Bilanz, GuV, Kapitalflussrechnung und EK-Veränderung Warnsignale ablesen (Cash-Burn, Eigenkapitalverzehr, Finanzierungsabhängigkeit).</li>
+<li>Den Unterschied zwischen Jahresverlust und Cash-Verlust erklären (nicht zahlungswirksame Posten).</li>
+</ul>
+</div>
+</section>

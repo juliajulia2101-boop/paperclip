@@ -1,0 +1,537 @@
+<section class="chapter" id="kap04">
+
+<h2>04 · Konzernabschluss, Bilanz, Gesamtergebnisrechnung, Eigenkapitalveränderungsrechnung</h2>
+
+<p class="lead">Dieses Kapitel öffnet den „Werkzeugkasten“ der IFRS-Rechnungslegung: Welche Bestandteile hat ein (konsolidierter) IFRS-Abschluss, wie sieht die Bilanz nach IAS 1 aus (Mindestposten, Gliederung nach Fristigkeit), wie funktioniert die Gesamtergebnisrechnung (GuV plus sonstiges Ergebnis, Gesamtkosten- vs. Umsatzkostenverfahren) und was zeigt die Eigenkapitalveränderungsrechnung? Für den Test zählt vor allem, dass du die Struktur der Rechenwerke sicher im Kopf hast, kurz- von langfristig trennen kannst und weißt, was ins „sonstige Ergebnis“ gehört. Wichtig für 2027: IFRS 18 ersetzt IAS 1 – das steht nicht auf den Folien und ist deshalb pink ergänzt.</p>
+<p class="folienbereich">Folien: PDF-S. 251–267 (Fassung C)</p>
+
+<div class="rec">
+<strong>Recherche – Hinweis zur Quellenlage:</strong> Bei der Recherche für dieses Kapitel waren nur Websuchen möglich; das Abrufen der vollständigen Seiten (z. B. ifrs.org, KPMG, EY, BDO, ESMA) wurde vom Netzwerk blockiert. Pinke Aussagen mit Link stützen sich daher auf Suchergebnis-Zusammenfassungen der genannten Seiten, nicht auf den vollständig gelesenen Standardtext. Pinke Aussagen mit dem Vermerk „eigenes Fachwissen, nicht abgerufen“ solltest du bei Bedarf gegen den Standard (IAS 1, IFRS 10, IFRS 18) oder das HGB gegenprüfen. Konkrete Zahlen aus Geschäftsberichten (SAP, Siemens, Bayer, VW) konnten <strong>nicht verifiziert</strong> werden und sind deshalb bewusst nicht aufgeführt.
+</div>
+
+<h3>1. Einzel- vs. Konzernabschluss: Recap (Anwendungsbereich der IFRS)</h3>
+<p>Die Folie 252 ist eine Matrix, die du aus dem vorherigen Kapitel kennst: Sie zeigt, <em>wann</em> in Deutschland nach IFRS und wann nach HGB bilanziert wird. Links stehen die <strong>Kapitalgesellschaften</strong> (AG, GmbH, …), rechts die <strong>sonstigen Rechtsformen</strong> (z. B. Personengesellschaften). Jeweils wird unterschieden, ob das Unternehmen <strong>kapitalmarktorientiert</strong> ist (Aktien oder Anleihen am organisierten Markt) oder <strong>nicht kapitalmarktorientiert</strong>. Waagerecht trennt die Folie zwischen <strong>Konzernabschluss</strong> (oben) und <strong>Einzelabschluss</strong> (unten).</p>
+<table>
+<thead><tr><th>Ebene</th><th>kapitalmarktorientiert</th><th>nicht kapitalmarktorientiert</th></tr></thead>
+<tbody>
+<tr><td><strong>Konzernabschluss</strong> (Kapitalgesellschaften und sonstige Rechtsformen)</td><td>IFRS-<strong>Pflicht</strong></td><td>IFRS-<strong>Wahlrecht</strong> (§ 315a HGB n.F.)</td></tr>
+<tr><td><strong>Einzelabschluss</strong> Kapitalgesellschaften</td><td colspan="2">HGB: §§ 238 bis 289a</td></tr>
+<tr><td><strong>Einzelabschluss</strong> sonstige Rechtsformen</td><td colspan="2">HGB: §§ 238 bis 263</td></tr>
+</tbody>
+</table>
+<p>Die dunkel hinterlegten Felder auf der Folie kennzeichnen <strong>Mitgliedstaatenwahlrechte nach der EU-Verordnung (Art. 5)</strong>: Die EU schreibt IFRS nur für den Konzernabschluss kapitalmarktorientierter Mütter zwingend vor; für alles andere dürfen die Mitgliedstaaten selbst entscheiden, ob sie IFRS erlauben oder vorschreiben. Rechts außen steht: Die Konzernabschluss-Regeln für sonstige Rechtsformen gelten nur für bestimmte Unternehmen (insbesondere § 264a, § 340l HGB sowie §§ 9, 11 PublG – also z. B. GmbH &amp; Co. KG, Kreditinstitute und große publizitätspflichtige Unternehmen). <span class="folie">S. 252</span></p>
+<div class="merke"><strong>Merke:</strong> Konzernabschluss kapitalmarktorientiert = IFRS <em>Pflicht</em>. Konzernabschluss nicht kapitalmarktorientiert = IFRS <em>Wahlrecht</em>. Einzelabschluss = in Deutschland weiterhin HGB.</div>
+<div class="rec"><strong>Recherche:</strong> Auf der Folie steht „§ 315a HGB n.F.“. Die Vorschrift ist seit dem Bilanzrichtlinie-Umsetzungsgesetz (BilRUG, 2015) als <strong>§ 315e HGB</strong> nummeriert (eigenes Fachwissen, nicht abgerufen – bitte im HGB nachschlagen). Inhaltlich ändert das nichts an der Aussage der Folie.</div>
+
+<h4>Was ist eigentlich ein Konzernabschluss?</h4>
+<p>Ein Konzern besteht aus einem Mutterunternehmen und seinen Tochterunternehmen, die rechtlich selbstständig bleiben, wirtschaftlich aber wie <em>eine</em> Einheit geführt werden. Der Konzernabschluss (Consolidated Financial Statements) tut so, als wäre der Konzern ein einziges Unternehmen: Er fasst die Abschlüsse aller einbezogenen Gesellschaften zusammen und eliminiert konzerninterne Beziehungen (z. B. Forderungen und Verbindlichkeiten zwischen Mutter und Tochter), damit nichts doppelt gezählt wird. Analogie: Wer seine Haushaltskasse, sein Girokonto und sein Sparbuch gemeinsam betrachtet, darf das Geld, das er vom Giro aufs Sparbuch überweist, nicht zweimal als Vermögen zählen.</p>
+<div class="rec"><strong>Recherche – Wann ist man Mutterunternehmen (IFRS 10)?</strong> Nach IFRS 10 gilt das <em>Beherrschungskonzept</em> (Control): Ein Investor beherrscht ein Beteiligungsunternehmen nur, wenn drei Elemente zusammen erfüllt sind: (1) <strong>Verfügungsgewalt</strong> über das Beteiligungsunternehmen (bestehende Rechte, die relevanten Tätigkeiten zu lenken – typischerweise Stimmrechte, aber auch Organbesetzungs- und Weisungsrechte), (2) <strong>Risiko bzw. Anrechte auf schwankende Renditen</strong> und (3) die <strong>Fähigkeit, die Verfügungsgewalt zu nutzen, um die Höhe dieser Renditen zu beeinflussen</strong>. Ändern sich die Umstände, muss die Beherrschung neu beurteilt werden. Alle beherrschten Unternehmen bilden zusammen den <strong>Konsolidierungskreis</strong>. Quellen: <a href="https://datenbank.nwb.de/Dokument/454672_7/" target="_blank">NWB-Datenbank zu IFRS 10.7</a>, <a href="https://www.haufe.de/id/norm/ifrs-10-konzernabschluesse-8-HI16196731_p8.html" target="_blank">Haufe IFRS-Kommentar zu IFRS 10</a>. Anders als nach HGB-Tradition kommt es also nicht (nur) auf die Kapitalmehrheit an, sondern auf tatsächliche Beherrschung.</div>
+
+<h3>2. Publikationsplattformen (Beispiele)</h3>
+<p>Ein Abschluss nützt Investoren und Gläubigern nur, wenn er auch veröffentlicht wird. Die Folie 253 ordnet Beispiele für Publikationswege zu:</p>
+<ul>
+<li><strong>IFRS – international:</strong> Websites (die Geschäftsberichte stehen im Investor-Relations-Bereich der Unternehmensseiten) und <strong>XBRL</strong> (eXtensible Business Reporting Language, ein maschinenlesbares Datenformat, mit dem Abschlusszahlen standardisiert „getaggt“ werden, damit Computer sie auswerten können).</li>
+<li><strong>HGB – national:</strong> <strong>Bundesanzeiger</strong> und <strong>Unternehmensregister</strong>.</li>
+<li><strong>Zusätzliche Publikationsplattformen:</strong> <strong>Transparenzregister</strong> (Register der wirtschaftlich Berechtigten, also der „wahren“ Eigentümer hinter Gesellschaften) und <strong>Sustainability Reporting</strong> (z. B. der „Sustainability Reporting Navigator“, srnav.com).</li>
+</ul>
+<p>Quellenangaben auf der Folie: bundesanzeiger.de, srnav.com, transparenzregister.de. <span class="folie">S. 253</span></p>
+<div class="rec"><strong>Recherche – wie läuft die Offenlegung in der Praxis?</strong>
+<ul>
+<li>Für IFRS-Konzernabschlüsse kapitalmarktorientierter Unternehmen in der EU gilt das <strong>European Single Electronic Format (ESEF)</strong>: Die Abschlüsse werden im XHTML-Format veröffentlicht und der IFRS-Konzernabschluss zusätzlich mit <strong>iXBRL</strong> (inline XBRL) maschinenlesbar ausgezeichnet. Quelle: <a href="https://www.pwc.de/de/im-fokus/accounting-reporting/esef-europaweit-einheitliches-berichtsformat.html" target="_blank">PwC zu ESEF</a>, <a href="https://drsc.de/app/uploads/2024/08/Briefing-Paper_CSRD_ESEF.pdf" target="_blank">DRSC Briefing Paper CSRD/ESEF</a>. Die Pflicht gilt nach einer DRSC-Quelle für Geschäftsjahre, die am oder nach dem 1.1.2020 beginnen (aus Suchergebnis, Detail nicht im Volltext geprüft).</li>
+<li>Seit dem Gesetz zur Umsetzung der Digitalisierungsrichtlinie (DiRUG) werden offenzulegende Unterlagen beim <strong>Unternehmensregister</strong> eingereicht statt wie früher beim Bundesanzeiger; ESEF-Abschlüsse kapitalmarktorientierter Unternehmen laufen ebenfalls über das Unternehmensregister. Quelle: <a href="https://www.frankfurt-main.ihk.de/recht/recht-und-steuern-aktuell/neue-offenlegungspflichten-nach-dirug-5559734" target="_blank">IHK Frankfurt zu DiRUG</a>. Die Folie nennt Bundesanzeiger und Unternehmensregister gleichrangig – das ist als „Beispiele“ okay, in der Praxis ist das Unternehmensregister heute die zentrale Anlaufstelle.</li>
+<li>Für in den USA notierte Unternehmen ist die zentrale Plattform die Datenbank <strong>SEC EDGAR</strong> (eigenes Fachwissen, in dieser Recherche nicht verifiziert).</li>
+</ul></div>
+
+<h3>3. Konsolidierte Abschlüsse</h3>
+<p>Konsolidierte Jahresabschlüsse zeigen ein <strong>aggregiertes Bild der Unternehmensleistung</strong>. Die Folie 254 hält fest:</p>
+<ul>
+<li>Sie enthalten die Schlüsselelemente des Jahresabschlusses nach IFRS.</li>
+<li>Die Tochtergesellschaften werden einbezogen (Einbeziehung von Tochtergesellschaften).</li>
+<li>Es entsteht ein aggregiertes Bild – wie viel jede einzelne Gesellschaft beiträgt, sieht man nicht.</li>
+<li>Einzelne informative Details über Tochtergesellschaften können deshalb fehlen. Daher bleibt die <strong>Einzelberichterstattung</strong> weiterhin relevant (z. B. der HGB-Einzelabschluss der Tochter).</li>
+</ul>
+<p>Als Beispiel zeigt die Folie einen Ausschnitt aus dem <strong>Siemens-Geschäftsbericht 2023</strong>: <em>Note 35 – List of subsidiaries and associated companies pursuant to Section 313 para. 2 of the German Commercial Code</em>, Stand 30. September 2023, mit der Spalte „Equity interest in %“. Allein für Deutschland sind dort „Germany (121 companies)“ aufgeführt, z. B. Acuson GmbH (Erlangen), Berliner Vermögensverwaltung GmbH oder Innomotics GmbH – meist mit 100 % Anteilsbesitz. Das zeigt anschaulich, wie viele rechtlich selbstständige Einheiten in einem einzigen Konzernabschluss „verschwinden“. <span class="folie">S. 254</span></p>
+<div class="merke"><strong>Merke:</strong> Konzernabschluss = Bild des Konzerns als <em>wirtschaftliche Einheit</em>. Vorteil: Gesamtbild. Nachteil: Einzelheiten der Töchter gehen verloren – deshalb zusätzlich Einzelabschlüsse und Angaben zum Anteilsbesitz im Anhang.</div>
+<p>Die Folien 251 und 255 sind reine Agenda-Folien: Sie zeigen, dass wir uns im Gliederungspunkt „3. IFRS-Abschlüsse – 3.2 Elemente konsolidierter Abschlüsse (Übersicht, Bilanz, Gesamtergebnisrechnung, Eigenkapitalveränderungsrechnung, Kapitalflussrechnung, Segmentberichterstattung, Anhang)“ befinden. In diesem Kapitel sind es die Punkte Übersicht bis Eigenkapitalveränderungsrechnung. <span class="folie">S. 251, 255</span></p>
+
+<h3>4. Abschlussbestandteile</h3>
+<p>Ein vollständiger IFRS-Abschluss besteht aus (Folie 256):</p>
+<ol>
+<li><strong>Bilanz</strong> (Statement of Financial Position) – Vermögen und Kapital zu einem Stichtag.</li>
+<li><strong>Gesamtergebnisrechnung (GuV)</strong> (Statement of Comprehensive Income / Profit or Loss) – Erfolg einer Periode.</li>
+<li><strong>Eigenkapitalveränderungsrechnung</strong> (Statement of Changes in Equity) – wie sich das Eigenkapital verändert hat.</li>
+<li><strong>Kapitalflussrechnung</strong> (Statement of Cash Flows) – Zahlungsströme (nächstes Kapitel).</li>
+<li><strong>Segmentberichterstattung</strong> (Segment Reporting) – <em>nur für kapitalmarktorientierte Unternehmen</em>.</li>
+<li><strong>Anhang</strong> (Notes) – Erläuterungen, Methoden, Detailangaben.</li>
+</ol>
+<p><span class="folie">S. 256</span> Eselsbrücke für die ersten vier: <em>„Bestand – Erfolg – Eigenkapital – Cash“</em>: Die Bilanz ist ein Foto (Stichtag), die anderen drei sind Filme (Zeitraum).</p>
+<div class="rec"><strong>Recherche:</strong> Die Aufzählung entspricht dem Grundgedanken von IAS 1 (vollständiger Abschluss inkl. Vergleichsinformationen der Vorperiode). Die Segmentberichterstattung ist nicht in IAS 1, sondern in IFRS 8 geregelt und betrifft Unternehmen mit öffentlich gehandelten Wertpapieren (eigenes Fachwissen, nicht abgerufen). Ab 2027 ändern sich Teile der Darstellung durch IFRS 18, siehe Abschnitt 11.</div>
+
+<h3>5. Bilanz mit Mindestangaben nach IAS 1.54</h3>
+<p>IAS 1 schreibt <strong>kein starres Bilanzschema</strong> vor, sondern eine Liste von <strong>Mindestposten</strong>, die auf der Bilanz selbst („on the face“) erscheinen müssen. Die Folie 257 zeigt sie getrennt nach Aktiva (Vermögenswerte, Assets) und Passiva (Eigenkapital und Schulden, Equity and Liabilities):</p>
+<table>
+<thead><tr><th>Aktiva (Assets)</th><th>Passiva (Equity and Liabilities)</th></tr></thead>
+<tbody>
+<tr><td>Immaterielle Vermögenswerte (Intangible assets)</td><td>Gezeichnetes Kapital und Rücklagen (Issued capital and reserves)</td></tr>
+<tr><td>Biologische Vermögenswerte nach IAS 41 (Biological assets)</td><td>Nicht beherrschende Anteile (Non-controlling interests)</td></tr>
+<tr><td>Sachanlagen (Property, plant and equipment)</td><td>Rückstellungen (Provisions)</td></tr>
+<tr><td>Als Finanzinvestition gehaltene Immobilien (Investment property)</td><td>Steuerschulden (Tax liabilities)</td></tr>
+<tr><td>Finanzielle Vermögenswerte (Financial assets)</td><td>Finanzielle Verbindlichkeiten (Financial liabilities)</td></tr>
+<tr><td>At equity bewertete Beteiligungen (Investments accounted for using the equity method)</td><td>Verbindlichkeiten aus Lieferung und Leistung (Trade payables)</td></tr>
+<tr><td>Vorräte (Inventories)</td><td>Schulden in direktem Zusammenhang mit zur Veräußerung gehaltenen langfristigen Vermögenswerten (Liabilities of disposal groups held for sale)</td></tr>
+<tr><td>Forderungen aus Lieferung und Leistung und sonstige Forderungen (Trade and other receivables)</td><td></td></tr>
+<tr><td>Steuererstattungsansprüche (Tax assets)</td><td></td></tr>
+<tr><td>Zahlungsmittel und Zahlungsmitteläquivalente (Cash and cash equivalents)</td><td></td></tr>
+<tr><td>Zur Veräußerung gehaltene langfristige Vermögenswerte und Veräußerungsgruppen (Assets held for sale)</td><td></td></tr>
+</tbody>
+</table>
+<p><span class="folie">S. 257</span></p>
+<p>Wie liest man diese Liste? Sie ist keine Gliederung, sondern ein <strong>Mindestkatalog</strong>: Ein Unternehmen mit Wald (Forstbetrieb) muss „Biologische Vermögenswerte“ zeigen, ein Maschinenbauer ohne solche Bestände nicht. Nicht beherrschende Anteile (früher „Minderheitenanteile“) sind der Teil des Konzern-Eigenkapitals, der Fremdgesellschaftern an Tochterunternehmen gehört, an denen die Mutter weniger als 100 % hält. Bei „zur Veräußerung gehaltenen“ Vermögenswerten steht der Verkauf fest bevor (IFRS 5); sie werden separat gezeigt, damit man sieht, was bald aus dem Konzern abgeht.</p>
+<div class="rec"><strong>Recherche:</strong> Die Folienliste ist eine Auswahl. Nach IAS 1.54 gehören zu den Mindestposten zusätzlich u. a. <strong>latente Steueransprüche und latente Steuerschulden</strong> (Deferred tax assets / liabilities) – die Folie nennt nur laufende „Steuererstattungsansprüche“ und „Steuerschulden“. Zudem muss der auf die Eigentümer des Mutterunternehmens entfallende Teil des Eigenkapitals vom Anteil nicht beherrschender Gesellschafter getrennt gezeigt werden (eigenes Fachwissen zu IAS 1.54, <a href="https://ifrs.org/issued-standards/list-of-standards/ias-1-presentation-of-financial-statements" target="_blank">IFRS-Foundation-Seite zu IAS 1</a>; Volltext nicht abgerufen). Außerdem sind weitere Posten oder Zwischensummen darzustellen, wenn das für das Verständnis der Vermögenslage relevant ist.</div>
+
+<h3>6. Bilanz nach IFRS: Weitere Regelungen</h3>
+<ul>
+<li><strong>Keine vorgeschriebene Reihenfolge oder Gliederung der Posten.</strong> IAS 1 sagt nur, <em>welche</em> Posten mindestens erscheinen, nicht in welcher Reihenfolge. (Im HGB dagegen schreibt § 266 ein festes Gliederungsschema vor.)</li>
+<li><strong>Strukturierung nach Fristigkeit</strong> (current / non-current):
+ <ul>
+ <li><em>Grundsatz:</em> Vermögenswerte und Verbindlichkeiten sind in einen <strong>lang- und kurzfristigen Teil</strong> aufzugliedern.</li>
+ <li><em>Ausnahme:</em> In seltenen Fällen ist eine Strukturierung nach der <strong>Liquidität</strong> zulässig (typisch bei Banken, bei denen eine Fristigkeitsgliederung wenig aussagt).</li>
+ </ul></li>
+<li><strong>Die Übernahme der HGB-Gliederung ist nicht möglich</strong> – es gilt IFRS. Wer nach IFRS bilanziert, kann also nicht einfach das HGB-Schema (§ 266) „stehen lassen“.</li>
+</ul>
+<p><span class="folie">S. 258</span></p>
+<div class="beispiel"><strong>Beispiel (Aufbau einer IFRS-Bilanz, erfundene Zahlen in Mio. EUR):</strong>
+<table>
+<thead><tr><th>Aktiva</th><th>Mio. €</th><th>Passiva</th><th>Mio. €</th></tr></thead>
+<tbody>
+<tr><td><strong>Langfristige Vermögenswerte</strong></td><td>700</td><td><strong>Eigenkapital</strong></td><td>600</td></tr>
+<tr><td>Immaterielle Vermögenswerte</td><td>150</td><td>davon Mutterunternehmen</td><td>540</td></tr>
+<tr><td>Sachanlagen</td><td>500</td><td>davon nicht beherrschende Anteile</td><td>60</td></tr>
+<tr><td>At equity bewertete Beteiligungen</td><td>50</td><td><strong>Langfristige Schulden</strong></td><td>500</td></tr>
+<tr><td><strong>Kurzfristige Vermögenswerte</strong></td><td>500</td><td>Finanzielle Verbindlichkeiten</td><td>400</td></tr>
+<tr><td>Vorräte</td><td>200</td><td>Rückstellungen</td><td>100</td></tr>
+<tr><td>Forderungen L+L</td><td>180</td><td><strong>Kurzfristige Schulden</strong></td><td>100</td></tr>
+<tr><td>Zahlungsmittel</td><td>120</td><td>Verbindlichkeiten L+L</td><td>100</td></tr>
+<tr><td><strong>Summe Aktiva</strong></td><td><strong>1.200</strong></td><td><strong>Summe Passiva</strong></td><td><strong>1.200</strong></td></tr>
+</tbody>
+</table>
+Die Bilanz muss immer ausgeglichen sein: Aktiva = Passiva (Vermögen = Eigenkapital + Schulden). Hier: 700 + 500 = 1.200 = 600 + 500 + 100.</div>
+<div class="rec"><strong>Recherche – weitere IAS-1-Grundregeln im Umfeld der Bilanz</strong> (Standardtext nicht im Volltext abgerufen; Paragraphenangaben aus <a href="https://xrb.govt.nz/dmsdocument/1224" target="_blank">XRB-Fassung von IAS 1</a> und <a href="https://www.moore-global.com/?p=5521" target="_blank">Moore Global</a>):
+<ul>
+<li><strong>Unternehmensfortführung (Going Concern, IAS 1.25–26):</strong> Der Abschluss wird unter der Annahme aufgestellt, dass das Unternehmen weitergeführt wird – außer das Management will liquidieren oder hat keine realistische Alternative. Bei der Einschätzung sind mindestens zwölf Monate ab dem Stichtag zu betrachten; wesentliche Unsicherheiten sind anzugeben.</li>
+<li><strong>Saldierungsverbot (Offsetting, IAS 1.32–35):</strong> Vermögenswerte und Schulden sowie Erträge und Aufwendungen dürfen grundsätzlich nicht miteinander verrechnet werden, es sei denn, ein IFRS verlangt oder erlaubt es ausdrücklich. (Paragraphenbereich quellenbelegt; die inhaltliche Formulierung ist eigenes Fachwissen.)</li>
+<li><strong>Fair Presentation (IAS 1.15–24):</strong> Der Abschluss muss ein den tatsächlichen Verhältnissen entsprechendes Bild vermitteln; die Einhaltung der IFRS ist hierfür der Weg.</li>
+</ul></div>
+
+<h3>7. Bilanz: Kurzfristige Vermögenswerte</h3>
+<p>Ein Vermögenswert ist <strong>kurzfristig (current)</strong>, wenn mindestens eines der folgenden Merkmale zutrifft (Folie 259):</p>
+<ul>
+<li>Realisation, Verkauf oder Verbrauch innerhalb des <strong>normalen Geschäftszyklus</strong> (Operating Cycle) wird erwartet,</li>
+<li>er wird <strong>primär zu Handelszwecken</strong> gehalten,</li>
+<li>die <strong>Realisation innerhalb von 12 Monaten nach dem Bilanzstichtag</strong> wird erwartet,</li>
+<li>es handelt sich um <strong>Zahlungsmittel oder Zahlungsmitteläquivalente</strong>.</li>
+</ul>
+<p>Alle anderen Vermögenswerte sind langfristig (non-current). <span class="folie">S. 259</span></p>
+<h4>Was bedeutet „normaler Geschäftszyklus“?</h4>
+<p>Der <strong>Operating Cycle</strong> ist die Zeitspanne vom Einkauf der Materialien über die Produktion und den Verkauf bis zum Zahlungseingang. Bei einem Supermarkt dauert er Tage oder Wochen, bei einem Weinhändler mit Reifelager mehrere Jahre. Warum ist das wichtig? Weil Vorräte und Forderungen eines Unternehmens <em>auch dann</em> kurzfristig sind, wenn der Zyklus länger als 12 Monate dauert. Beispiel Werft: Ein Schiff wird 30 Monate gebaut; die Vorräte „Schiff im Bau“ gehören trotzdem zu den kurzfristigen Vermögenswerten, weil sie im normalen Geschäftszyklus der Werft verbraucht bzw. verkauft werden. Die 12-Monats-Regel greift nur, wenn kein Geschäftszyklus als Maßstab zur Verfügung steht oder der Posten nicht dazu gehört.</p>
+<div class="rec"><strong>Recherche:</strong> Die vier Merkmale entsprechen den Kriterien in IAS 1.66; der Operating Cycle ist die Zeit zwischen dem Erwerb von Vermögenswerten für die Verarbeitung und deren Realisierung in Zahlungsmitteln. Zahlungsmittel zählen als kurzfristig, solange sie nicht in ihrer Verwendung beschränkt sind (z. B. nicht mindestens 12 Monate zur Tilgung einer Schuld gesperrt). Quellen: <a href="https://www.bdo.nz/en-nz/accounting-alert-june-2017/common-errors-in-presentation-of-financial-stateme" target="_blank">BDO NZ</a>, <a href="https://xrb.govt.nz/dmsdocument/1224" target="_blank">XRB (IAS-1-Paragraphenübersicht)</a>.</div>
+
+<h3>8. Bilanz: Kurzfristige Schulden</h3>
+<p>Eine Schuld ist <strong>kurzfristig</strong>, wenn mindestens eines zutrifft (Folie 260):</p>
+<ul>
+<li>Die Tilgung wird innerhalb des <strong>gewöhnlichen Geschäftszyklus</strong> erwartet,</li>
+<li>sie wird <strong>primär zu Handelszwecken</strong> gehalten,</li>
+<li>die Tilgung ist <strong>innerhalb von 12 Monaten nach dem Bilanzstichtag</strong> fällig,</li>
+<li>das Unternehmen hat <strong>kein Recht</strong>, die Erfüllung der Schuld um <strong>mindestens 12 Monate zu verschieben</strong>.</li>
+</ul>
+<p><strong>IAS 1-Besonderheit laut Folie:</strong> Auch fällig werdende, ursprünglich langfristige Verbindlichkeiten, für die <em>vor Bilanzveröffentlichung</em> eine Fälligkeitsverschiebung eingetreten ist, sind als <strong>kurzfristig</strong> auszuweisen. Gemeint ist: Entscheidend ist die Lage am <em>Stichtag</em>. Wenn ein Darlehen am Stichtag binnen 12 Monaten fällig ist und die Bank erst danach (aber noch vor der Veröffentlichung des Abschlusses) die Laufzeit verlängert, bleibt es im Abschluss trotzdem kurzfristig – die Verlängerung ist ein späteres Ereignis (im Anhang anzugeben).</p>
+<div class="formel">Faustregel: kurzfristig, wenn Restlaufzeit &lt; 12 Monate (ab Bilanzstichtag)</div>
+<p><span class="folie">S. 260</span></p>
+<div class="beispiel"><strong>Beispiel:</strong> Bilanzstichtag 31.12.2026. Ein Bankdarlehen über 500 Mio. € ist am 30.09.2027 zurückzuzahlen (Restlaufzeit 9 Monate) → kurzfristige Schuld. Ein zweites Darlehen über 300 Mio. € läuft bis 31.03.2030 (39 Monate) → langfristig. Ein Tilgungsdarlehen mit jährlicher Rate von 50 Mio. € zum 30.06. wird <em>aufgeteilt</em>: Die in den nächsten 12 Monaten fällige Rate (50 Mio. €) steht unter den kurzfristigen Schulden, der Rest unter den langfristigen.</div>
+<div class="rec"><strong>Recherche – Änderungen von IAS 1 zur Klassifizierung (gültig seit 2024):</strong> Das IASB hat die Kriterien 2020 und 2022 präzisiert; die Änderungen gelten verpflichtend für Geschäftsjahre ab dem <strong>1.1.2024</strong> und wurden von der EU übernommen (Übernahme laut Deloitte-Österreich-Newsletter am 19.12.2023). Kernaussagen: (1) Maßgeblich sind die <strong>am Abschlussstichtag bestehenden Rechte</strong> des Unternehmens, die Erfüllung der Schuld um mindestens 12 Monate zu verschieben; die <em>Erwartung des Managements</em>, ob es dieses Recht ausüben wird, ist unerheblich. (2) <strong>Covenants</strong> (Kreditklauseln, z. B. Mindest-Eigenkapitalquote): Nur Covenants, die am oder vor dem Stichtag eingehalten werden müssen, beeinflussen die Einstufung. Covenants, die erst nach dem Stichtag geprüft werden, sind für die Einstufung irrelevant – dafür sind zusätzliche Anhangangaben nötig (etwa zu Umständen, die auf Schwierigkeiten bei der Einhaltung hindeuten). Der Folienhinweis „kein Recht, die Erfüllung zu verschieben“ ist genau dieses Recht-Kriterium. Quellen: <a href="https://kpmg.com/de/de/home/themen/2024/08/bilanzausweis-von-verbindlichkeiten.html" target="_blank">KPMG Deutschland</a>, <a href="https://blogs.pwc.de/en/accounting-aktuell/article/234313/aenderungen-an-ias-1-zur-klassifizierung-von-schulden-mit-covenants/" target="_blank">PwC Deutschland</a>, <a href="https://kpmg.com/at/de/home/insights/2024/01/rn-01-2024-eu-uebernimmt-aenderungen-an-ias-1.html" target="_blank">KPMG Österreich</a>.</div>
+
+<h3>9. Gesamtergebnisrechnung</h3>
+<h4>9.1 Grundidee: GuV + sonstiges Ergebnis (OCI)</h4>
+<p>Folie 261 zeigt einen Kasten: Die <strong>Gesamtergebnisrechnung</strong> besteht aus der <strong>GuV</strong> (Gewinn- und Verlustrechnung, Profit or Loss) <em>und</em> dem <strong>sonstigen Ergebnis</strong> (OCI = Other Comprehensive Income). Es gilt:</p>
+<div class="formel">Gesamtergebnis = Gewinn oder Verlust (GuV) + sonstiges Ergebnis (OCI)</div>
+<p>Die GuV enthält die „normalen“ Erträge und Aufwendungen, die den Periodengewinn bilden. Das OCI enthält Wertänderungen, die nach den IFRS <em>direkt im Eigenkapital</em> erfasst werden, ohne die GuV zu berühren – z. B. weil sie noch nicht realisiert sind oder das Ergebnis sonst stark schwanken würde. <span class="folie">S. 261</span></p>
+<div class="rec"><strong>Recherche – was gehört ins OCI?</strong> IAS 1 verlangt, die OCI-Posten danach zu gruppieren, ob sie später in die GuV umgegliedert werden (<strong>Recycling / Reclassification adjustment</strong>) oder nicht:
+<table class="rec">
+<thead><tr><th>Wird später in die GuV umgegliedert (recycelt)</th><th>Wird nie in die GuV umgegliedert</th></tr></thead>
+<tbody>
+<tr><td>Währungsumrechnungsdifferenzen ausländischer Tochterunternehmen (IAS 21), Umgliederung bei Abgang der Einheit</td><td>Neubewertungen von Pensionsplänen (versicherungsmathematische Gewinne/Verluste, IAS 19)</td></tr>
+<tr><td>Effektiver Teil von Cashflow-Hedges (realisierte Beträge werden bei Wirksamwerden des Grundgeschäfts umgegliedert)</td><td>Neubewertungsrücklage bei Sachanlagen/immateriellen Vermögenswerten (IAS 16)</td></tr>
+<tr><td></td><td>Wertänderungen von Eigenkapitalinstrumenten, die erfolgsneutral zum beizulegenden Zeitwert bewertet werden (FVOCI-Option, IFRS 9)</td></tr>
+</tbody>
+</table>
+Quellen: <a href="https://accaglobal.com/an/en/student/exam-support-resources/professional-exams-study-resources/strategic-business-reporting/technical-articles/profit-loss-oci.html" target="_blank">ACCA – Profit, loss and other comprehensive income</a>, <a href="https://ifrscommunity.com/knowledge-base/other-comprehensive-income-oci/" target="_blank">IFRS Community – OCI</a>, <a href="https://opentuition.com/glossary/reclassification-adjustment/" target="_blank">OpenTuition – Reclassification adjustment</a>. (Die Quellen bestätigen die Zuordnung der Pensionsneubewertung, der Neubewertung nach IAS 16 und der FVOCI-Eigenkapitalinstrumente zu „nicht umgegliedert“ sowie der Währungsumrechnung zu „umgegliedert“; die Detailzuordnung der Cashflow-Hedges im Entstehungszeitpunkt ist aus dem Suchergebnis nicht explizit belegt und beruht auf eigenem Fachwissen.) Eselsbrücke: <em>„Währung und Hedge dürfen zurück in die GuV, Pension, Neubewertung und Aktien-FVOCI bleiben für immer im Eigenkapital.“</em></div>
+
+<h4>9.2 Darstellung (Folie 262)</h4>
+<p>Die Darstellung von Gewinn und Verlust und sonstigem Ergebnis muss nach <strong>IAS 1.81A</strong> neben den Abschnitten „Gewinn oder Verlust“ und „Sonstiges Ergebnis“ <strong>drei Summen</strong> zeigen:</p>
+<ul>
+<li>den <strong>Gewinn oder Verlust</strong>,</li>
+<li>das <strong>sonstige Ergebnis insgesamt</strong>,</li>
+<li>das <strong>Gesamtergebnis</strong> für die Periode, d. h. die Summe aus Gewinn/Verlust und sonstigem Ergebnis.</li>
+</ul>
+<p><strong>Ein oder zwei Aufstellungen:</strong> Man kann alles in <em>einer</em> Gesamtergebnisrechnung zeigen (erst GuV-Teil, dann OCI-Teil). Oder man erstellt <em>zwei</em> Aufstellungen: eine separate GuV und darauf aufbauend eine Überleitungsrechnung zum Gesamtergebnis, die mit dem Gewinn beginnt. Die Folie sagt dazu: Bei Vorliegen einer <strong>gesonderten GuV</strong> wird in der Gesamtergebnisrechnung vom Abschnitt „Gewinn oder Verlust“ abgesehen (er steht ja schon in der separaten GuV). <span class="folie">S. 262</span></p>
+
+<h4>9.3 Verfahren (Folie 263)</h4>
+<ul>
+<li><strong>Wesentliche Einzelposten</strong> sind entweder in der GuV oder im Anhang anzugeben – z. B. außerplanmäßige Abschreibungen oder die Veräußerung von Finanzanlagen. Hintergrund: Ein außergewöhnlich großer Einmaleffekt würde sonst die Aussagekraft des Gewinns verzerren.</li>
+<li><strong>Darstellung der GuV</strong> in zwei zulässigen Verfahren: <strong>Gesamtkostenverfahren (GKV)</strong> und <strong>Umsatzkostenverfahren (UKV)</strong>. Beim UKV sind Anhangangaben zu Abschreibungen und Personalaufwand erforderlich.</li>
+<li>Das <strong>Ergebnis je Aktie (Earnings per Share, EPS)</strong> nach <strong>IAS 33</strong> ist grundsätzlich in der Gesamtergebnisrechnung auszuweisen.</li>
+</ul>
+<p><span class="folie">S. 263</span></p>
+<div class="formel">Unverwässertes EPS = Ergebnis, das den Stammaktionären des Mutterunternehmens zusteht / gewichtete durchschnittliche Anzahl Stammaktien</div>
+<p>Fallstricke: Im Zähler steht <em>nicht</em> das gesamte Konzernergebnis, sondern nur der Anteil der Mutter-Aktionäre (Anteil nicht beherrschender Gesellschafter abziehen). Hoch = viel Gewinn je Aktie – aber nur zwischen Unternehmen mit ähnlicher Aktienzahl/Struktur direkt vergleichbar. <em>(Formel: eigene didaktische Zusammenfassung des IAS-33-Grundprinzips.)</em></p>
+
+<h4>9.4 Struktur der Gesamtergebnisrechnung (Folie 264)</h4>
+<p>Die Folie zeigt die klassische Staffelform auf Englisch. Die fettgedruckten Zwischensummen sind die „Anker“ der Ergebnisanalyse:</p>
+<table>
+<thead><tr><th>Posten (englisch)</th><th>Deutsch</th><th>Zwischensumme?</th></tr></thead>
+<tbody>
+<tr><td>Revenues or Sales</td><td>Umsatzerlöse</td><td></td></tr>
+<tr><td>Cost of Goods Sold</td><td>Umsatzkosten (Herstellungskosten der verkauften Produkte)</td><td></td></tr>
+<tr><td><strong>Gross Profit</strong></td><td>Bruttogewinn (Bruttoergebnis vom Umsatz)</td><td>Umsatzerlöse − Umsatzkosten</td></tr>
+<tr><td>Selling Expenses</td><td>Vertriebskosten</td><td></td></tr>
+<tr><td>Administrative or General Expenses</td><td>Verwaltungsaufwendungen</td><td></td></tr>
+<tr><td>Other Income and Expense</td><td>Sonstige Erträge und Aufwendungen</td><td></td></tr>
+<tr><td><strong>Income from Operations</strong></td><td>Betriebsergebnis</td><td>Bruttogewinn − Vertrieb − Verwaltung ± Sonstiges</td></tr>
+<tr><td>Financing costs</td><td>Finanzierungsaufwendungen</td><td></td></tr>
+<tr><td><strong>Income before Income Tax</strong></td><td>Ergebnis vor Ertragsteuern</td><td>Betriebsergebnis − Finanzierungskosten</td></tr>
+<tr><td>Income Tax</td><td>Ertragsteuern</td><td></td></tr>
+<tr><td><strong>Income from Continuing Operations</strong></td><td>Ergebnis aus fortgeführten Geschäftsbereichen</td><td>Ergebnis vor Steuern − Steuern</td></tr>
+<tr><td>Discontinued Operations</td><td>Ergebnis aus aufgegebenen Geschäftsbereichen</td><td></td></tr>
+<tr><td><strong>Net Income</strong></td><td>Periodenergebnis (Jahresüberschuss/-fehlbetrag)</td><td>Fortgeführt + aufgegeben</td></tr>
+<tr><td>Non-Controlling Interest</td><td>Nicht beherrschende Anteile (Ergebnisanteil)</td><td></td></tr>
+<tr><td>Earnings Per Share</td><td>Ergebnis je Aktie</td><td></td></tr>
+</tbody>
+</table>
+<p><span class="folie">S. 264</span></p>
+<div class="beispiel"><strong>Beispiel (erfundene Zahlen, Mio. €):</strong> Umsatzerlöse 2.000; Umsatzkosten 1.200 → <strong>Bruttogewinn 800</strong>. Vertriebskosten 250, Verwaltungsaufwendungen 150, sonstige Erträge/Aufwendungen saldiert −20 → <strong>Betriebsergebnis 380</strong> (800 − 250 − 150 − 20). Finanzierungsaufwand 60 → <strong>Ergebnis vor Steuern 320</strong>. Ertragsteuern 30 % = 96 → <strong>Ergebnis aus fortgeführten Geschäftsbereichen 224</strong>. Aufgegebener Geschäftsbereich −14 → <strong>Periodenergebnis 210</strong>. Davon nicht beherrschende Anteile 30 → Anteil der Mutter-Aktionäre 180. Bei 90 Mio. Aktien: <strong>EPS = 180 / 90 = 2,00 €</strong>.</div>
+<p><strong>Wichtig zum Verständnis:</strong> Die Zeile „Non-Controlling Interest“ ist kein Aufwand, der den Gewinn mindert, sondern eine <em>Verteilung</em> des bereits ermittelten Periodenergebnisses auf Mutter-Aktionäre und Fremdgesellschafter. Die Folie ordnet die Staffel nach Funktionen (Cost of Goods Sold, Selling, Administrative) – sie entspricht damit der Logik des <strong>Umsatzkostenverfahrens</strong>.</p>
+<div class="rec"><strong>Recherche (Hinweis zur Folie):</strong> Die Folie zeigt Zwischensummen wie „Income from Operations“, die in IAS 1 selbst <em>nicht</em> definiert sind; IAS 1 erlaubt zusätzliche Zwischensummen, aber jedes Unternehmen füllt „Betriebsergebnis“ unterschiedlich. Genau diese Lücke schließt IFRS 18 ab 2027 (siehe Abschnitt 11; Quelle: <a href="https://www.forvismazars.com/de/en/who-we-are/news/press-media/newsletters/newsletter-ifrs/newsletter-ifrs-3-2025/ifrs-18-eckpunkte-zur-neuen-darstellung" target="_blank">Forvis Mazars</a>, <a href="https://www.icaew.com/technical/corporate-reporting/corporate-reporting-resources/by-all-accounts/articles/2024/new-ifrs-accounting-standard-to-aid-analysis-of-financial-performance" target="_blank">ICAEW</a>).</div>
+
+<h4>9.5 Gesamtkostenverfahren (GKV) vs. Umsatzkostenverfahren (UKV) (Folie 265)</h4>
+<table>
+<thead><tr><th>GKV nach IAS 1.102</th><th>UKV nach IAS 1.103</th></tr></thead>
+<tbody>
+<tr><td>Umsatzerlöse</td><td>Umsatzerlöse</td></tr>
+<tr><td>Sonstige Erträge</td><td>Umsatzkosten</td></tr>
+<tr><td>Veränderungen des Bestands an Fertigerzeugnissen und unfertigen Erzeugnissen</td><td>Bruttogewinn</td></tr>
+<tr><td>Aufwendungen für RHB (Roh-, Hilfs- und Betriebsstoffe)</td><td>Sonstige Erträge</td></tr>
+<tr><td>Aufwendungen für Leistungen an Arbeitnehmer</td><td>Vertriebskosten</td></tr>
+<tr><td>Aufwand für planmäßige Abschreibungen</td><td>Verwaltungsaufwendungen</td></tr>
+<tr><td>Andere Aufwendungen</td><td>Andere Aufwendungen</td></tr>
+<tr><td>Gesamtaufwand</td><td>Gewinn vor Steuern</td></tr>
+<tr><td>Gewinn vor Steuern</td><td></td></tr>
+</tbody>
+</table>
+<p><span class="folie">S. 265</span></p>
+<h4>Der Unterschied in einfachen Worten</h4>
+<ul>
+<li><strong>GKV (Nature of Expense Method):</strong> Alle Aufwendungen der Periode werden nach ihrer <em>Art</em> gezeigt (Material, Personal, Abschreibungen, …), unabhängig davon, ob die Produkte verkauft wurden. Damit die Rechnung stimmt, müssen die <strong>Bestandsveränderungen</strong> an Fertigerzeugnissen und unfertigen Erzeugnissen mit angesetzt werden: Wer mehr produziert als verkauft, hat einen Teil der Aufwendungen in Lagerbestände „verpackt“ – die Bestandsmehrung wird deshalb als Ertrag hinzugerechnet, damit die Rechnung nur die verkaufte Leistung belastet. Wer Lager abbaut, verkauft mehr als er produziert; die Bestandsminderung wirkt dann wie zusätzlicher Aufwand.</li>
+<li><strong>UKV (Function of Expense Method / Cost of Sales Method):</strong> Es werden nur die Aufwendungen angesetzt, die zu den <em>verkauften</em> Produkten gehören („Umsatzkosten“), und die übrigen Kosten nach <em>Funktionsbereichen</em> (Vertrieb, Verwaltung, ggf. Forschung &amp; Entwicklung). Bestandsveränderungen tauchen nicht auf, da die Herstellungskosten der nicht verkauften Produkte in der Bilanz (Vorräte) bleiben. Dafür müssen im <strong>Anhang</strong> Abschreibungen und Personalaufwand nach Art angegeben werden.</li>
+</ul>
+<div class="merke"><strong>Merke:</strong> GKV = nach <em>Art</em> der Aufwendungen, braucht Bestandsveränderung, zeigt <em>Gesamtleistung</em>. UKV = nach <em>Funktion</em>, zeigt <em>Umsatzkosten</em> und Bruttogewinn, braucht Anhangangaben zu Abschreibungen und Personal. <strong>Beide führen zum selben Gewinn vor Steuern.</strong></div>
+<div class="beispiel"><strong>Beispiel (selbst gerechnet, Mio. €) – derselbe Gewinn, zwei Darstellungen:</strong>
+<table>
+<thead><tr><th>GKV</th><th>Mio. €</th><th>UKV</th><th>Mio. €</th></tr></thead>
+<tbody>
+<tr><td>Umsatzerlöse</td><td>1.000</td><td>Umsatzerlöse</td><td>1.000</td></tr>
+<tr><td>Bestandsmehrung Fertige/Unfertige</td><td>+50</td><td>Umsatzkosten</td><td>−580</td></tr>
+<tr><td>Sonstige Erträge</td><td>+20</td><td><strong>Bruttogewinn</strong></td><td><strong>420</strong></td></tr>
+<tr><td>Materialaufwand</td><td>−400</td><td>Sonstige Erträge</td><td>+20</td></tr>
+<tr><td>Personalaufwand</td><td>−250</td><td>Vertriebskosten</td><td>−95</td></tr>
+<tr><td>Planmäßige Abschreibungen</td><td>−80</td><td>Verwaltungsaufwendungen</td><td>−80</td></tr>
+<tr><td>Andere Aufwendungen</td><td>−90</td><td>Andere Aufwendungen</td><td>−15</td></tr>
+<tr><td><strong>Gewinn vor Steuern</strong></td><td><strong>250</strong></td><td><strong>Gewinn vor Steuern</strong></td><td><strong>250</strong></td></tr>
+</tbody>
+</table>
+Herleitung der Umsatzkosten: Die Herstellkosten der Periode betragen Material 400 + Personal (Produktion) 150 + Abschreibungen (Produktion) 50 + andere Aufwendungen (Produktion) 30 = 630. Davon sind 50 in die Lagerbestände gewandert (Bestandsmehrung) → Umsatzkosten = 630 − 50 = 580. Vertrieb = 60 Personal + 10 Abschreibung + 25 andere = 95; Verwaltung = 40 + 20 + 20 = 80; übrige andere Aufwendungen 15. Kontrolle: 580 + 95 + 80 + 15 = 770 und 400 + 250 + 80 + 90 − 50 = 770. Im Anhang des UKV wären Personalaufwand 250 und Abschreibungen 80 anzugeben.</div>
+<div class="rec"><strong>Recherche:</strong> IAS 1 (Paragraphen 99 ff.) verlangt, dass Aufwendungen entweder nach Art oder nach Funktion gegliedert werden, je nachdem, welche Darstellung verlässlicher und relevanter ist. Die Folie nennt „Aufwand für planmäßige Abschreibungen“; im Standard geht es allgemeiner um „Abschreibungen und Wertminderungen“ (eigenes Fachwissen, nicht abgerufen). <strong>Praxis:</strong> Welche DAX-Konzerne GKV oder UKV nutzen, konnte in dieser Recherche nicht anhand der Geschäftsberichte verifiziert werden (nicht verifiziert). International ist die funktionale Darstellung (UKV) weit verbreitet; deshalb sind die Kennzahlen Bruttomarge und EBIT-Marge der Folie für UKV-Bilanzierer direkt ablesbar.</div>
+
+<h3>10. Eigenkapitalveränderungsrechnung</h3>
+<h4>10.1 Rechtlicher Rahmen und Ziel (Folie 266)</h4>
+<ul>
+<li><strong>HGB:</strong> Verpflichtender Bestandteil des Konzernabschlusses seit dem <em>Bilanzrechtsformgesetz</em> (2004) – gemeint ist das Bilanzrechtsreformgesetz.</li>
+<li><strong>IFRS:</strong> Notwendiger Bestandteil eines IFRS-Jahresabschlusses gemäß <strong>IAS 1</strong>.</li>
+<li><strong>Ziel:</strong> Die Eigenkapitalveränderungen einer Periode übersichtlich und nachvollziehbar darlegen.</li>
+<li><strong>Mögliche Eigenkapitalveränderungen:</strong>
+ <ul>
+ <li>Aufwendungen und Erträge (GuV),</li>
+ <li>Kapitaltransaktionen zwischen Eigentümern und Unternehmen (<strong>Kapitalerhöhungen, Kapitalherabsetzungen, Dividendenzahlungen</strong>).</li>
+ </ul></li>
+</ul>
+<p><span class="folie">S. 266</span></p>
+<div class="rec"><strong>Recherche (Hinweis zur Folie):</strong> Auf der Folie steht „Bilanzrechtsformgesetz“ – das ist ein Tippfehler; das Gesetz heißt <strong>Bilanzrechtsreformgesetz (BilReG)</strong> von 2004. Die HGB-Regelung zum Konzern-Eigenkapitalspiegel wird durch den DRS 22 konkretisiert (eigenes Fachwissen, nicht abgerufen – bitte bei Bedarf in § 297 HGB nachschlagen).</div>
+
+<h4>10.2 Notwendigkeit und Inhalte (Folie 267)</h4>
+<p>Warum braucht man eine eigene Rechnung, wenn Bilanz und GuV doch schon da sind? Weil das Eigenkapital durch <em>mehrere unterschiedliche Quellen</em> verändert wird, die man in Bilanz und GuV nicht sauber trennen kann. Die Folie nennt vier Gründe:</p>
+<ul>
+<li><strong>Erfolgswirksame Komponenten</strong> des Periodenergebnisses (Gewinn oder Verlust aus der GuV),</li>
+<li><strong>erfolgsneutrale Komponenten</strong> (direkte Erfassung im Eigenkapital, also das OCI: z. B. Währungsumrechnung, Neubewertungen),</li>
+<li><strong>Ein- und Auszahlungen von/an Eigenkapitalgeber</strong> (Kapitalerhöhung, Dividende, Aktienrückkauf),</li>
+<li><strong>Trennung der Beträge</strong>, die den <strong>Anteilseignern des Mutterunternehmens</strong> und den <strong>Minderheitsgesellschaftern</strong> (nicht beherrschende Anteile) zuzurechnen sind.</li>
+</ul>
+<p><span class="folie">S. 267</span></p>
+<h4>Aufbau und Rechenlogik</h4>
+<p>Die Eigenkapitalveränderungsrechnung (EKV) ist typischerweise eine Tabelle: In den Spalten stehen die Eigenkapitalbestandteile (gezeichnetes Kapital, Kapitalrücklage, Gewinnrücklagen, sonstige Rücklagen aus OCI, Summe Anteile der Mutter, nicht beherrschende Anteile, Gesamteigenkapital), in den Zeilen die Veränderungen. Die Grundformel lautet:</p>
+<div class="formel">Eigenkapital Ende = Eigenkapital Anfang + Gesamtergebnis (GuV + OCI) + Kapitalerhöhungen − Kapitalherabsetzungen − Dividenden (± sonstige Transaktionen mit Eigentümern)</div>
+<div class="beispiel"><strong>Beispiel (selbst gerechnet, Mio. €):</strong>
+<table>
+<thead><tr><th>Zeile</th><th>Mutter</th><th>Nicht beherrschende Anteile</th><th>Gesamt</th></tr></thead>
+<tbody>
+<tr><td>Eigenkapital 1.1.</td><td>900</td><td>100</td><td>1.000</td></tr>
+<tr><td>Periodenergebnis (GuV)</td><td>+240</td><td>+60</td><td>+300</td></tr>
+<tr><td>Sonstiges Ergebnis (OCI)</td><td>+30</td><td>+10</td><td>+40</td></tr>
+<tr><td><strong>Gesamtergebnis</strong></td><td><strong>+270</strong></td><td><strong>+70</strong></td><td><strong>+340</strong></td></tr>
+<tr><td>Dividendenzahlung</td><td>−100</td><td>−20</td><td>−120</td></tr>
+<tr><td>Kapitalerhöhung</td><td>+200</td><td>0</td><td>+200</td></tr>
+<tr><td><strong>Eigenkapital 31.12.</strong></td><td><strong>1.270</strong></td><td><strong>150</strong></td><td><strong>1.420</strong></td></tr>
+</tbody>
+</table>
+Kontrolle: 1.000 + 340 − 120 + 200 = 1.420. Die Dividende ist <em>kein Aufwand</em>: Sie mindert das Eigenkapital direkt (Gewinnverwendung) und taucht deshalb nicht in der GuV, sondern nur in der EKV und der Kapitalflussrechnung auf.</div>
+<div class="rec"><strong>Recherche:</strong> Nach IAS 1.106 muss die EKV u. a. das Gesamtergebnis der Periode mit getrennter Zuordnung zu Eigentümern des Mutterunternehmens und nicht beherrschenden Anteilen, die Effekte rückwirkender Änderungen nach IAS 8 und eine Überleitung der Buchwerte je Eigenkapitalkomponente zeigen (eigenes Fachwissen, Standardtext nicht abgerufen). Diese Tabellenlogik passt zu den vier Punkten der Folie 267.</div>
+
+<h3>11. Ausblick (Recherche): IFRS 18 ersetzt IAS 1 ab 1.1.2027</h3>
+<div class="rec"><strong>Recherche – das steht nicht auf den Folien, ist aber für die Praxis ab 2027 entscheidend:</strong>
+<p>Der IASB hat im April 2024 <strong>IFRS 18 „Presentation and Disclosure in Financial Statements“</strong> veröffentlicht. Er ersetzt <strong>IAS 1</strong> und gilt für Geschäftsjahre, die am oder nach dem <strong>1. Januar 2027</strong> beginnen (retrospektive Anwendung; vorzeitige Anwendung erlaubt). <strong>Stand EU (heute: 24.11.2026):</strong> Die EU hat IFRS 18 übernommen – durch die <strong>Verordnung (EU) 2026/338 der Kommission vom 13. Februar 2026</strong>, veröffentlicht im Amtsblatt am 16. Februar 2026; Anwendung in der EU für Geschäftsjahre ab 1.1.2027. Quellen: <a href="https://www.fondazioneoic.eu/31086/?lang=en" target="_blank">Fondazione OIC zu VO 2026/338</a>, <a href="https://www.drsc.de/en/news/eu-adoption-of-ifrs-18-presentation-and-disclosure-in-financial-statements/" target="_blank">DRSC – EU-Übernahme von IFRS 18</a>, <a href="https://www.xbrl.org/news/eu-officially-adopts-ifrs-18/" target="_blank">XBRL International</a>, <a href="https://www.efrag.org/en/news-and-calendar/news/efrag-endorsement-status-report-update-59" target="_blank">EFRAG Endorsement Status Report</a>; Forvis Mazars: <a href="https://www.forvismazars.com/de/en/who-we-are/news/press-media/newsletters/newsletter-ifrs/newsletter-ifrs-3-2025/ifrs-18-eckpunkte-zur-neuen-darstellung" target="_blank">IFRS 18 Eckpunkte</a>. (Das Datum der Verordnung stammt aus Suchergebnis-Zusammenfassungen; ein Suchergebnis nennt für den Amtsblatt-Termin den 16.2.2026, andere nennen den 13.2. – verlässlich ist 13.2.2026 als Datum der Verordnung.)</p>
+
+<h4>Was ändert sich gegenüber den Folien?</h4>
+<table class="rec">
+<thead><tr><th>Thema</th><th>Folien (IAS 1)</th><th>IFRS 18 (ab 2027)</th></tr></thead>
+<tbody>
+<tr><td>Kategorien in der GuV</td><td>Keine feste Kategorisierung; Staffel Bruttogewinn – Betriebsergebnis – Finanzierung – Steuern (Folie 264)</td><td>Fünf Kategorien: <strong>Betrieb (Operating)</strong>, <strong>Investition (Investing)</strong>, <strong>Finanzierung (Financing)</strong>, Ertragsteuern, aufgegebene Geschäftsbereiche. Die Kategorie „Investition“ ist neu; Finanzierung und Steuern bleiben inhaltlich wie bisher.</td></tr>
+<tr><td>Zwischensummen</td><td>„Income from Operations“ nicht verbindlich definiert</td><td>Zwei <strong>Pflicht-Zwischensummen</strong>: <strong>Betriebsergebnis</strong> (Operating profit or loss) und <strong>Ergebnis vor Finanzierung und Ertragsteuern</strong> (= Betriebsergebnis + Investitionsergebnis). Das Betriebsergebnis ist nicht gleichzusetzen mit dem bisher häufig verwendeten EBIT, z. B. wegen des Beteiligungsergebnisses.</td></tr>
+<tr><td>Aufwandsgliederung</td><td>GKV oder UKV (Folie 265); Art-Angaben beim UKV im Anhang</td><td>Gliederung nach Art, nach Funktion oder gemischt <strong>direkt in der GuV</strong>; bei funktionaler Darstellung zusätzliche Angaben zu Art und Höhe von Aufwandsposten im Anhang. Das Betriebsergebnis ist unabhängig vom Gliederungsformat dasselbe.</td></tr>
+<tr><td>Eigene Kennzahlen</td><td>Nicht geregelt</td><td><strong>Management-defined performance measures (MPMs)</strong>: Subtotale von Erträgen und Aufwendungen, die das Management in der Öffentlichkeit außerhalb des Abschlusses nutzt, müssen im Anhang definiert, begründet und übergeleitet werden – und sind damit erstmals Teil des geprüften Abschlusses.</td></tr>
+<tr><td>Bilanz</td><td>Mindestposten IAS 1.54, kurz-/langfristig</td><td>Die Klassifizierung kurz-/langfristig und das Bilanzschema bleiben im Kern; die ausführlichen Neuerungen betreffen GuV und Anhang (eigenes Fachwissen, nicht gesondert verifiziert).</td></tr>
+<tr><td>OCI</td><td>Gruppierung recycelt / nicht recycelt</td><td>Die Trennung in umgliederbare und nicht umgliederbare OCI-Posten bleibt bestehen.</td></tr>
+<tr><td>Beträge</td><td>–</td><td>IFRS 18 ändert grundsätzlich <strong>nicht die Höhe</strong> von Gewinn oder OCI, sondern Gliederung und Angaben. Folgeänderungen gibt es u. a. an IAS 7 (Kapitalflussrechnung), IAS 33 und IAS 34.</td></tr>
+</tbody>
+</table>
+<p>Quellen: <a href="https://www.lucanet.com/en/insights/regulatory-insights/ifrs-18-changes-at-a-glance-06-09-2024/" target="_blank">LucaNet: IFRS 18 – All changes at a glance</a>, <a href="https://assets.kpmg.com/content/dam/kpmg/xx/pdf/2024/06/isg-first-impressions-presentation-and-disclosure-ifrs-18.pdf" target="_blank">KPMG First Impressions IFRS 18</a>, <a href="https://www.bdo.com.au/en-au/blogs/corporate-reporting/presenting-operating-expenses-under-ifrs-18-by-nature-by-function-or-both" target="_blank">BDO Australia zu Nature/Function</a>, <a href="https://www.icaew.com/technical/corporate-reporting/corporate-reporting-resources/by-all-accounts/articles/2024/new-ifrs-accounting-standard-to-aid-analysis-of-financial-performance" target="_blank">ICAEW</a>, <a href="https://www.forvismazars.com/de/en/who-we-are/news/press-media/newsletters/newsletter-ifrs/newsletter-ifrs-3-2025/ifrs-18-eckpunkte-zur-neuen-darstellung" target="_blank">Forvis Mazars</a>.</p>
+
+<h4>Wie sieht die neue Staffel aus?</h4>
+<p>Statt der Folienstaffel (Bruttogewinn → Betriebsergebnis → Ergebnis vor Steuern) sortiert IFRS 18 die Posten nach der <em>Rolle im Geschäftsmodell</em>:</p>
+<ul>
+<li><strong>Betrieb:</strong> Alles, was nicht in eine andere Kategorie gehört (Umsatz, Material, Personal, Abschreibungen, Vertrieb, Verwaltung, …) → <strong>Betriebsergebnis</strong>.</li>
+<li><strong>Investition:</strong> Erträge und Aufwendungen aus Vermögenswerten, die weitgehend unabhängig von anderen Ressourcen Erträge erzeugen (bei Nicht-Finanzunternehmen z. B. Zinsen auf Bankguthaben, Beteiligungserträge, Ergebnis aus at-equity-Beteiligungen, Mieterträge aus als Finanzinvestition gehaltenen Immobilien) → mit dem Betriebsergebnis zusammen <strong>Ergebnis vor Finanzierung und Ertragsteuern</strong>.</li>
+<li><strong>Finanzierung:</strong> Aufwendungen aus der Kapitalbeschaffung (z. B. Zinsen auf Bankdarlehen, Anleihen) → danach das <strong>Ergebnis vor Ertragsteuern</strong>.</li>
+<li>Danach: Ertragsteuern, aufgegebene Geschäftsbereiche, Periodenergebnis.</li>
+</ul>
+<p>Für Banken und Unternehmen, die Finanzierung oder Investieren als Hauptgeschäft betreiben, gelten Sonderregeln: Dort kann ein Teil der Posten, der sonst in „Investition/Finanzierung“ stünde, im Betrieb landen. Wichtig: Die Kategorien sind <em>nicht deckungsgleich</em> mit denen der Kapitalflussrechnung. (Quellen s. o.; die konkrete Zuordnung einzelner Posten im Beispiel basiert auf eigenem Fachwissen zu IFRS 18 und ist nicht im Standardtext geprüft.)</p>
+<div class="merke"><strong>Merke (Klausur-Ausblick):</strong> IAS 1 → IFRS 18 ab 1.1.2027. Neu: <em>Operating / Investing / Financing</em>, zwei Pflicht-Zwischensummen, MPMs im Anhang. Nicht neu: Höhe von Gewinn und OCI, Grundlogik der Bilanz.</div></div>
+
+<h3>Zusammenfassung des Kapitels in einem Bild</h3>
+<p>Vom Konzern her gedacht: Konzernabschluss → besteht aus Bilanz (Stichtag), Gesamtergebnisrechnung (GuV + OCI, Zeitraum), Eigenkapitalveränderungsrechnung (Zeitraum), Kapitalflussrechnung (Zeitraum), Segmentberichterstattung, Anhang. Die Bilanz verlinkt mit der EKV (Schlussbestand), die GuV mit der EKV (Gewinn) und dem OCI (Rücklagen). Die Kapitalflussrechnung (nächstes Kapitel) erklärt, wie sich die Zahlungsmittel der Bilanz verändert haben.</p>
+
+<h3>Übungsaufgaben</h3>
+<p>Auf den Folien dieses Bereichs (PDF-S. 251–267) stehen keine Rechenaufgaben; die folgenden Aufgaben sind deshalb alle neu erstellt und orientieren sich am Stil der Vorlesung (Zuordnen, Gliedern, Rechnen mit überschaubaren Zahlen).</p>
+
+<div class="exercise neu">
+<h4>Übung 04.1: Wahr oder falsch?</h4>
+<p>Entscheide, ob die Aussagen wahr (W) oder falsch (F) sind, und begründe kurz.</p>
+<ol>
+<li>IAS 1 schreibt eine feste Reihenfolge der Bilanzposten vor.</li>
+<li>Ein IFRS-Konzernabschluss darf die HGB-Gliederung nach § 266 unverändert übernehmen.</li>
+<li>Eine Verbindlichkeit mit einer Restlaufzeit von 8 Monaten ist kurzfristig.</li>
+<li>Zahlungsmittel und Zahlungsmitteläquivalente zählen laut Folien zu den kurzfristigen Vermögenswerten.</li>
+<li>Gesamtergebnis = Gewinn/Verlust + sonstiges Ergebnis.</li>
+<li>Beim Umsatzkostenverfahren werden die Aufwendungen nach ihrer Art (Material, Personal, …) gegliedert.</li>
+<li>Eine Dividendenzahlung an die Aktionäre ist ein Aufwand der GuV.</li>
+<li>Die Segmentberichterstattung ist für alle Unternehmen verpflichtend.</li>
+</ol>
+<details><summary>Lösung anzeigen</summary>
+<ol>
+<li>F – IAS 1 nennt nur Mindestposten (IAS 1.54), keine feste Reihenfolge (Folie 258).</li>
+<li>F – die Übernahme der HGB-Gliederung ist nicht möglich, es gilt IFRS.</li>
+<li>W – Restlaufzeit &lt; 12 Monate (Faustregel Folie 260).</li>
+<li>W – Folie 259.</li>
+<li>W – Folie 262 (IAS 1.81A).</li>
+<li>F – das ist das GKV; das UKV gliedert nach Funktion (Umsatzkosten, Vertrieb, Verwaltung) und verlangt Anhangangaben zu Abschreibungen und Personalaufwand.</li>
+<li>F – Dividenden sind Kapitaltransaktionen mit Eigentümern; sie mindern das Eigenkapital direkt und erscheinen in der EKV, nicht in der GuV.</li>
+<li>F – nur für kapitalmarktorientierte Unternehmen (Folie 256).</li>
+</ol></details>
+</div>
+
+<div class="exercise neu">
+<h4>Übung 04.2: Kurzfristig oder langfristig? (Bilanzstichtag 31.12.2026)</h4>
+<p>Ordne die Posten der Konzernbilanz zu: kurzfristig (current) oder langfristig (non-current) – und gib jeweils an, ob es ein Vermögenswert oder eine Schuld ist.</p>
+<ol type="a">
+<li>Vorräte (Fertigerzeugnisse für den normalen Verkauf)</li>
+<li>Maschinen in der Produktion</li>
+<li>Forderung aus Lieferung und Leistung, fällig am 15.03.2027</li>
+<li>Festgeld bei der Bank, fällig am 31.10.2027 (frei verfügbar)</li>
+<li>At equity bewertete Beteiligung</li>
+<li>Bankdarlehen, endfällig am 30.06.2030</li>
+<li>Verbindlichkeiten aus Lieferung und Leistung (Zahlungsziel 30 Tage)</li>
+<li>Anleihe, endfällig am 31.05.2027</li>
+<li>Als Finanzinvestition gehaltene Immobilie</li>
+<li>Garantierückstellung, Inanspruchnahme in rund 8 Monaten erwartet</li>
+</ol>
+<details><summary>Lösung anzeigen</summary>
+<ol type="a">
+<li>kurzfristig, Vermögenswert (Verbrauch/Verkauf im normalen Geschäftszyklus).</li>
+<li>langfristig, Vermögenswert (Sachanlage).</li>
+<li>kurzfristig, Vermögenswert (Realisation in ca. 2,5 Monaten).</li>
+<li>kurzfristig, Vermögenswert (Realisation innerhalb von 12 Monaten: 10 Monate).</li>
+<li>langfristig, Vermögenswert.</li>
+<li>langfristig, Schuld (Restlaufzeit 42 Monate).</li>
+<li>kurzfristig, Schuld (Tilgung im gewöhnlichen Geschäftszyklus bzw. innerhalb 12 Monaten).</li>
+<li>kurzfristig, Schuld (Restlaufzeit 5 Monate &lt; 12 Monate).</li>
+<li>langfristig, Vermögenswert (wird zu Anlagezwecken gehalten, nicht im Geschäftszyklus umgesetzt).</li>
+<li>kurzfristig, Schuld (Inanspruchnahme innerhalb von 12 Monaten erwartet).</li>
+</ol>
+Merkhilfe: Frage dich bei jedem Posten: „Wird er im normalen Geschäftszyklus oder innerhalb von 12 Monaten nach dem Stichtag zu Geld bzw. getilgt?“ Wenn ja → kurzfristig.</details>
+</div>
+
+<div class="exercise neu">
+<h4>Übung 04.3: Tilgungsdarlehen und Fristverlängerung</h4>
+<p>Die Nord AG hat am 1.1.2025 ein Darlehen über 900 Mio. € aufgenommen. Es wird in 6 gleichen jährlichen Raten à 150 Mio. € jeweils zum 30.06. getilgt, erstmals am 30.06.2025. Bilanzstichtag ist der 31.12.2026. Außerdem besteht ein zweites Darlehen über 400 Mio. €, das am 15.02.2027 zur Rückzahlung fällig ist. Am 20.01.2027 – also nach dem Stichtag, aber vor der Veröffentlichung des Abschlusses am 15.03.2027 – vereinbart die Nord AG mit der Bank, dieses zweite Darlehen bis 2030 zu verlängern.<br>
+a) Wie hoch sind die kurz- und langfristigen Teile des ersten Darlehens?<br>
+b) Wie ist das zweite Darlehen im Abschluss zum 31.12.2026 auszuweisen?<br>
+c) Wie hoch sind die kurzfristigen Schulden aus beiden Darlehen insgesamt?</p>
+<details><summary>Lösung anzeigen</summary>
+<p><strong>a)</strong> Bis zum 31.12.2026 sind zwei Raten getilgt (30.06.2025 und 30.06.2026): Restschuld = 900 − 2 × 150 = 600 Mio. €. Die nächste Rate (150 Mio. €) fällt am 30.06.2027 an, also innerhalb von 12 Monaten nach dem Stichtag → <strong>kurzfristig 150 Mio. €</strong>. Der Rest (die Raten 2028–2030, 3 × 150 = 450 Mio. €) ist <strong>langfristig 450 Mio. €</strong>.</p>
+<p><strong>b)</strong> Das Darlehen ist am Stichtag in 1,5 Monaten fällig. Die Verlängerung wurde erst nach dem Stichtag vereinbart; gemäß Folie 260 sind auch ursprünglich langfristige Verbindlichkeiten, bei denen bis zur Veröffentlichung eine Fälligkeitsverschiebung eintritt, als kurzfristig auszuweisen (die Verlängerung wurde erst nach dem Stichtag vereinbart und ändert die Einstufung am Stichtag nicht). Ergebnis: <strong>kurzfristige Schuld 400 Mio. €</strong> (die Verlängerung ist im Anhang zu erläutern).</p>
+<p><strong>c)</strong> 150 + 400 = <strong>550 Mio. €</strong> kurzfristig; langfristig bleiben 450 Mio. €.</p>
+<span class="rec">Hintergrund (Recherche): Maßgeblich ist das <em>am Stichtag bestehende Recht</em>, die Erfüllung um mindestens 12 Monate zu verschieben – eine erst nach dem Stichtag vereinbarte Verlängerung ändert die Einstufung nicht. Quelle: <a href="https://kpmg.com/de/de/home/themen/2024/08/bilanzausweis-von-verbindlichkeiten.html" target="_blank">KPMG Deutschland</a>.</span>
+</details>
+</div>
+
+<div class="exercise neu">
+<h4>Übung 04.4: Vom Gesamtkostenverfahren zum Umsatzkostenverfahren</h4>
+<p>Die Süd GmbH liefert diese GKV-Zahlen (Mio. €): Umsatzerlöse 1.000; Bestandsmehrung an Fertigerzeugnissen/unfertigen Erzeugnissen 50; sonstige Erträge 20; Materialaufwand 400; Personalaufwand 250; planmäßige Abschreibungen 80; andere Aufwendungen 90.<br>
+Die Kosten verteilen sich so auf die Funktionsbereiche:</p>
+<table>
+<thead><tr><th>Aufwandsart</th><th>Produktion</th><th>Vertrieb</th><th>Verwaltung</th><th>Nicht zuordenbar (Andere Aufwendungen)</th></tr></thead>
+<tbody>
+<tr><td>Material 400</td><td>400</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>Personal 250</td><td>150</td><td>60</td><td>40</td><td>0</td></tr>
+<tr><td>Abschreibungen 80</td><td>50</td><td>10</td><td>20</td><td>0</td></tr>
+<tr><td>Andere Aufwendungen 90</td><td>30</td><td>25</td><td>20</td><td>15</td></tr>
+</tbody>
+</table>
+<p>a) Berechne den Gewinn vor Steuern nach dem GKV.<br>
+b) Stelle die Gewinn- und Verlustrechnung im UKV auf (inkl. Bruttogewinn) und berechne den Gewinn vor Steuern.<br>
+c) Welche zusätzlichen Angaben sind beim UKV im Anhang nötig?</p>
+<details><summary>Lösung anzeigen</summary>
+<p><strong>a) GKV:</strong> Gesamtleistung und Erträge = 1.000 + 50 + 20 = 1.070. Gesamtaufwand = 400 + 250 + 80 + 90 = 820. Gewinn vor Steuern = 1.070 − 820 = <strong>250 Mio. €</strong>.</p>
+<p><strong>b) UKV:</strong> Herstellkosten der Periode = 400 + 150 + 50 + 30 = 630. Da 50 in die Lagerbestände gewandert sind, ergeben sich Umsatzkosten = 630 − 50 = 580. Bruttogewinn = 1.000 − 580 = <strong>420</strong>. Vertriebskosten = 60 + 10 + 25 = 95. Verwaltungsaufwendungen = 40 + 20 + 20 = 80. Andere Aufwendungen = 15. Sonstige Erträge = 20.<br>
+Gewinn vor Steuern = 420 + 20 − 95 − 80 − 15 = <strong>250 Mio. €</strong> – identisch mit dem GKV-Ergebnis.</p>
+<p><strong>c)</strong> Anhangangaben zu <strong>Personalaufwand (250)</strong> und <strong>Abschreibungen (80)</strong> (Folie 263).</p></details>
+</div>
+
+<div class="exercise neu">
+<h4>Übung 04.5: Gesamtergebnis, Zuordnung und Ergebnis je Aktie</h4>
+<p>Die Ost AG weist für das Geschäftsjahr aus (Mio. €, jeweils nach Steuern): Periodenergebnis 300, davon entfallen 60 auf nicht beherrschende Anteile. Sonstiges Ergebnis: Währungsumrechnung ausländischer Tochter +40, Neubewertung der Pensionsverpflichtungen −25, Cashflow-Hedge-Rücklage +10, Wertänderung eines Eigenkapitalinstruments (FVOCI) +15. Vom sonstigen Ergebnis entfallen insgesamt 10 auf nicht beherrschende Anteile. Die AG hat 100 Mio. Aktien im Umlauf (kein Aktienrückkauf im Jahr).<br>
+a) Berechne das sonstige Ergebnis und das Gesamtergebnis.<br>
+b) Berechne das Gesamtergebnis der Mutter-Aktionäre.<br>
+c) Berechne das unverwässerte Ergebnis je Aktie.<br>
+d) Welche OCI-Posten werden später in die GuV umgegliedert?</p>
+<details><summary>Lösung anzeigen</summary>
+<p><strong>a)</strong> OCI = 40 − 25 + 10 + 15 = <strong>40 Mio. €</strong>. Gesamtergebnis = 300 + 40 = <strong>340 Mio. €</strong>.</p>
+<p><strong>b)</strong> Mutter: Periodenergebnis 300 − 60 = 240; OCI 40 − 10 = 30; Gesamtergebnis der Mutter = 240 + 30 = <strong>270 Mio. €</strong>; nicht beherrschende Anteile: 60 + 10 = 70.</p>
+<p><strong>c)</strong> EPS = Ergebnis der Mutter-Aktionäre / Anzahl Aktien = 240 / 100 = <strong>2,40 € je Aktie</strong> (nur das Periodenergebnis, nicht das OCI; Nenner: Aktien 100 Mio.).</p>
+<p><strong>d)</strong> <span class="rec">Umgegliedert werden die Währungsumrechnung (+40) und die Cashflow-Hedge-Rücklage (+10); nicht umgegliedert werden die Pensionsneubewertung (−25) und die FVOCI-Eigenkapitalinstrumente (+15). Quelle: <a href="https://accaglobal.com/an/en/student/exam-support-resources/professional-exams-study-resources/strategic-business-reporting/technical-articles/profit-loss-oci.html" target="_blank">ACCA</a>.</span></p></details>
+</div>
+
+<div class="exercise neu">
+<h4>Übung 04.6: Eigenkapitalveränderungsrechnung</h4>
+<p>Das Konzern-Eigenkapital der West AG beträgt am 1.1. insgesamt 1.000 Mio. € (davon Mutter 900, nicht beherrschende Anteile 100). Im Jahr entstehen: Gesamtergebnis 340 (Mutter 270, nicht beherrschende Anteile 70), Dividendenzahlung insgesamt 120 (Mutter 100, nicht beherrschende Anteile 20), Kapitalerhöhung der Mutter 200.<br>
+a) Stelle die EKV auf (Spalten: Mutter / nicht beherrschende Anteile / Gesamt).<br>
+b) Wie hoch ist das Eigenkapital am 31.12.?<br>
+c) Warum ist die Dividende nicht in der GuV enthalten?</p>
+<details><summary>Lösung anzeigen</summary>
+<table>
+<thead><tr><th>Zeile</th><th>Mutter</th><th>NCI</th><th>Gesamt</th></tr></thead>
+<tbody>
+<tr><td>1.1.</td><td>900</td><td>100</td><td>1.000</td></tr>
+<tr><td>Gesamtergebnis</td><td>+270</td><td>+70</td><td>+340</td></tr>
+<tr><td>Dividende</td><td>−100</td><td>−20</td><td>−120</td></tr>
+<tr><td>Kapitalerhöhung</td><td>+200</td><td>0</td><td>+200</td></tr>
+<tr><td><strong>31.12.</strong></td><td><strong>1.270</strong></td><td><strong>150</strong></td><td><strong>1.420</strong></td></tr>
+</tbody>
+</table>
+<p><strong>b)</strong> 900 + 270 − 100 + 200 = 1.270 (Mutter); 100 + 70 − 20 = 150 (NCI); Gesamt = 1.420 Mio. € (Kontrolle: 1.000 + 340 − 120 + 200 = 1.420).</p>
+<p><strong>c)</strong> Die Dividende ist eine Ausschüttung an die Eigentümer (Kapitaltransaktion zwischen Eigentümern und Unternehmen), kein Aufwand der Periode. Sie senkt das Eigenkapital direkt und steht deshalb nur in der EKV (Folien 266/267).</p></details>
+</div>
+
+<div class="exercise neu">
+<h4>Übung 04.7: Mini-Fallstudie – Kreditklausel (Covenant) und Bilanzausweis</h4>
+<p>Die Kaltenberg AG hat ein Bankdarlehen über 500 Mio. €, vertraglich fällig am 31.12.2030. Die Bank darf das Darlehen vorzeitig fällig stellen, wenn die Eigenkapitalquote unter 30 % sinkt. Bilanzstichtag ist der 31.12.2026.<br>
+<strong>Fall A:</strong> Die Eigenkapitalquote wird laut Vertrag zum 31.12.2026 getestet und liegt tatsächlich bei 27 %; die Bank hat bis zur Aufstellung des Abschlusses keinen Verzicht erklärt.<br>
+<strong>Fall B:</strong> Die Quote wird erstmals zum 30.06.2027 getestet; am 31.12.2026 liegt sie bei 27 %.<br>
+Wie ist das Darlehen im Abschluss zum 31.12.2026 jeweils auszuweisen? Begründe mit den Kriterien der Folie 260.</p>
+<details><summary>Lösung anzeigen</summary>
+<p><strong>Fall A:</strong> Am Stichtag verletzt das Unternehmen die Klausel und hat nicht das Recht, die Erfüllung der Schuld um mindestens 12 Monate zu verschieben (die Bank kann sofortige Rückzahlung verlangen). Damit trifft das letzte Kriterium der Folie 260 zu: <strong>kurzfristige Schuld (500 Mio. €)</strong>. Die Vertragslaufzeit bis 2030 spielt keine Rolle.</p>
+<p><strong>Fall B:</strong> Die Klausel muss erst nach dem Stichtag eingehalten werden; am Stichtag besteht das Recht, die Zahlung bis 2030 zu verschieben. Das Darlehen ist <strong>langfristig</strong>. <span class="rec">Nach den seit 2024 geltenden Änderungen an IAS 1 sind dann aber zusätzliche Anhangangaben erforderlich, u. a. zu den Umständen, die darauf hindeuten, dass das Unternehmen Schwierigkeiten haben könnte, die Klausel einzuhalten (Quellen: <a href="https://blogs.pwc.de/en/accounting-aktuell/article/234313/aenderungen-an-ias-1-zur-klassifizierung-von-schulden-mit-covenants/" target="_blank">PwC</a>, <a href="https://kpmg.com/de/de/home/themen/2024/08/bilanzausweis-von-verbindlichkeiten.html" target="_blank">KPMG</a>).</span></p>
+<p>Interpretation: Eine Umklassifizierung von lang- auf kurzfristig verschlechtert Kennzahlen wie das Verhältnis von kurzfristigen Vermögenswerten zu kurzfristigen Schulden, ohne dass sich die Kreditlaufzeit geändert hat – deshalb achten Banken und Analysten auf solche Klauseln.</p></details>
+</div>
+
+<div class="exercise neu">
+<h4>Übung 04.8: IFRS 18 – Kategorien und Zwischensummen</h4>
+<p>Ein Industrieunternehmen (kein Finanzunternehmen) liefert für 2027 diese Posten (Mio. €): Umsatzerlöse 3.000; Materialaufwand 1.200; Personalaufwand 900; Abschreibungen 250; sonstige betriebliche Aufwendungen 350; Zinserträge auf Bankguthaben 15; Ergebnis aus at-equity-Beteiligungen 25; Mieterträge aus als Finanzinvestition gehaltener Immobilie 10; Zinsaufwand auf Bankdarlehen 80; Ertragsteuern 30 % des Ergebnisses vor Ertragsteuern; Verlust aus aufgegebenem Geschäftsbereich (nach Steuern) 9.<br>
+a) Ordne die Posten den IFRS-18-Kategorien zu (Betrieb / Investition / Finanzierung / Ertragsteuern / aufgegebene Geschäftsbereiche).<br>
+b) Berechne Betriebsergebnis, Ergebnis vor Finanzierung und Ertragsteuern, Ergebnis vor Ertragsteuern und Periodenergebnis.</p>
+<details><summary>Lösung anzeigen</summary>
+<p><strong>a)</strong> Betrieb: Umsatz, Material, Personal, Abschreibungen, sonstige betriebliche Aufwendungen. Investition: Zinserträge auf Bankguthaben, Ergebnis aus at-equity-Beteiligungen, Mieterträge aus Finanzinvestitions-Immobilie. Finanzierung: Zinsaufwand auf Bankdarlehen. Außerdem: Ertragsteuern und aufgegebener Geschäftsbereich in eigenen Kategorien.</p>
+<p><strong>b)</strong> Betriebsergebnis = 3.000 − 1.200 − 900 − 250 − 350 = <strong>300</strong>. Investitionsergebnis = 15 + 25 + 10 = 50 → Ergebnis vor Finanzierung und Ertragsteuern = 300 + 50 = <strong>350</strong>. Finanzierung −80 → Ergebnis vor Ertragsteuern = <strong>270</strong>. Steuern 30 % = 81 → Ergebnis aus fortgeführten Geschäftsbereichen = 189. Aufgegebener Geschäftsbereich −9 → Periodenergebnis = <strong>180</strong>.</p>
+<p><span class="rec">Hinweis: Die Zuordnung der Posten entspricht dem Grundschema von IFRS 18 für Unternehmen ohne Finanzierungs-/Anlage-Hauptgeschäft (Quellen: <a href="https://www.lucanet.com/en/insights/regulatory-insights/ifrs-18-changes-at-a-glance-06-09-2024/" target="_blank">LucaNet</a>, <a href="https://assets.kpmg.com/content/dam/kpmg/xx/pdf/2024/06/isg-first-impressions-presentation-and-disclosure-ifrs-18.pdf" target="_blank">KPMG First Impressions</a>; Detailzuordnung nicht im Standardtext geprüft). Beachte: Das Betriebsergebnis (300) ist hier niedriger als ein klassisches „EBIT inkl. Beteiligungsergebnis“ (350).</span></p></details>
+</div>
+
+<div class="exercise neu">
+<h4>Übung 04.9: Anwendungsbereich IFRS (Recap Folie 252)</h4>
+<p>Welches Rechnungslegungsregime gilt jeweils (IFRS-Pflicht / IFRS-Wahlrecht / HGB)?<br>
+a) Konzernabschluss einer börsennotierten AG.<br>
+b) Konzernabschluss einer nicht börsennotierten GmbH (Kapitalgesellschaft) mit Tochtergesellschaften.<br>
+c) Einzelabschluss einer börsennotierten AG.<br>
+d) Einzelabschluss einer OHG (sonstige Rechtsform).</p>
+<details><summary>Lösung anzeigen</summary>
+<p>a) IFRS-<strong>Pflicht</strong> (kapitalmarktorientierter Konzern). b) IFRS-<strong>Wahlrecht</strong> (§ 315a HGB n.F. laut Folie). c) <strong>HGB</strong> (§§ 238–289a), da Einzelabschlüsse HGB-pflichtig bleiben (Mitgliedstaatenwahlrecht). d) <strong>HGB</strong> (§§ 238–263).</p></details>
+</div>
+
+<div class="glossar">
+<h3>Glossar</h3>
+<table>
+<thead><tr><th>Begriff (DE)</th><th>Englisch</th><th>Kurzerklärung</th></tr></thead>
+<tbody>
+<tr><td>Konzernabschluss</td><td>Consolidated financial statements</td><td>Abschluss, der Mutter- und Tochterunternehmen wie eine wirtschaftliche Einheit darstellt</td></tr>
+<tr><td>Einzelabschluss</td><td>Separate / individual financial statements</td><td>Abschluss einer einzelnen rechtlichen Einheit (in Deutschland HGB)</td></tr>
+<tr><td>Kapitalmarktorientiert</td><td>Capital-market oriented</td><td>Wertpapiere des Unternehmens sind an einem organisierten Markt zugelassen</td></tr>
+<tr><td>Bilanz</td><td>Statement of financial position</td><td>Vermögen, Eigenkapital und Schulden zu einem Stichtag</td></tr>
+<tr><td>Gesamtergebnisrechnung</td><td>Statement of comprehensive income</td><td>GuV plus sonstiges Ergebnis</td></tr>
+<tr><td>Gewinn- und Verlustrechnung</td><td>Profit or loss</td><td>Erträge minus Aufwendungen einer Periode</td></tr>
+<tr><td>Sonstiges Ergebnis</td><td>Other comprehensive income (OCI)</td><td>Im Eigenkapital direkt erfasste Wertänderungen, nicht Teil des Gewinns</td></tr>
+<tr><td>Eigenkapitalveränderungsrechnung</td><td>Statement of changes in equity</td><td>Zeigt Veränderungen des Eigenkapitals durch Ergebnis, OCI und Transaktionen mit Eigentümern</td></tr>
+<tr><td>Kurzfristig / langfristig</td><td>Current / non-current</td><td>Unterscheidung nach Geschäftszyklus bzw. 12-Monats-Grenze</td></tr>
+<tr><td>Normaler Geschäftszyklus</td><td>Operating cycle</td><td>Zeit zwischen Einkauf der Einsatzgüter und Zahlungseingang aus dem Verkauf</td></tr>
+<tr><td>Gesamtkostenverfahren</td><td>Nature of expense method</td><td>GuV nach Aufwandsarten, mit Bestandsveränderung</td></tr>
+<tr><td>Umsatzkostenverfahren</td><td>Function of expense (cost of sales) method</td><td>GuV nach Funktionsbereichen, Umsatzkosten ausgewiesen</td></tr>
+<tr><td>Nicht beherrschende Anteile</td><td>Non-controlling interests (NCI)</td><td>Eigenkapitalanteil Dritter an Tochterunternehmen (früher Minderheiten)</td></tr>
+<tr><td>Ergebnis je Aktie</td><td>Earnings per share (EPS, IAS 33)</td><td>Ergebnis der Stammaktionäre der Mutter / gewichtete Aktienzahl</td></tr>
+<tr><td>Aufgegebener Geschäftsbereich</td><td>Discontinued operations</td><td>Verkaufter oder zur Veräußerung gehaltener wesentlicher Geschäftsbereich, gesondert ausgewiesen</td></tr>
+<tr><td>Beherrschung</td><td>Control (IFRS 10)</td><td>Verfügungsgewalt + schwankende Renditen + Fähigkeit zur Beeinflussung der Renditen</td></tr>
+<tr><td>Management-definierte Leistungskennzahl</td><td>Management-defined performance measure (MPM, IFRS 18)</td><td>Vom Management genutztes Ergebnis-Subtotal, das im Anhang erläutert werden muss</td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="checkliste">
+<h3>Das solltest du am Ende können</h3>
+<ul>
+<li>Die Matrix „IFRS-Pflicht / Wahlrecht / HGB“ für Konzern- und Einzelabschluss erklären (Folie 252).</li>
+<li>Die sechs Abschlussbestandteile nennen und kurz beschreiben (Folie 256).</li>
+<li>Mindestposten der IFRS-Bilanz nach IAS 1.54 zuordnen und erklären, warum keine feste Gliederung vorgeschrieben ist.</li>
+<li>Kurzfristige von langfristigen Vermögenswerten und Schulden trennen (Geschäftszyklus, 12 Monate, Recht zur Verschiebung).</li>
+<li>Erklären, was die Gesamtergebnisrechnung zeigt: Gewinn + OCI = Gesamtergebnis, ein oder zwei Aufstellungen.</li>
+<li>GKV und UKV gegenüberstellen und zeigen, dass sie zum selben Gewinn führen; Anhangangaben beim UKV nennen.</li>
+<li>Die Struktur der Gesamtergebnisrechnung (Bruttogewinn bis EPS) aufstellen und das EPS berechnen.</li>
+<li>Eine Eigenkapitalveränderungsrechnung mit Mutter- und Minderheitenanteilen rechnerisch aufstellen.</li>
+<li>Recherche: Wissen, dass IFRS 18 ab 1.1.2027 die GuV in Betrieb/Investition/Finanzierung gliedert und IAS 1 ersetzt.</li>
+</ul>
+</div>
+
+</section>
