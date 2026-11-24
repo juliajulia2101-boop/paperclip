@@ -120,8 +120,15 @@ body.hide-rec .rec{display:none}
   .layout{display:block}
   body{background:#fff;color:#000;font-size:11pt}
   section.chapter{border:0;padding:0;break-before:page}
-  details{border:0}
+  details{border:0;padding:0}
   details>*{display:block}
+  table{display:table;width:100%;font-size:9pt;overflow:visible;table-layout:auto}
+  th,td{padding:3px 6px}
+  .formel{white-space:pre-wrap}
+  h2,h3,h4{break-after:avoid}
+  .exercise,.merke,.beispiel,.rec,table{break-inside:avoid-page}
+  .exercise,.rec{break-inside:auto}
+  a{color:inherit}
   .rec,.merke,.beispiel,.exercise,.formel,.chip{-webkit-print-color-adjust:exact;print-color-adjust:exact}
 }
 </style>
